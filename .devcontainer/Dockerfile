@@ -28,6 +28,12 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         libfontconfig1-dev \
         libcairo2-dev \
         build-essential \
+        pandoc \
+        pandoc-citeproc \
+        curl \
+        gdebi-core \
+        && rm -rf /var/lib/apt/lists/*
+
 
     && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts \
     && python3 -m pip --no-cache-dir install radian \
