@@ -1,0 +1,15 @@
+---
+title: Jellyfish
+---
+
+## Jellyfish
+
+Jellyfish in the original model were parametrized as a single group including large and small jellyfish. The group was modified as parto of a WA SeaGrant project.
+We will quantify the ecosystem effects of changing jellyfish populations in Puget Sound using an Atlantis ecosystem model, and develop indicators of their abundance for ecosystem management. We will examine scenarios that integrate results from the mesocosms and field studies part of this grant to understand the ecological role of jellyfish in Puget Sound, and their effects on other species including salmon and forage fish.
+
+#Jellyfish groups
+
+## Spatial distribution
+
+We used the results from Green et al. who examined interspecific variation in species-specific response of jellyfish adult life stages to environmental variation and anthropogenic influence, and projected future changes in these parameters in Puget Sound. They used results from a field survey to predict the presence of seven jellyfish species across six sub basins in Puget Sound. They modeled the probability of species presence as a function of site-specific parameters (geomorphic type, anthropogenic land use) and observation-specific variables (salinity, temperature, depth). Their presence/absence models indicated strong interspecific variation in the habitat preferences of jellyfish to environmental parameters such as temperature and geomorphic type, as well as varying sensitivity to potential anthropogenic effects on nearshore waters. We used the embayments derived by Green et al. (embayment_unit_revised.shp) and classified additional coastline segments from data collected by The Salmon and Steelhead Habitat Inventory and Assessment Program (SSHIAP) http://nwifc.org/about-us/habitat/sshiap/ (geodatabase Geomorph_PS_S). Geomorphology categories Beach beach, modified, shoreline, bluff, and platform categories were aggregated and reclassified as exposed; all types of delta were assigned to the delta category. 
+We also derived percent Used landcover classes at 30 m resolution (szline_GSU_identity_Spj_HUC_NHD_dissolve_DU_sum_LU.shp). Development classes were based on the NCCOS' Coastal Change and Analysis Program (C-CAP, 2006 analysis year). Nationally standardized, raster-based inventories of land cover for the coastal areas of the U.S. Data are derived, through the Coastal Change Analysis Program, from the analysis of multiple dates of remotely sensed imagery. https://coast.noaa.gov/digitalcoast/tools/lca.html. Land classification scheme https://coast.noaa.gov/data/digitalcoast/pdf/ccap-class-scheme-regional.pdf
