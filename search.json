@@ -70,20 +70,6 @@
     "text": "Render locally and publish to gh-pages branch\nTo render locally and push up to the gh-pages branch, open a terminal window and then cd to the directory with the Quarto project. Type this in the terminal:\nquarto render gh-pages"
   },
   {
-    "objectID": "content/add-content.html",
-    "href": "content/add-content.html",
-    "title": "Customize",
-    "section": "",
-    "text": "Edit the qmd or md files in the content folder. qmd files can include code (R, Python, Julia) and lots of Quarto markdown bells and whistles (like call-outs, cross-references, auto-citations and much more).\nEach page should start with\n---\ntitle: your title\n---\nand the first header will be the 2nd level, so ##. Note, there are situations where you leave off\n---\ntitle: your title\n---\nand start the qmd file with a level header #, but if using the default title yaml (in the --- fence) is a good habit since it makes it easy for Quarto convert your qmd file to other formats (like into a presentation)."
-  },
-  {
-    "objectID": "content/add-content.html#add-your-pages-the-project",
-    "href": "content/add-content.html#add-your-pages-the-project",
-    "title": "Customize",
-    "section": "Add your pages the project",
-    "text": "Add your pages the project\n\nAdd the files to _quarto.yml"
-  },
-  {
     "objectID": "content/customizing.html",
     "href": "content/customizing.html",
     "title": "Customization",
@@ -96,6 +82,20 @@
     "title": "Customization",
     "section": "Examples",
     "text": "Examples\nLooking at other people’s Quarto code is a great way to figure out how to do stuff. Most will have a link to a GitHub repo where you can see the raw code. Look for a link to edit page or see source code. This will usually be on the right. Or look for the GitHub icon somewhere.\n\nQuarto gallery\nnmfs-openscapes\nFaye lab manual\nquarto-titlepages Note the link to edit is broken. Go to repo and look in documentation directory."
+  },
+  {
+    "objectID": "content/jellyfish.html",
+    "href": "content/jellyfish.html",
+    "title": "Jellyfish",
+    "section": "",
+    "text": "Jellyfish in the original model were parametrized as a single group including large and small jellyfish. The group was modified as parto of a WA SeaGrant project. We will quantify the ecosystem effects of changing jellyfish populations in Puget Sound using an Atlantis ecosystem model, and develop indicators of their abundance for ecosystem management. We will examine scenarios that integrate results from the mesocosms and field studies part of this grant to understand the ecological role of jellyfish in Puget Sound, and their effects on other species including salmon and forage fish.\n#Jellyfish groups"
+  },
+  {
+    "objectID": "content/jellyfish.html#spatial-distribution",
+    "href": "content/jellyfish.html#spatial-distribution",
+    "title": "Jellyfish",
+    "section": "Spatial distribution",
+    "text": "Spatial distribution\nWe used the results from Green et al. who examined interspecific variation in species-specific response of jellyfish adult life stages to environmental variation and anthropogenic influence, and projected future changes in these parameters in Puget Sound. They used results from a field survey to predict the presence of seven jellyfish species across six sub basins in Puget Sound. They modeled the probability of species presence as a function of site-specific parameters (geomorphic type, anthropogenic land use) and observation-specific variables (salinity, temperature, depth). Their presence/absence models indicated strong interspecific variation in the habitat preferences of jellyfish to environmental parameters such as temperature and geomorphic type, as well as varying sensitivity to potential anthropogenic effects on nearshore waters. We used the embayments derived by Green et al. (embayment_unit_revised.shp) and classified additional coastline segments from data collected by The Salmon and Steelhead Habitat Inventory and Assessment Program (SSHIAP) http://nwifc.org/about-us/habitat/sshiap/ (geodatabase Geomorph_PS_S). Geomorphology categories Beach beach, modified, shoreline, bluff, and platform categories were aggregated and reclassified as exposed; all types of delta were assigned to the delta category. We also derived percent Used landcover classes at 30 m resolution (szline_GSU_identity_Spj_HUC_NHD_dissolve_DU_sum_LU.shp). Development classes were based on the NCCOS’ Coastal Change and Analysis Program (C-CAP, 2006 analysis year). Nationally standardized, raster-based inventories of land cover for the coastal areas of the U.S. Data are derived, through the Coastal Change Analysis Program, from the analysis of multiple dates of remotely sensed imagery. https://coast.noaa.gov/digitalcoast/tools/lca.html. Land classification scheme https://coast.noaa.gov/data/digitalcoast/pdf/ccap-class-scheme-regional.pdf"
   },
   {
     "objectID": "content/publishing.html",
@@ -137,13 +137,13 @@
     "href": "index.html",
     "title": "Atlantis Model for Puget Sound",
     "section": "",
-    "text": "This website records changes to the Atlantis Model for Puget Sound from the original published model in the Technical memorandum found here: https://repository.library.noaa.gov/view/noaa/40463\nThe model was built using the Atlantis modeling framework, a simulation modeling approach developed by Dr. Beth Fulton at the Commonwealth Scientific and Industrial Research Organisation (CSIRO) . Atlantis integrates physical, chemical, ecological, and anthropogenic processes in a three-dimensional, spatially explicit domain. This framework has been applied to evaluate management scenarios and investigate the effects of climate change in over 30 ecosystems worldwide. In Atlantis, ecosystem dynamics are represented by spatially explicit submodels that simulate oceanographic processes, biogeochemical factors driving primary production, and food web relations among flora and fauna. The model represents species of ecological and conservation concern and key exploited species at the level of detail necessary to evaluate the direct effects of fishing, and it represents other anthropogenic and climate impacts on the ecosystem as a whole."
+    "text": "This website records changes to the Atlantis Model for Puget Sound from the original published model in the Technical memorandum\nMorzaria-Luna H, Kaplan IC, Harvey CJ, Girardin R, Fulton EA, MacCready P, Chasco B, Horne P, Schmidt M. 2022. Design and Parameterization of a Spatially Explicit Atlantis Ecosystem Model for Puget Sound. Northwest Fisheries Science Center (U.S.). NOAA technical memorandum NMFS-NWFSC 177. DOI : https://doi.org/10.25923/tnp6-mf67\nThe model was built using the Atlantis modeling framework, a simulation modeling approach developed by Dr. Beth Fulton at the Commonwealth Scientific and Industrial Research Organisation (CSIRO) . Atlantis integrates physical, chemical, ecological, and anthropogenic processes in a three-dimensional, spatially explicit domain. This framework has been applied to evaluate management scenarios and investigate the effects of climate change in over 30 ecosystems worldwide. In Atlantis, ecosystem dynamics are represented by spatially explicit submodels that simulate oceanographic processes, biogeochemical factors driving primary production, and food web relations among flora and fauna. The model represents species of ecological and conservation concern and key exploited species at the level of detail necessary to evaluate the direct effects of fishing, and it represents other anthropogenic and climate impacts on the ecosystem as a whole."
   },
   {
     "objectID": "index.html#atlantis-model-for-puget-sound-applications",
     "href": "index.html#atlantis-model-for-puget-sound-applications",
     "title": "Atlantis Model for Puget Sound",
     "section": "Atlantis Model for Puget Sound Applications",
-    "text": "Atlantis Model for Puget Sound Applications\n\n\nExplore whether top-down processes - predation and bottom-up processes—including competition and primary productivity—have led to shifts in prey availability, timing, and quality for juvenile Chinook and coho salmon.\nProvide insight into the ecosystem effects of management actions aimed at Southern Resident Killer Whales.Turn on GitHub Pages under Settings > Pages . You will set pages to be made from the gh-pages branch and root directory.\nExamine the ecological role of increasing jellyfish populations\nEdit the repo description and Readme to add a link to the webpage. When you edit the description, you will see the link url in the url box or you can click on the Actions tab or the Settings > Pages page to find the url."
+    "text": "Atlantis Model for Puget Sound Applications\n\nExplore whether top-down processes - predation and bottom-up processes—including competition and primary productivity—have led to shifts in prey availability, timing, and quality for juvenile Chinook and coho salmon.\nProvide insight into the ecosystem effects of management actions aimed at Southern Resident Killer Whales.Turn on GitHub Pages under Settings > Pages . You will set pages to be made from the gh-pages branch and root directory.\nExamine the ecological role of increasing jellyfish populations\nEdit the repo description and Readme to add a link to the webpage. When you edit the description, you will see the link url in the url box or you can click on the Actions tab or the Settings > Pages page to find the url."
   }
 ]
