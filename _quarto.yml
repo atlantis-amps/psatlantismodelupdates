@@ -3,9 +3,9 @@ project:
 
 website: 
   page-navigation: true
-  title: "NOAA quarto simple" 
-  site-url: "https://nmfs-opensci.github.io/NOAA-quarto-simple" 
-  repo-url: "https://github.com/nmfs-opensci/NOAA-quarto-simple"
+  title: "Atlantis Model for Puget Sound" 
+  site-url: "https://hmorzaria.github.io/psatlantismodelupdates/" 
+  repo-url: "https://github.com/hmorzaria/psatlantismodelupdates"
   repo-actions: [edit, source, issue]
   favicon: images/favicon.ico
   
@@ -15,7 +15,7 @@ website:
   
   sidebar:
     background: "#D9E3E4"
-    logo: "https://raw.githubusercontent.com/nmfs-opensci/assets/main/logo/nmfs-opensci-logo3.png"
+    logo: "https://user-images.githubusercontent.com/11339490/204617034-60925058-5fa4-468c-ad50-6c5719757066.jpg"
     favicon: images/favicon.ico
     pinned: true
     align: center
