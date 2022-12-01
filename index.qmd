@@ -2,15 +2,26 @@
 title: "Atlantis Model for Puget Sound"
 subtitle: "Updates to model parametrization"
 page-layout: full
+bibliography: jellyfishbiblio.bib
+csl: ecology.csl
 ---
 
-This website records changes to the Atlantis Model for Puget Sound from the original published model in the [Technical memorandum](https://repository.library.noaa.gov/view/noaa/40463)
+This website records changes to the Atlantis Model for Puget Sound from the original published model in this [Technical memorandum](https://repository.library.noaa.gov/view/noaa/40463)
 
 Morzaria-Luna H, Kaplan IC, Harvey CJ, Girardin R, Fulton EA, MacCready P, Chasco B, Horne P, Schmidt M. 2022. Design and Parameterization of a Spatially Explicit Atlantis Ecosystem Model for Puget Sound. Northwest Fisheries Science Center (U.S.). NOAA technical memorandum NMFS-NWFSC 177. DOI : https://doi.org/10.25923/tnp6-mf67
 
-The model was built using the [Atlantis modeling framework](https://research.csiro.au/atlantis/), a simulation modeling approach developed by Dr. Beth Fulton at the Commonwealth Scientific and Industrial Research Organisation (CSIRO) . Atlantis integrates physical, chemical, ecological, and anthropogenic processes in a three-dimensional, spatially explicit domain. This framework [has been applied](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13272) to evaluate management scenarios and investigate the effects of climate change in over 30 ecosystems worldwide. In Atlantis, ecosystem dynamics are represented by spatially explicit submodels that simulate oceanographic processes, biogeochemical factors driving primary production, and food web relations among flora and fauna. The model represents species of ecological and conservation concern and key exploited species at the level of detail necessary to evaluate the direct effects of fishing, and it represents other anthropogenic and climate impacts on the ecosystem as a whole. 
+The model was built using the [Atlantis modeling framework](https://research.csiro.au/atlantis/), a simulation modeling approach developed by Dr. Beth Fulton at the Commonwealth Scientific and Industrial Research Organisation (CSIRO). Atlantis integrates physical, chemical, ecological, and anthropogenic processes in a three-dimensional, spatially explicit domain. This framework [has been applied](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13272) to evaluate management scenarios and investigate the effects of climate change in over 30 ecosystems worldwide. In Atlantis, ecosystem dynamics are represented by spatially explicit submodels that simulate oceanographic processes, biogeochemical factors driving primary production, and food web relations among flora and fauna. The model represents species of ecological and conservation concern and key exploited species at the level of detail necessary to evaluate the direct effects of fishing, and it represents other anthropogenic and climate impacts on the ecosystem as a whole. 
 
+Our aim is to leverage and improve the AMPS to focus on broader ecological questions within the zooplankton and fish communities.
 <img width="540" alt="image" src="https://user-images.githubusercontent.com/11339490/204617539-235ae7c8-d26b-42dc-bd3e-d89b729715ad.png">
+
+## Atlantis Model for Puget Sound
+The Atlantis Model of Puget Sound (AMPS) was developed as part of the [Salish Sea Marine Survival Project](https://marinesurvivalproject.com/), a collaboration of 60+ partner organizations focused on declining survival of Chinook and coho salmon. The model was designed to test both bottom-up effects on salmon (e.g. changes in primary production, zooplankton community structure, and availability and timing of forage fish and other prey) and top-down effects (e.g. predation by pinnipeds on juvenile salmon).  The model simulates ecological and food web dynamics of four zooplankton functional groups (i.e. aggregates of similar species), twelve other invertebrate groups, four primary producers, benthic and pelagic bacteria, three detrital categories, and 48 vertebrate groups, including fish, marine mammals, sharks and birds. Model development required extensive synthesis of local data contributed by collaborators from NOAA, University of Washington, state and tribal agencies, and others. 
+
+## Geographic extent
+The AMPS has 89 polygons that extend over 9652 km2, including 60 water column polygons, 29 islands, and two non-dynamic boundary polygons in the north (Strait of Georgia) and west (Strait of San Juan de Fuca). All model polygons are further divided into water column depth layers, ranging from one layer for nearshore boxes to six for offshore boxes and one sediment layer. Individual polygons within the domain were defined from a combination of geographic features, bathymetry, circulation patterns, ecological characteristics, and, to some extent, management and statistical reporting areas for key state-managed fisheries.
+
+<img width="540" alt="image" src= "https://user-images.githubusercontent.com/11339490/204620348-9c925002-00f2-480e-91e1-81cbab15154f.png">
 
 ## Atlantis Model for Puget Sound Applications
 
