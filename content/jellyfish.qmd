@@ -5,6 +5,8 @@ format:
   html:
     code-fold: true
     code-tools: true
+bibliography: jellyfishbiblio.bib
+csl: ecology.csl
 ---
 
 ## Jellyfish
@@ -25,9 +27,9 @@ In its initial version, the AMPS included one ‘Gelatinous zooplankton’ funct
 
 #| column: page
 #| 
-knitr::kable(read_csv(here::here("inputs","guilds_table.csv")), format="html", caption = "Table 1. Plankton groups in the Atlantis Model of Puget Sound.")
+knitr::kable(readr::read_csv(here::here("inputs","guilds_table.csv")), format="html", caption = "Table 1. Plankton groups in the Atlantis Model of Puget Sound.")
 ```
-Gelatinous zooplankton diets were compiled from multiple sources, focused on Puget Sound when available [@Costello2002; @Purcell1990]; these are studies from Puget Sound, but do not include Aurelia diets, instead describing the diet of small hydromedusae such as Aglantha and Obelia. Currently, diet of gelatinous zooplankton in the AMPS is: 48.3% microzooplankton; 24.7% mesozooplankton (copepods); and 27% other zooplankton including barnacle larvae, appendicularians, and bivalve larvae. As an approximation, rate parameters, specifically growth and clearance rates, were taken from the California Current Atlantis model (Kaplan et al. 2017; Marshall et al. 2017). This diet composition is overly weighted toward small gelatinous zooplankton and would benefit from improved parameterization.
+Gelatinous zooplankton diets were compiled from multiple sources, focused on Puget Sound when available [@Costello2002; @Purcell1990]; these are studies from Puget Sound, but do not include Aurelia diets, instead describing the diet of small hydromedusae such as Aglantha and Obelia. Currently, diet of gelatinous zooplankton in the AMPS is: 48.3% microzooplankton; 24.7% mesozooplankton (copepods); and 27% other zooplankton including barnacle larvae, appendicularians, and bivalve larvae. As an approximation, rate parameters, specifically growth and clearance rates, were taken from the California Current Atlantis model [@Kaplan2017; @Marshall2017]. This diet composition is overly weighted toward small gelatinous zooplankton and would benefit from improved parameterization.
 
 
 
@@ -44,8 +46,53 @@ source(here::here("libraries.R")) #need to figure out which ones are actually ne
 ## Update spatial distribution
 
 We used the results from Green et al. who examined interspecific variation in species-specific response of jellyfish adult life stages to environmental variation and anthropogenic influence, and projected future changes in these parameters in Puget Sound. They used results from a field survey to predict the presence of seven jellyfish species across six sub basins in Puget Sound. They modeled the probability of species presence as a function of site-specific parameters (geomorphic type, anthropogenic land use) and observation-specific variables (salinity, temperature, depth). Their presence/absence models indicated strong interspecific variation in the habitat preferences of jellyfish to environmental parameters such as temperature and geomorphic type, as well as varying sensitivity to potential anthropogenic effects on nearshore waters. 
-We used the embayments derived by Green et al. (embayment_unit_revised.shp) and classified additional coastline segments from data collected by The Salmon and Steelhead Habitat Inventory and Assessment Program (SSHIAP) http://nwifc.org/about-us/habitat/sshiap/ (geodatabase Geomorph_PS_S). Geomorphology categories Beach beach, modified, shoreline, bluff, and platform categories were aggregated and reclassified as exposed; all types of delta were assigned to the delta category. 
-We also derived percent used landcover classes at 30 m resolution (szline_GSU_identity_Spj_HUC_NHD_dissolve_DU_sum_LU.shp). Development classes were based on the NCCOS' Coastal Change and Analysis Program (C-CAP, 2006 analysis year). Nationally standardized, raster-based inventories of land cover for the coastal areas of the U.S. Data are derived, through the Coastal Change Analysis Program, from the analysis of multiple dates of remotely sensed imagery. https://coast.noaa.gov/digitalcoast/tools/lca.html. Land classification scheme https://coast.noaa.gov/data/digitalcoast/pdf/ccap-class-scheme-regional.pdf
+We used the embayments derived by Green et al. (embayment_unit_revised.shp) and classified additional coastline segments from data collected by [The Salmon and Steelhead Habitat Inventory and Assessment Program](http://nwifc.org/about-us/habitat/sshiap/) (SSHIAP) (geomorph_ps_s.shp from Geodatabase SSHIAP_Marine.gdb>Geomorph_PS_S). Geomorphology categories beach, modified, shoreline, bluff, and platform categories were aggregated and reclassified as exposed; all types of delta were assigned to the delta category. 
+We also derived percent used landcover classes at 30 m resolution (szline_GSU_identity_Spj_HUC_NHD_dissolve_DU_sum_LU.shp). 
+
+Development classes were based on the NCCOS' Coastal Change and Analysis Program (C-CAP, 2006 analysis year). Nationally standardized, raster-based inventories of land cover for the coastal areas of the U.S. Data are derived, through the Coastal Change Analysis Program, from the analysis of multiple dates of remotely sensed imagery. https://coast.noaa.gov/digitalcoast/tools/lca.html. Land classification scheme https://coast.noaa.gov/data/digitalcoast/pdf/ccap-class-scheme-regional.pdf
+
+```{r}
+#| message = FALSE 
+#| warning = FALSE
+
+#Q:there is also category large river delta in units, is this eliminated or converted to large bay
+embayment.shp <- sf::st_read(here::here("inputs","RevisedInputs","embayment_unit_revised_20111103.shp")) %>% 
+  dplyr::mutate(GeoMorph = dplyr::if_else(units=="small embayment", "small bay", 
+                                dplyr::if_else(units=="large embayment", "large bay", units)))
+
+geomorph.shp <- sf::st_read(here::here("inputs","RevisedInputs","geomorph_ps.shp")) 
+
+geomorph.units <- geomorph.shp %>% 
+  dplyr::mutate(GeoUnit = tolower(GeoUnit), QA_Basis = tolower(QA_Basis), PreQA_GeoU = tolower(PreQA_GeoU), Name = tolower(Name)) %>% 
+  dplyr::mutate(GeoMorph = dplyr::if_else(grepl("beach", GeoUnit), "exposed",
+                                   dplyr::if_else(grepl("modified", GeoUnit),"exposed",
+                                           dplyr::if_else(grepl("shoreline", GeoUnit),"exposed",
+                                                   dplyr::if_else(grepl("bluff", GeoUnit),"exposed", 
+                                                           dplyr::if_else(grepl("platform", GeoUnit),"exposed", 
+                                                                   dplyr::if_else(grepl("delta", GeoUnit),"delta", 
+                                                           GeoUnit))))))) %>% 
+   dplyr::mutate(GeoMorph = dplyr::if_else(grepl("embayment",QA_Basis), "embayment",
+                                 dplyr::if_else(grepl("lagoon",QA_Basis), "embayment", 
+                                         dplyr::if_else(grepl("delta", PreQA_GeoU),"delta",
+                                                 dplyr::if_else(grepl("lagoon", PreQA_GeoU),"embayment",
+                                                         dplyr::if_else(grepl("estuary", PreQA_GeoU),"embayment",
+                                                                    dplyr::if_else(grepl("beach", PreQA_GeoU),"exposed", GeoMorph))))))) %>% 
+  dplyr::mutate(GeoMorph = dplyr::if_else(grepl("bay", Name), "embayment", GeoMorph)) %>% 
+  dplyr::mutate(GeoMorph = dplyr::if_else(grepl("lagoon", GeoMorph), "embayment",
+                                           dplyr::if_else(grepl("marsh", GeoMorph), "embayment", 
+                    #CHECK with Correigh (drowned channel)
+                                                   dplyr::if_else(grepl("drowned channel", GeoMorph),"exposed", GeoMorph)))) 
+
+
+landcover.shp <- st_read(here::here("inputs","RevisedInputs","szline_GSU_identity_Spj_HUC_NHD_dissolve_DU_sum_LU.shp"))
+
+embayment.areas <- embayment.shp %>% 
+  dplyr::filter(GeoMorph %in% c("large bay","small bay"))
+
+geomorph.data <- geomorph.units %>% 
+  dplyr::filter(GeoMorph %in% c("exposed","delta"))
+ 
+```
 
 Following Green et al. we used data from the Puget Sound Nearshore Ecosystem Restoration Project (PSNERP), an initiative led by the Washington Department of Fish and Wildlife (WDFW) in partnership with the U.S. Army Corps of Engineers (Corps) to assign geomorphology classification to Atlantis polygons
 

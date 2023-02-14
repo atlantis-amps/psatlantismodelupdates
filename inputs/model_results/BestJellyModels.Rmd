@@ -1,0 +1,142 @@
+---
+title: "Best Jelly Models"
+output: pdf_document
+author: Joshua Dominguez
+header-includes:
+  \usepackage{fvextra}
+  \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+---
+```{r setup, include=FALSE} 
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, tidy = TRUE)
+```
+
+This is a quick RMarkdown file containing our best models for predicting species-specific presence/absence of jellies in Puget Sound. Models were fit with the glmmTMB package that allows for more complex model structures relative to lme4 (autocorrelation structures). I've revised just a couple of things to make the code a bit cleaner (hopefully). If you find any additional errors just let me know! 
+
+# Read in Dataset
+```{r}
+library(glmmTMB)
+
+
+
+# read in dataset 
+jellydf <- read.csv("Revised_Compiled_Data.csv")
+
+# lower case colnames 
+colnames(jellydf) <- tolower(colnames(jellydf))
+```
+
+# Convert Jellyfish to Factors (Present or Absent)
+```{r}
+jellydf$cyanea <-ifelse(test=jellydf$cyanea==0, yes = "Absent", no = "Present")
+jellydf$cyanea <- as.factor(jellydf$cyanea)
+
+jellydf$aurelia <- ifelse(test=jellydf$aurelia==0, yes = "Absent", no = "Present")
+jellydf$aurelia <- as.factor(jellydf$aurelia)
+
+jellydf$aequorea <- ifelse(test=jellydf$aequorea==0, yes = "Absent", no = "Present")
+jellydf$aequorea <- as.factor(jellydf$aequorea)
+
+jellydf$phacellophora <- ifelse(test=jellydf$phacellophora==0, yes = "Absent", no = "Present")
+jellydf$phacellophora <- as.factor(jellydf$phacellophora)
+
+jellydf$pleurobrachia <- ifelse(test=jellydf$pleurobrachia==0, yes = "Absent", no = "Present")
+jellydf$pleurobrachia <- as.factor(jellydf$pleurobrachia)
+
+jellydf$mitrocoma <- ifelse(test = jellydf$mitrocoma == 0, yes = "Absent", no = "Present")
+jellydf$mitrocoma <- as.factor(jellydf$mitrocoma)
+
+jellydf$clytia <- ifelse(test = jellydf$clytia == 0, yes = "Absent", no = "Present")
+jellydf$clytia <- as.factor(jellydf$clytia)
+```
+
+# Convert Variables to Factors and Numerics
+```{r}
+#random effects/autocorrelation variables
+jellydf$basin <- as.factor(jellydf$basin)
+jellydf$site <- as.factor(jellydf$site)
+jellydf$month <- as.factor(jellydf$month)
+
+#landscape variables
+names(jellydf)[names(jellydf) == "microbe_pct.ag.catch"] <- "pct_ag"
+names(jellydf)[names(jellydf) == "microbe_pct.dev.catch"] <- "pct_dev"
+jellydf$pct_ag <- as.numeric(jellydf$pct_ag)
+jellydf$pct_dev <- as.numeric(jellydf$pct_dev)
+jellydf$total <- jellydf$pct_dev + jellydf$pct_ag 
+jellydf$geomorph <- as.factor(jellydf$geomorph)
+
+#environmental variables 
+jellydf$ctd_max_cast_temp_c <- as.numeric(jellydf$ctd_max_cast_temp_c)
+jellydf$ctd_ave_cast_salinity_psu <- as.numeric(jellydf$ctd_ave_cast_salinity_psu)
+jellydf$ctd_max_cast_depth_m <- as.numeric(jellydf$ctd_max_cast_depth_m)
+jellydf$ctd_min_cast_salinity_psu <- as.numeric(jellydf$ctd_min_cast_salinity_psu)
+```
+
+
+# Standardize Variables 
+```{r}
+# new dataframe with standardized observation level variables
+final_df <- data.frame( 
+  "month" = jellydf$month, 
+  "site" = jellydf$site, 
+  "basin" = jellydf$basin, 
+  "geomorph" = jellydf$geomorph, 
+  "tow" = jellydf$tow, 
+  "aurelia" = jellydf$aurelia,
+  "mitrocoma" = jellydf$mitrocoma, 
+  "cyanea" = jellydf$cyanea, 
+  "phacellophora" = jellydf$phacellophora, 
+  "pleurobrachia" = jellydf$pleurobrachia, 
+  "aequorea" = jellydf$aequorea, 
+  "clytia" = jellydf$clytia, 
+  "temp" = scale(jellydf$ctd_max_cast_temp_c), 
+  "ave_sal" = scale(jellydf$ctd_ave_cast_salinity_psu), 
+  "min_sal" = scale(jellydf$ctd_min_cast_salinity_psu),
+  "depth" = scale(jellydf$ctd_max_cast_depth_m), 
+  "ag" = scale(jellydf$pct_ag), 
+  "dev" = scale(jellydf$pct_dev), 
+  "total" = scale(jellydf$total))
+str(final_df) # looks bueno, time to fit our best models! 
+```
+
+# aequorea
+```{r}
+AQmodel <- glmmTMB(aequorea ~ geomorph + total + geomorph*total + temp + I(temp^2) + ave_sal + (1|basin) + ar1(month-1|basin), data = final_df, family = "binomial", na.action = "na.omit")
+summary(AQmodel)
+```
+
+# aurelia 
+```{r}
+Amodel <- glmmTMB(aurelia ~ geomorph + ag + temp + (1|basin) + ar1(month-1|basin), data = final_df, family = "binomial", na.action = "na.omit")
+summary(Amodel)
+```
+
+# clytia
+```{r}
+CLmodel <- glmmTMB(clytia ~ geomorph + ag + min_sal + I(min_sal^2) + depth + (1|basin) + ar1(month-1|basin), data = final_df, family = "binomial", na.action = "na.omit")
+summary(CLmodel)
+```
+
+# cyanea 
+```{r}
+Cmodel <- glmmTMB(cyanea ~ geomorph + total + temp + I(temp^2) + depth + (1|basin) + ar1(month-1|basin), data = final_df, family = "binomial", na.action = "na.omit")
+summary(Cmodel)
+```
+
+# mitrocoma 
+```{r}
+Mmodel <-glmmTMB(mitrocoma ~ geomorph + ag + geomorph*ag + temp + ave_sal + (1|basin) + ar1(month-1|basin), data = final_df, family = "binomial", na.action = "na.omit")
+summary(Mmodel)
+```
+
+# phacellophora
+```{r}
+Pmodel <- glmmTMB(phacellophora ~ geomorph + dev + geomorph*dev + temp + I(temp^2) + ave_sal + (1|basin) + ar1(month-1|basin), data = final_df, family = "binomial", na.action = "na.omit")
+summary(Pmodel)
+```
+
+# pleurobrachia 
+```{r}
+PLmodel <-glmmTMB(pleurobrachia ~ geomorph + ag + depth + I(depth^2) + ave_sal + (1|basin) + ar1(month-1|basin), data = final_df, family = "binomial", na.action = "na.omit")
+summary(PLmodel)
+```
+

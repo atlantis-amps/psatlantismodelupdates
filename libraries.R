@@ -3,7 +3,7 @@ install.packages("rnaturalearthhires", repos = "http://packages.ropensci.org", t
 .packages = c("tidyverse","devtools","readxl",
               "sp","sf","rnaturalearth",
               "rnaturalearthdata","here", "raster", "exactextractr",
-              "glmmTMB","knitr")
+              "glmmTMB","knitr","readr")
 
 # .packages = c("tidyverse","devtools","readxl",
 #               "sp","sf","GISTools","rgdal",

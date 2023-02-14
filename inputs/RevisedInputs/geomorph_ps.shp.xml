@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE metadata SYSTEM "http://www.fgdc.gov/metadata/fgdc-std-001-1998.dtd">
+<metadata>
+	<idinfo>
+		<citation>
+			<citeinfo>
+				<origin>Northwest Indian Fisheries Commission and Point No Point Treaty Council, Salmon and Steelhead Habitat Inventory and Assessment Program (SSHIAP)</origin>
+				<pubdate>Unknown</pubdate>
+				<title Sync="TRUE">Geomorph_PS_S</title>
+				<geoform Sync="TRUE">vector digital data</geoform>
+				<othercit>Quality Assurance Methodology for Mapping Marine Shoreline Geomorphology, Steve Todd, Osa Odum, Aundrea McBride, and Marilu Koschak. Available upon distribution of data.
+</othercit><ftname Sync="TRUE">Geomorph_PS_S</ftname><onlink Sync="TRUE">\\Lynx\Alternate\NatRes\GIS_Data\SSHIAP_data\Marine\Marine\SSHIAP_Marine.gdb</onlink></citeinfo>
+		</citation>
+		<descript>
+			<abstract>The Salmon and Steelhead Habitat Inventory and Assessment Program (SSHIAP) has mapped the Washington State shoreline according to geomorphology. In 2008 SSHIAP completed a quality assurance (QA) on the initial draft dataset for the Puget Sound region. In 2009, SSHIAP completed a QA version for the outer Washington coast using similar methodologies. The mapping was based on a geomorphic classification model developed by McBride et al. (2005). The model uses existing information to determine dominant processes (i.e., tidal erosion, wave deposition, fluvial deposition), surface geology/shoreline material (e.g. bedrock, cohesive sediments, loose sediments), and topography (i.e., steep, gentle, and flat) to map the shoreline into geomorphic units.  The Washington Department of Natural Resources (WDNR) ShoreZone spatial dataset represents the shoreline, and WDNR aquatic boundary spatial dataset and National Wetlands Inventory spatial dataset represent the Extreme Low Water (ELW).  In performing the quality assurance phase of the mapping for the Puget Sound region, SSHIAP used supplemental datasets that were not widely available during the initial mapping phase, including a revised drift cell dataset (unpublished from PSNERP 2008), 1:24000 scale geology maps in a few locations, historic and current tidal wetland datasets available through the University of Washington River History Project (UWRHP), and the Washington Department of Ecology oblique air photos from 2006, available via the world wide web at the Washington Digital Coastal Atlas. Data is available as ArcGIS geodatabase format.</abstract>
+			<purpose>This nearshore classification was developed for addressing specific applications regarding habitat protection, restoration, and land use policies and regulations that affect nearshore processes, including salmonid habitat structure and function.</purpose>
+			<langdata Sync="TRUE">en</langdata></descript>
+		<timeperd>
+			<timeinfo>
+				<rngdates>
+					<begdate>unknown</begdate>
+					<enddate>unknown</enddate>
+				</rngdates>
+				<sngdate><caldate>REQUIRED: The year (and optionally month, or month and day) for which the data set corresponds to the ground.</caldate></sngdate></timeinfo>
+			<current>publication date</current>
+		</timeperd>
+		<status>
+			<progress>Complete</progress>
+			<update>As needed</update>
+		</status>
+		<spdom>
+			<bounding>
+				<westbc Sync="TRUE">-124.767378</westbc>
+				<eastbc Sync="TRUE">-122.127495</eastbc>
+				<northbc Sync="TRUE">49.002332</northbc>
+				<southbc Sync="TRUE">47.021872</southbc>
+			</bounding>
+			<lboundng><leftbc Sync="TRUE">1216215.771999</leftbc><rightbc Sync="TRUE">1849793.312256</rightbc><bottombc Sync="TRUE">17089858.873891</bottombc><topbc Sync="TRUE">17807428.484353</topbc></lboundng></spdom>
+		<keywords>
+			<theme>
+				<themekt>none</themekt>
+				<themekey>nearshore, habitat, geomorphology</themekey>
+			</theme>
+			<place><placekey>Puget Sound, Washington State marine shorelines</placekey></place></keywords>
+		<accconst>none</accconst>
+		<useconst>none</useconst>
+		<ptcontac>
+			<cntinfo>
+				<cntpos>GIS Analyst</cntpos>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>6730 Martin Way E.</address>
+					<city>Olympia</city>
+					<state>WA</state>
+					<postal>98516</postal>
+					<country>USA</country>
+				</cntaddr>
+				<cntvoice>360-528-4368</cntvoice>
+				<cntemail>rmcfarlane@nwifc.org</cntemail>
+				<cntinst>For details or more information about the geomorphic mapping contact Ron McFarlane at 360-528-4368</cntinst>
+				<cntorgp><cntorg>Northwest Indian Fisheries Commission, Salmon and Steelhead Habitat Inventory and Assessment Program (SSHIAP)</cntorg><cntper>Ron McFarlane</cntper></cntorgp><cntfax>360-753-8659</cntfax></cntinfo>
+		</ptcontac>
+		<native Sync="TRUE">Microsoft Windows XP Version 5.1 (Build 2600) Service Pack 3; ESRI ArcCatalog 9.3.1.3000</native>
+		<datacred>Salmon and Steelhead Habitat Inventory and Assessment Program (SSHIAP), Northwest Indian Fisheries Commission (NWIFC) and the Point No Point Treaty Council (PNPTC)</datacred><natvform Sync="TRUE">File Geodatabase Feature Class</natvform></idinfo>
+	<dataqual>
+		<lineage>
+			<srcinfo>
+				<srccite>
+					<citeinfo>
+						<origin>Washington State Department of Natural Resources</origin>
+						<pubdate>2001</pubdate>
+						<title>Washington State ShoreZone Inventory</title>
+						<edition>1</edition>
+						<geoform>vector digital data</geoform>
+						<othercit>Washington Department of Natural Resources, Nearshore Habitat Program. 2001. The Washington State ShoreZone Inventory. CD-ROM. Olympia, WA.</othercit>
+					</citeinfo>
+				</srccite>
+				<typesrc>CD-ROM</typesrc>
+				<srctime>
+					<timeinfo>
+						<rngdates>
+							<begdate>unknown</begdate>
+							<enddate>unknown</enddate>
+						</rngdates>
+					</timeinfo>
+				</srctime>
+			</srcinfo>
+			<srcinfo>
+				<srccite>
+					<citeinfo>
+						<origin>Skagit River System Cooperative</origin>
+						<pubdate>2005</pubdate>
+						<title>Geomorphic Unit Classification</title>
+						<geoform>document</geoform>
+						<othercit>McBride, A., K. Wolf, and E. Beamer.  2005.  Methods for Evaluating Historic Change in Skagit Bay Pocket Estuaries.  Appendix D.IV. in Beamer, E., A. McBride, C. Greene, R. Henderson, G. Hood, K. Wolf, K. Larsen, C. Rice, and K. Fresh.  Delta and Nearshore Restoration for the Recovery of Wild Skagit River Chinook Salmon:  Linking Estuary Restoration to Wild Chinook Salmon Populations.  Supplement to Skagit Chinook Recovery Plan.  La Conner, Washington.</othercit>
+					</citeinfo>
+				</srccite>
+				<srctime>
+					<timeinfo>
+						<rngdates>
+							<begdate>Unknown</begdate>
+							<enddate>Unknown</enddate>
+						</rngdates>
+					</timeinfo>
+				</srctime>
+			</srcinfo>
+			<srcinfo>
+				<srccite>
+					<citeinfo>
+						<origin>University of Washington, School of Oceanography</origin>
+						<pubdate>2005</pubdate>
+						<title>Combined Bathymetry and Topography of Puget Lowlands, Washington State.</title>
+						<geoform>raster digital data</geoform>
+						<othercit>University of Washington, School of Oceanography.  2005.  Combined Bathymetry and Topography of Puget Lowlands, Washington State.  Seattle, WA.</othercit>
+					</citeinfo>
+				</srccite>
+				<srctime>
+					<timeinfo>
+						<rngdates>
+							<begdate>Unknown</begdate>
+							<enddate>Unknown</enddate>
+						</rngdates>
+					</timeinfo>
+				</srctime>
+			</srcinfo>
+			<srcinfo>
+				<srccite>
+					<citeinfo>
+						<origin>United States Geologic Survey</origin>
+						<pubdate>2000</pubdate>
+						<title>10m DEM</title>
+						<edition>1</edition>
+						<geoform>raster digital data</geoform>
+					</citeinfo>
+				</srccite>
+				<srctime>
+					<timeinfo>
+						<rngdates>
+							<begdate>Unknown</begdate>
+							<enddate>Unknown</enddate>
+						</rngdates>
+					</timeinfo>
+				</srctime>
+			</srcinfo>
+			<srcinfo>
+				<srccite>
+					<citeinfo>
+						<origin>Washington Department of Ecology</origin>
+						<pubdate>2002</pubdate>
+						<title>Net Shore-Drift in Washington State, Version 2.0.</title>
+						<geoform>vector digital data</geoform>
+						<othercit>Washington Department of Ecology, Shorelands and Environmental Assistance Program.  2002.  Net Shore-Drift in Washington State, Version 2.0.</othercit>
+					</citeinfo>
+				</srccite>
+				<srctime>
+					<timeinfo>
+						<rngdates>
+							<begdate>Unknown</begdate>
+							<enddate>Unknown</enddate>
+						</rngdates>
+					</timeinfo>
+				</srctime>
+			</srcinfo>
+			<srcinfo>
+				<srccite>
+					<citeinfo>
+						<origin>Washington Department of Natural Resources</origin>
+						<pubdate>2004</pubdate>
+						<title>ALO.AQUATIC_BOUNDARY</title>
+						<geoform>vector digital data</geoform>
+						<othercit>Washington Department of Natural Resources, Nearshore Habitat Program.  2004.  ALO.AQUATIC_BOUNDARY.  Olympia, WA.</othercit>
+					</citeinfo>
+				</srccite>
+				<srctime>
+					<timeinfo>
+						<rngdates>
+							<begdate>Unknown</begdate>
+							<enddate>Unknown</enddate>
+						</rngdates>
+					</timeinfo>
+				</srctime>
+			</srcinfo>
+			<srcinfo>
+				<srccite>
+					<citeinfo>
+						<origin>United States Fish and Wildlife Service</origin>
+						<pubdate>1989</pubdate>
+						<title>National Wetlands Inventory (NWIPOLY) for Washington State.</title>
+						<geoform>vector digital data</geoform>
+						<othercit>United States Fish and Wildlife Service, National Wetlands Inventory Center. 1989.  National Wetlands Inventory (NWIPOLY) for Washington State.</othercit>
+					</citeinfo>
+				</srccite>
+				<srctime>
+					<timeinfo>
+						<rngdates>
+							<begdate>Unknown</begdate>
+							<enddate>Unknown</enddate>
+						</rngdates>
+					</timeinfo>
+				</srctime>
+			</srcinfo>
+			<srcinfo>
+				<srccite>
+					<citeinfo>
+						<origin>Washington Department of Natural Resources</origin>
+						<pubdate>2000</pubdate>
+						<title>1:100,000-Scale Digital Geology of Washington State.</title>
+						<geoform>vector digital data</geoform>
+						<othercit>Washington Department of Natural Resources, Division of Geology and Earth Resources.  2000.  1:100,000-Scale Digital Geology of Washington State.  Olympia, WA.</othercit>
+					</citeinfo>
+				</srccite>
+				<srctime>
+					<timeinfo>
+						<rngdates>
+							<begdate>Unknown</begdate>
+							<enddate>Unknown</enddate>
+						</rngdates>
+					</timeinfo>
+				</srctime>
+			</srcinfo>
+			<srcinfo>
+				<srccite>
+					<citeinfo>
+						<origin>Washington Department of Natural Resources.</origin>
+						<pubdate>2005</pubdate>
+						<title>Hydrography</title>
+						<geoform>vector digital data</geoform>
+						<othercit>Washington Department of Natural Resources, Forest Practices Division. 2005. Hydrography. Olympia, WA.</othercit>
+					</citeinfo>
+				</srccite>
+				<srctime>
+					<timeinfo>
+						<rngdates>
+							<begdate>Unknown</begdate>
+							<enddate>Unknown</enddate>
+						</rngdates>
+					</timeinfo>
+				</srctime>
+			</srcinfo>
+			<procstep>
+				<procdesc>Refer to "Quality Assurance Methodology for Mapping Marine Shoreline Geomorphology" available through the Salmon and Steelhead Habitat Inventory and Assessment Program (SSHIAP), Northwest Indian Fisheries Commission.</procdesc>
+				<procdate>Unknown</procdate>
+			</procstep>
+			<procstep><procdesc Sync="TRUE">Metadata imported.</procdesc><srcused Sync="TRUE">D:\gisdata\nick\geomorphmetadata.xml</srcused><procdate Sync="TRUE">20091029</procdate><proctime Sync="TRUE">10153100</proctime></procstep><procstep><procdesc Sync="TRUE">Dataset copied.</procdesc><srcused Sync="TRUE">\\PLECOSTOMAS\C$\AquaScape\Marine\Import\NWIFC\NearShore_Geomorph.gdb</srcused><procdate Sync="TRUE">20091203</procdate><proctime Sync="TRUE">13480600</proctime></procstep></lineage>
+	</dataqual>
+	<spdoinfo>
+		<direct Sync="TRUE">Vector</direct>
+		<ptvctinf><esriterm Name="geomorph_ps"><efeatyp Sync="TRUE">Simple</efeatyp><efeageom code="3" Sync="TRUE"></efeageom><esritopo Sync="TRUE">FALSE</esritopo><efeacnt Sync="TRUE">11727</efeacnt><spindex Sync="TRUE">TRUE</spindex><linrefer Sync="TRUE">FALSE</linrefer></esriterm></ptvctinf></spdoinfo>
+	<spref>
+		<horizsys>
+			<planar>
+				<planci>
+					<plance Sync="TRUE">coordinate pair</plance>
+					<coordrep>
+						<absres Sync="TRUE">0.000328</absres>
+						<ordres Sync="TRUE">0.000328</ordres>
+					</coordrep>
+					<plandu Sync="TRUE">survey feet</plandu>
+				</planci>
+			</planar>
+			<geodetic>
+				<horizdn Sync="TRUE">North American Datum of 1983</horizdn>
+				<ellips Sync="TRUE">Geodetic Reference System 80</ellips>
+				<semiaxis Sync="TRUE">6378137.000000</semiaxis><denflat Sync="TRUE">298.257222</denflat></geodetic>
+			<cordsysn><projcsn Sync="TRUE">NAD_1983_UTM_Zone_10N</projcsn><geogcsn Sync="TRUE">GCS_North_American_1983</geogcsn></cordsysn></horizsys>
+		<vertdef><altsys><altenc Sync="TRUE">Explicit elevation coordinate included with horizontal coordinates</altenc><altres Sync="TRUE">0.000000</altres></altsys></vertdef></spref>
+	<eainfo>
+		<detailed Name="geomorph_ps">
+			<enttyp>
+				<enttypl Sync="TRUE">geomorph_ps</enttypl>
+				<enttypt Sync="TRUE">Feature Class</enttypt><enttypc Sync="TRUE">11727</enttypc></enttyp>
+			<attr><attrlabl Sync="TRUE">FID</attrlabl><attalias Sync="TRUE">FID</attalias><attrtype Sync="TRUE">OID</attrtype><attwidth Sync="TRUE">4</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale><attrdef Sync="TRUE">Internal feature number.</attrdef><attrdefs Sync="TRUE">Esri</attrdefs><attrdomv><udom Sync="TRUE">Sequential unique whole numbers that are automatically generated.</udom></attrdomv></attr><attr><attrlabl Sync="TRUE">SHAPE</attrlabl><attalias Sync="TRUE">Shape</attalias><attrtype Sync="TRUE">Geometry</attrtype><attwidth Sync="TRUE">0</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale><attrdef Sync="TRUE">Feature geometry.</attrdef><attrdefs Sync="TRUE">ESRI</attrdefs><attrdomv><udom Sync="TRUE">Coordinates defining the features.</udom></attrdomv></attr><attr>
+				<attrlabl>HydroID</attrlabl>
+				<attrdef>Automatically generated numerical value from ArcHydro Tools.</attrdef>
+				<attrdefs>ESRI</attrdefs>
+				<attalias Sync="TRUE">HydroID</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>Unit_CD</attrlabl>
+				<attrdef>Numerical code derived from attribute field "UnitID" from WDNR ShoreZone dataset, attribute field "AQBDRYID" from WDNR Aquatic Boundary dataset, and attribute field "FID" from USFWS NWI dataset.</attrdef>
+				<attrdefs>WDNR/USFWS</attrdefs>
+				<attalias Sync="TRUE">Unit_CD</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">30</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>Name</attrlabl>
+				<attrdef>Text description of name (if any) derived from original data.</attrdef>
+				<attrdefs>"Shorename" attribute from WDNR Shore Zone.</attrdefs>
+				<attalias Sync="TRUE">Name</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">50</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>FType</attrlabl>
+				<attrdef>Text description categorizing the data into the following: Coastline, ELW, or Breakline.</attrdef>
+				<attrdefs>Coastline from WDNR ShoreZone, ELW from WDNR Aquatic Boundary or USFWS NWI dataset, and Breakline from NWIFC for enclosing polygons.</attrdefs>
+				<attalias Sync="TRUE">FType</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">30</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>MatrlClass</attrlabl>
+				<attrdef>Text description used to classify the surface geology (WDNR 100K) into the following: loose sediments, cohesive sediments, bedrock, and artificial.</attrdef>
+				<attrdefs>NWIFC/SRSC</attrdefs>
+				<attalias Sync="TRUE">MatrlClass</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">30</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>GeolSource</attrlabl>
+				<attrdef>Text description of source data for MatrlClass attribute field.</attrdef>
+				<attrdefs>NWIFC</attrdefs>
+				<attalias Sync="TRUE">GeolSource</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">30</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr><attrlabl Sync="TRUE">SlopeSourc</attrlabl><attalias Sync="TRUE">SlopeSourc</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">30</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr>
+				<attrlabl>SlopeClass</attrlabl>
+				<attrdef>Text description used to categorize the slope into the following slope classes from 10m DEM: flat (0-3 degrees), gentle (3-7 degrees), or steep (&gt;7 degrees).</attrdef>
+				<attrdefs>NWIFC/SRSC</attrdefs>
+				<attalias Sync="TRUE">SlopeClass</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">30</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>DomProc</attrlabl>
+				<attrdef>Text description used to classify the dominant process from WDOE Net-Shore Drift or WDNR Hydrography into the following categories: fluvial deposition, wave deposition, wave erosion, wave transport, tidal erosion, neutral, or modified.</attrdef>
+				<attrdefs>NWIFC/SRSC</attrdefs>
+				<attalias Sync="TRUE">DomProc</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">50</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr><attrlabl Sync="TRUE">SourceScal</attrlabl><attalias Sync="TRUE">SourceScal</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr><attr>
+				<attrlabl>DomPSource</attrlabl>
+				<attrdef>Text description of the source data used for classifying dominant process.</attrdef>
+				<attrdefs>NWIFC</attrdefs>
+				<attalias Sync="TRUE">DomPSource</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">50</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr><attrlabl Sync="TRUE">Nearshore_</attrlabl><attalias Sync="TRUE">Nearshore_</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">5</attwidth><atprecis Sync="TRUE">5</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">Addl_Sourc</attrlabl><attalias Sync="TRUE">Addl_Sourc</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">ModShoreli</attrlabl><attalias Sync="TRUE">ModShoreli</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">5</attwidth><atprecis Sync="TRUE">5</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">QA_Correct</attrlabl><attalias Sync="TRUE">QA_Correct</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">5</attwidth><atprecis Sync="TRUE">5</atprecis><attscale Sync="TRUE">0</attscale></attr><attr>
+				<attrlabl>SourceDate</attrlabl>
+				<attrdef>Date value derived from when original source data was created.</attrdef>
+				<attrdefs>NWIFC</attrdefs>
+				<attalias Sync="TRUE">SourceDate</attalias><attrtype Sync="TRUE">Date</attrtype><attwidth Sync="TRUE">8</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr><attrlabl Sync="TRUE">QA_AirPhot</attrlabl><attalias Sync="TRUE">QA_AirPhot</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">5</attwidth><atprecis Sync="TRUE">5</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">PreQA_GeoU</attrlabl><attalias Sync="TRUE">PreQA_GeoU</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">50</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr>
+				<attrlabl>QA_Date</attrlabl>
+				<attrdef>Date that GeoUnit went throught the QA/air photo mapping process</attrdef>
+				<attrdefs>NWIFC</attrdefs>
+				<attalias Sync="TRUE">QA_Date</attalias><attrtype Sync="TRUE">Date</attrtype><attwidth Sync="TRUE">8</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr><attrlabl Sync="TRUE">GeoUnitCod</attrlabl><attalias Sync="TRUE">GeoUnitCod</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">5</attwidth><atprecis Sync="TRUE">5</atprecis><attscale Sync="TRUE">0</attscale></attr><attr>
+				<attrlabl>FW_Input</attrlabl>
+				<attrdef>Indicates whether freshwater input occurs in association with the GeoUnit</attrdef>
+				<attrdefs>Hydro layer/Air photo</attrdefs>
+				<attrdomv>
+					<edom>
+						<edomv>0</edomv>
+						<edomvd>No</edomvd>
+					</edom>
+					<edom>
+						<edomv>1</edomv>
+						<edomvd>Unknown</edomvd>
+					</edom>
+					<edom>
+						<edomv>2</edomv>
+						<edomvd>Yes</edomvd>
+					</edom>
+				</attrdomv>
+				<attalias Sync="TRUE">FW_Input</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">5</attwidth><atprecis Sync="TRUE">5</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr><attrlabl Sync="TRUE">AirPhoto_D</attrlabl><attalias Sync="TRUE">AirPhoto_D</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">30</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr>
+				<attrlabl>QA_Notes</attrlabl>
+				<attrdef>Misc. notes for the GeoUnit pertaining to the QA process</attrdef>
+				<attrdefs>NWIFC</attrdefs>
+				<attalias Sync="TRUE">QA_Notes</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">100</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr><attrlabl Sync="TRUE">OfflineSZ_</attrlabl><attalias Sync="TRUE">OfflineSZ_</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">5</attwidth><atprecis Sync="TRUE">5</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">ComplexEmb</attrlabl><attalias Sync="TRUE">ComplexEmb</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">5</attwidth><atprecis Sync="TRUE">5</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">Historic_D</attrlabl><attalias Sync="TRUE">Historic_D</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">100</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr>
+				<attrlabl>QA_Basis</attrlabl>
+				<attrdef>Rationale for revising GeoUnit through QA process</attrdef>
+				<attrdefs>NWIFC</attrdefs>
+				<attalias Sync="TRUE">QA_Basis</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">100</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr><attrlabl Sync="TRUE">Unit_CD_SR</attrlabl><attalias Sync="TRUE">Unit_CD_SR</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">30</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr>
+				<attrlabl>Region</attrlabl>
+				<attrdef>Broad scale geographic area e.g., Puget Sound/Georgia Basin, or Coast</attrdef>
+				<attrdefs>NWIFC</attrdefs>
+				<attalias Sync="TRUE">Region</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">50</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>PS_Basin</attrlabl>
+				<attrdef>Puget Sound Sub-basin Name as defined by Puget Sound Partnership (e.g., Whidbey)</attrdef>
+				<attrdefs>Puget Sound Partnership</attrdefs>
+				<attrdomv>
+					<edom>
+						<edomv>1</edomv>
+						<edomvd>Strait of Juan de Fuca</edomvd>
+					</edom>
+					<edom>
+						<edomv>2</edomv>
+						<edomvd>Hood Canal</edomvd>
+					</edom>
+					<edom>
+						<edomv>3</edomv>
+						<edomvd>North Central Puget Sound</edomvd>
+					</edom>
+					<edom>
+						<edomv>4</edomv>
+						<edomvd>South Central Puget Sound</edomvd>
+					</edom>
+					<edom>
+						<edomv>5</edomv>
+						<edomvd>South Puget Sound</edomvd>
+					</edom>
+					<edom>
+						<edomv>6</edomv>
+						<edomvd>Whidbey Basin</edomvd>
+					</edom>
+					<edom>
+						<edomv>7</edomv>
+						<edomvd>San Juan Is/Georgia Straits</edomvd>
+					</edom>
+				</attrdomv>
+				<attalias Sync="TRUE">PS_Basin</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">50</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr><attrlabl Sync="TRUE">Reg_Scale_</attrlabl><attalias Sync="TRUE">Reg_Scale_</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">50</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr>
+				<attrlabl>OfflineSZ</attrlabl>
+				<attrdef>Text description of GeoUnit feature that occurs outside of WDNR Shorezone line, seaward (e.g. spits) or landward (e.g. lagoons). See Attribute: GeoUnit.</attrdef>
+				<attalias Sync="TRUE">OfflineSZ</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">50</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>GeoUnit</attrlabl>
+				<attrdef>Text description of geomorphic unit (see GeoUnitCode)</attrdef>
+				<attrdomv>
+					<edom>
+						<edomv>Tectonic Estuary</edomv>
+					</edom>
+					<edom>
+						<edomv>Glacial Estuary</edomv>
+					</edom>
+					<edom>
+						<edomv>Major River Estuary</edomv>
+					</edom>
+					<edom>
+						<edomv>Tidal Channel Marsh</edomv>
+					</edom>
+					<edom>
+						<edomv>Tidal Channel Lagoon</edomv>
+					</edom>
+					<edom>
+						<edomv>Drowned Channel</edomv>
+					</edom>
+					<edom>
+						<edomv>Drowned Channel Lagoon</edomv>
+					</edom>
+					<edom>
+						<edomv>Tidal Delta</edomv>
+					</edom>
+					<edom>
+						<edomv>Tidal Delta Lagoon</edomv>
+					</edom>
+					<edom>
+						<edomv>Delta</edomv>
+					</edom>
+					<edom>
+						<edomv>Delta Lagoon</edomv>
+					</edom>
+					<edom>
+						<edomv>Pocket Beach Lagoon</edomv>
+					</edom>
+					<edom>
+						<edomv>Pocket Closed Lagoon and Marsh</edomv>
+					</edom>
+					<edom>
+						<edomv>Pocket Beach</edomv>
+					</edom>
+					<edom>
+						<edomv>Closed Lagoon and Marsh</edomv>
+					</edom>
+					<edom>
+						<edomv>Longshore Lagoon</edomv>
+					</edom>
+					<edom>
+						<edomv>Beach Seep</edomv>
+					</edom>
+					<edom>
+						<edomv>Depositional Beach</edomv>
+					</edom>
+					<edom>
+						<edomv>Sediment Source Beach</edomv>
+					</edom>
+					<edom>
+						<edomv>Sediment Transport Beach</edomv>
+					</edom>
+					<edom>
+						<edomv>Barrier Beach</edomv>
+					</edom>
+					<edom>
+						<edomv>Plunging Sediment Bluff</edomv>
+					</edom>
+					<edom>
+						<edomv>Rocky Beach</edomv>
+					</edom>
+					<edom>
+						<edomv>Veneered Rock Platform</edomv>
+					</edom>
+					<edom>
+						<edomv>Modified</edomv>
+					</edom>
+				</attrdomv>
+				<attalias Sync="TRUE">GeoUnit</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">50</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr><attrlabl Sync="TRUE">Hydro_CD</attrlabl><attalias Sync="TRUE">Hydro_CD</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">50</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">Hydro_CD_S</attrlabl><attalias Sync="TRUE">Hydro_CD_S</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">50</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">SHAPE_Leng</attrlabl><attalias Sync="TRUE">SHAPE_Leng</attalias><attrtype Sync="TRUE">Double</attrtype><attwidth Sync="TRUE">19</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr></detailed>
+	</eainfo>
+	<distinfo>
+		<distrib>
+			<cntinfo>
+				<cntperp>
+					<cntper>Ron McFarlane</cntper>
+					<cntorg>Northwest Indian Fisheries Commission, Salmon and Steelhead Habitat Inventory and Assessment Program (SSHIAP)</cntorg>
+				</cntperp>
+				<cntpos>GIS Analyst</cntpos>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>6730 Martin Way E.</address>
+					<city>Olympia</city>
+					<state>WA</state>
+					<postal>98516</postal>
+					<country>USA</country>
+				</cntaddr>
+				<cntvoice>360-528-4368</cntvoice>
+				<cntfax>360-753-8659</cntfax><cntemail>rmcfarlane@nwifc.org</cntemail></cntinfo>
+		</distrib>
+		<resdesc>Downloadable Data</resdesc>
+		<distliab>Data to be used with the SSHIAP Marine Database.</distliab>
+	</distinfo>
+	<metainfo>
+		<metd Sync="TRUE">20100317</metd>
+		<metc>
+			<cntinfo>
+				<cntperp>
+					<cntper>Ron McFarlane</cntper>
+					<cntorg>Northwest Indian Fisheries Commission, Salmon and Steelhead Habitat Inventory and Assessment Program (SSHIAP)</cntorg>
+				</cntperp>
+				<cntpos>GIS Analyst</cntpos>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>6730 Martin Way E.</address>
+					<city>Olympia</city>
+					<state>WA</state>
+					<postal>98516</postal>
+					<country>USA</country>
+				</cntaddr>
+				<cntvoice>360-528-4368</cntvoice>
+				<cntfax>360-753-8659</cntfax>
+				<cntemail>rmcfarlane@nwifc.org</cntemail><cntorgp><cntper>REQUIRED: The person responsible for the metadata information.</cntper><cntorg>REQUIRED: The organization responsible for the metadata information.</cntorg></cntorgp></cntinfo>
+		</metc>
+		<metstdn Sync="TRUE">FGDC Content Standards for Digital Geospatial Metadata</metstdn>
+		<metstdv Sync="TRUE">FGDC-STD-001-1998</metstdv>
+		<metrd>6/16/2009</metrd><metfrd>As Needed</metfrd><langmeta Sync="TRUE">en</langmeta><mettc Sync="TRUE">local time</mettc></metainfo>
+	<Esri><CreaDate>20091203</CreaDate><CreaTime>13480600</CreaTime><SyncOnce>FALSE</SyncOnce><ModDate>20221201</ModDate><ModTime>15154700</ModTime><SyncDate>20221201</SyncDate><SyncTime>15154700</SyncTime><MetaID>{9961ACA5-20A5-4A5C-A094-F37AA09F7CBD}</MetaID><DataProperties><itemProps><itemName Sync="TRUE">geomorph_ps</itemName><imsContentType Sync="TRUE">002</imsContentType><nativeExtBox><westBL Sync="TRUE">1216215.771999</westBL><eastBL Sync="TRUE">1849793.312256</eastBL><southBL Sync="TRUE">17089858.873891</southBL><northBL Sync="TRUE">17807428.484353</northBL><exTypeCode Sync="TRUE">1</exTypeCode></nativeExtBox><itemLocation><linkage Sync="TRUE">file://\\NWCDWR0000771\E$\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\geomorph_ps.shp</linkage><protocol Sync="TRUE">Local Area Network</protocol></itemLocation><itemSize Sync="TRUE">3.377</itemSize></itemProps><coordRef><type Sync="TRUE">Projected</type><geogcsn Sync="TRUE">GCS_North_American_1983</geogcsn><csUnits Sync="TRUE">Linear Unit: Foot_US (0.304801)</csUnits><projcsn Sync="TRUE">NAD_1983_UTM_Zone_10N</projcsn><peXml Sync="TRUE">&lt;ProjectedCoordinateSystem xsi:type='typens:ProjectedCoordinateSystem' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/10.8'&gt;&lt;WKT&gt;PROJCS[&amp;quot;NAD_1983_UTM_Zone_10N&amp;quot;,GEOGCS[&amp;quot;GCS_North_American_1983&amp;quot;,DATUM[&amp;quot;D_North_American_1983&amp;quot;,SPHEROID[&amp;quot;GRS_1980&amp;quot;,6378137.0,298.257222101]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0.0],UNIT[&amp;quot;Degree&amp;quot;,0.0174532925199433]],PROJECTION[&amp;quot;Transverse_Mercator&amp;quot;],PARAMETER[&amp;quot;False_Easting&amp;quot;,1640416.666666667],PARAMETER[&amp;quot;False_Northing&amp;quot;,0.0],PARAMETER[&amp;quot;Central_Meridian&amp;quot;,-123.0],PARAMETER[&amp;quot;Scale_Factor&amp;quot;,0.9996],PARAMETER[&amp;quot;Latitude_Of_Origin&amp;quot;,0.0],UNIT[&amp;quot;Foot_US&amp;quot;,0.3048006096012192]]&lt;/WKT&gt;&lt;XOrigin&gt;-16800800&lt;/XOrigin&gt;&lt;YOrigin&gt;-32802000&lt;/YOrigin&gt;&lt;XYScale&gt;137296494.95062786&lt;/XYScale&gt;&lt;ZOrigin&gt;-100000&lt;/ZOrigin&gt;&lt;ZScale&gt;10000&lt;/ZScale&gt;&lt;MOrigin&gt;-100000&lt;/MOrigin&gt;&lt;MScale&gt;10000&lt;/MScale&gt;&lt;XYTolerance&gt;0.0032808333333333331&lt;/XYTolerance&gt;&lt;ZTolerance&gt;0.001&lt;/ZTolerance&gt;&lt;MTolerance&gt;0.001&lt;/MTolerance&gt;&lt;HighPrecision&gt;true&lt;/HighPrecision&gt;&lt;/ProjectedCoordinateSystem&gt;</peXml></coordRef><lineage><Process ToolSource="c:\program files (x86)\arcgis\desktop10.8\ArcToolbox\Toolboxes\Conversion Tools.tbx\FeatureClassToFeatureClass" Date="20221201" Time="151539">FeatureClassToFeatureClass E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles geomorph_ps.shp # "HydroID "HydroID" true true false 4 Long 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,HydroID,-1,-1;Name "Name" true true false 50 Text 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,Name,-1,-1;FType "FType" true true false 30 Text 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,FType,-1,-1;MatrlClass "MatrlClass" true true false 30 Text 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,MatrlClass,-1,-1;GeolSource "GeolSource" true true false 30 Text 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,GeolSource,-1,-1;SlopeClass "SlopeClass" true true false 30 Text 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,SlopeClass,-1,-1;SlopeSourc "SlopeSourc" true true false 30 Text 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,SlopeSource,-1,-1;DomProc "DomProc" true true false 50 Text 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,DomProc,-1,-1;DomPSource "DomPSource" true true false 50 Text 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,DomPSource,-1,-1;SourceScal "SourceScal" true true false 4 Long 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,SourceScale,-1,-1;SourceDate "SourceDate" true true false 8 Date 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,SourceDate,-1,-1;Nearshore_ "Nearshore_" true true false 2 Short 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,Nearshore_Class,-1,-1;Addl_Sourc "Addl_Source" true true false 4 Long 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,Addl_Source,-1,-1;ModShoreli "ModShoreline" true true false 2 Short 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,ModShoreline,-1,-1;QA_Correct "QA_Correction" true true false 2 Short 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,QA_Correction,-1,-1;QA_Date "QA_Date" true true false 8 Date 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,QA_Date,-1,-1;QA_AirPhot "QA_AirPhot" true true false 2 Short 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,QA_AirPhoto,-1,-1;PreQA_GeoU "PreQA_GeoU" true true false 50 Text 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,PreQA_GeoUnit,-1,-1;FW_Input "FW_Input" true true false 2 Short 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,FW_Input,-1,-1;GeoUnitCod "GeoUnitCod" true true false 2 Short 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,GeoUnitCode,-1,-1;QA_Notes "QA_Notes" true true false 100 Text 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,QA_Notes,-1,-1;AirPhoto_D "AirPhoto_D" true true false 30 Text 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,AirPhoto_Det,-1,-1;QA_Basis "QA_Basis" true true false 100 Text 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,QA_Basis,-1,-1;OfflineSZ_ "OfflineSZ_" true true false 2 Short 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,OfflineSZ_Code,-1,-1;ComplexEmb "ComplexEmb" true true false 2 Short 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,ComplexEmbay,-1,-1;Historic_D "Historic_D" true true false 100 Text 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,Historic_Detail,-1,-1;Unit_CD "Unit_CD" true true false 30 Text 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,Unit_CD,-1,-1;Unit_CD_SR "Unit_CD_SR" true true false 30 Text 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,Unit_CD_SRC,-1,-1;Region "Region" true true false 50 Text 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,Region,-1,-1;PS_Basin "PS_Basin" true true false 50 Text 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,PS_Basin,-1,-1;Reg_Scale_ "Reg_Scale_" true true false 50 Text 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,Reg_Scale_Landform,-1,-1;GeoUnit "GeoUnit" true true false 50 Text 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,GeoUnit,-1,-1;OfflineSZ "OfflineSZ" true true false 50 Text 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,OfflineSZ,-1,-1;Hydro_CD "Hydro_CD" true true false 50 Text 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,Hydro_CD,-1,-1;Hydro_CD_S "Hydro_CD_S" true true false 50 Text 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,Hydro_CD_SRC,-1,-1;SHAPE_Leng "SHAPE_Length" false true true 8 Double 0 0 ,First,#,E:\PugetSoundAtlantis\Article_text\Jellyfish\Data\jellies\shapefiles\SSHIAP_Marine.gdb\Nearshore\Geomorph_PS_S,SHAPE_Length,-1,-1" #</Process></lineage></DataProperties></Esri><mdDateSt Sync="TRUE">20221201</mdDateSt><dataIdInfo><envirDesc Sync="TRUE"> Version 6.2 (Build 9200) ; Esri ArcGIS 10.8.1.14362</envirDesc><dataLang><languageCode Sync="TRUE" value="eng"></languageCode><countryCode value="USA" Sync="TRUE"></countryCode></dataLang><idCitation><resTitle Sync="TRUE">geomorph_ps</resTitle><presForm><PresFormCd value="005" Sync="TRUE"></PresFormCd></presForm></idCitation><dataExt><geoEle><GeoBndBox esriExtentType="native"><westBL Sync="TRUE">1216215.771999</westBL><eastBL Sync="TRUE">1849793.312256</eastBL><northBL Sync="TRUE">17807428.484353</northBL><southBL Sync="TRUE">17089858.873891</southBL><exTypeCode Sync="TRUE">1</exTypeCode></GeoBndBox></geoEle></dataExt><geoBox esriExtentType="decdegrees"><westBL Sync="TRUE">-124.767378</westBL><eastBL Sync="TRUE">-122.127495</eastBL><northBL Sync="TRUE">49.002332</northBL><southBL Sync="TRUE">47.021872</southBL><exTypeCode Sync="TRUE">1</exTypeCode></geoBox><spatRpType><SpatRepTypCd value="001" Sync="TRUE"></SpatRepTypCd></spatRpType><dataExt><geoEle><GeoBndBox esriExtentType="search"><exTypeCode Sync="TRUE">1</exTypeCode><westBL Sync="TRUE">-124.767378</westBL><eastBL Sync="TRUE">-122.127495</eastBL><northBL Sync="TRUE">49.002332</northBL><southBL Sync="TRUE">47.021872</southBL></GeoBndBox></geoEle></dataExt></dataIdInfo><mdLang><languageCode Sync="TRUE" value="eng"></languageCode><countryCode value="USA" Sync="TRUE"></countryCode></mdLang><mdStanName Sync="TRUE">ISO 19115 Geographic Information - Metadata</mdStanName><mdStanVer Sync="TRUE">DIS_ESRI1.0</mdStanVer><mdChar><CharSetCd Sync="TRUE" value="006"></CharSetCd></mdChar><mdHrLv><ScopeCd Sync="TRUE" value="005"></ScopeCd></mdHrLv><mdHrLvName Sync="TRUE">dataset</mdHrLvName><distInfo><distributor><distorTran><onLineSrc><orDesc Sync="TRUE">002</orDesc><linkage Sync="TRUE">file://\\Lynx\Alternate\NatRes\GIS_Data\SSHIAP_data\Marine\Marine\SSHIAP_Marine.gdb</linkage><protocol Sync="TRUE">Local Area Network</protocol></onLineSrc></distorTran><distorFormat><formatName Sync="TRUE">File Geodatabase Feature Class</formatName></distorFormat></distributor><distFormat><formatName Sync="TRUE">Shapefile</formatName></distFormat><distTranOps><transSize Sync="TRUE">3.377</transSize></distTranOps></distInfo><refSysInfo><RefSystem><refSysID><identCode Sync="TRUE" code="0">NAD_1983_UTM_Zone_10N</identCode></refSysID></RefSystem></refSysInfo><spatRepInfo><VectSpatRep><geometObjs Name="geomorph_ps"><geoObjTyp><GeoObjTypCd value="002" Sync="TRUE"></GeoObjTypCd></geoObjTyp><geoObjCnt Sync="TRUE">11727</geoObjCnt></geometObjs><topLvl><TopoLevCd value="001" Sync="TRUE"></TopoLevCd></topLvl></VectSpatRep></spatRepInfo></metadata>
