@@ -1,49 +1,33 @@
-# [Choice] R version: 4, 4.2, 4.1, 4.0
-ARG VARIANT=4
-# [Choice] Base image. Minimal (r-ver), tidyverse installed (tidyverse), or full image (binder): rocker/r-ver, rocker/tidyverse, rocker/binder
-ARG BASE_IMAGE=rocker/r-ver
-FROM ${BASE_IMAGE}:${VARIANT}
+# Pre-built Dev Container Image for R. More info: https://github.com/rocker-org/devcontainer-images/pkgs/container/devcontainer%2Ftidyverse
+# Available R version: 4, 4.1, 4.0
+ARG VARIANT="4.2"
+FROM ghcr.io/rocker-org/devcontainer/tidyverse:${VARIANT}
 
-# [Option] Install zsh
-ARG INSTALL_ZSH="true"
-# [Option] Upgrade OS packages to their latest versions
-ARG UPGRADE_PACKAGES="false"
+RUN install2.r --error --skipinstalled -n -1 \
+        statip \
+        patchwork \
+        paletteer \
+        here \
+        doParallel \
+        janitor \
+        vip \
+        ranger \
+        palmerpenguins \
+        skimr \
+        nnet \
+        kernlab \
+        plotly \
+        factoextra \
+        cluster \
+        tidymodels \
+        markdown \
+        ottr \
+    && rm -rf /tmp/downloaded_packages \
+    && R -q -e 'remotes::install_github("https://github.com/dcomtois/summarytools/tree/0-8-9")'
 
-# Install needed packages and setup non-root user. Use a separate RUN statement to add your own dependencies.
-ARG USERNAME=rstudio
-ARG USER_UID=1000
-ARG USER_GID=$USER_UID
-USER root
-COPY library-scripts/*.sh /tmp/library-scripts/
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && /bin/bash /tmp/library-scripts/common-debian.sh "${INSTALL_ZSH}" "${USERNAME}" "${USER_UID}" "${USER_GID}" "${UPGRADE_PACKAGES}" "true" "true" \
-    && usermod -a -G staff ${USERNAME} \
-    && apt-get -y install \
-        python3-pip \
-        libgit2-dev \
-        libcurl4-openssl-dev \
-        libssl-dev \
-        libxml2-dev \
-        libxt-dev \
-        libfontconfig1-dev \
-        libcairo2-dev \
-        build-essential \
-        pandoc \
-        pandoc-citeproc \
-        curl \
-        gdebi-core \
-        && rm -rf /var/lib/apt/lists/*
-
-
-    && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts \
-    && python3 -m pip --no-cache-dir install radian \
-    && install2.r --error --skipinstalled --ncpus -1 \
-        devtools \
-        languageserver \
-        httpgd \
-        usethis \
-    && rm -rf /tmp/downloaded_packages
-
+# Install Python packages
+COPY requirements.txt /tmp/pip-tmp/
+RUN python3 -m pip --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt
 # VSCode R Debugger dependency. Install the latest release version from GitHub without using GitHub API.
 # See https://github.com/microsoft/vscode-dev-containers/issues/1032
 RUN export TAG=$(git ls-remote --tags --refs --sort='version:refname' https://github.com/ManuelHentschel/vscDebugger v\* | tail -n 1 | cut --delimiter='/' --fields=3) \
