@@ -1,5 +1,5 @@
 ---
-title: Jellyfish
+title: Jellyfish functional group
 author: "Hem Nalini Morzaria-Luna"
 format:
   html:
@@ -9,17 +9,17 @@ bibliography: jellyfishbiblio.bib
 csl: ecology.csl
 ---
 
-## Jellyfish
+## Addition of a Jellyfish functional group
 
 <img width="540" alt="image" src="https://user-images.githubusercontent.com/11339490/204919117-510c0fbb-99d0-43e8-abc4-f5fe7c4beef6.png">
 
-The model simulates food web dynamics using 73 biological groups, including jellyfish (gelatinous zooplankton). While much effort centered on characterizing pelagic fish abundance, diets, and distribution during the development of the AMPS, data on these attributes are scarcer for jellyfish in Puget Sound. We use data from field studies, mesocosms, and relevant global literature to add a new functional group, based on Aurelia. We incorporate information on total consumption rates of Aurelia on their prey and composition of Aurelia diet.
+The model simulates food web dynamics using 73 biological groups, including one gelatinous zooplankton. While much effort centered on characterizing pelagic fish abundance, diets, and distribution during the development of the AMPS, data on these attributes are scarcer for jellyfish in Puget Sound. We use data from field studies, mesocosms, and relevant global literature to add a new functional group, based on the jellyfish *Aurelia*. We incorporate information on total consumption rates of Aurelia on their prey and composition of *Aurelia* diet.
 
-As part of a [WA Sea Grant](https://wsg.washington.edu/) project, led by Julie Kiester (University of Washington), we will quantify the ecosystem effects of changing jellyfish populations in Puget Sound. We will examine scenarios that integrate results from mesocosms and field studies part of this grant to understand the ecological role of jellyfish in Puget Sound, and their effects on other species including salmon and forage fish. Spatial representation in the Atlantis Model for Puget Sound (AMPS) will allow us to test the impact of spatial aggregations of Aurelia identified in aerial monitoring by EOPS, for instance in South Sound inlets. Vertical structure in the model allows us to capture diel vertical movement of jellyfish and other zooplankton taxa, which will be informed by field sampling.
+As part of a [WA Sea Grant](https://wsg.washington.edu/) project, led by Julie Kiester (University of Washington), "Ecosystem impacts of the jellyfish *Aurelia labiata* in Puget Sound", we will quantify the ecosystem effects of changing jellyfish populations in Puget Sound. We will examine scenarios that integrate results from mesocosms and field studies part of this grant to understand the ecological role of jellyfish in Puget Sound, and their effects on other species including salmon and forage fish. Spatial representation in the Atlantis Model for Puget Sound (AMPS) will allow us to test the impact of spatial aggregations of *Aurelia* identified in aerial monitoring by EOPS, for instance in South Sound inlets. Vertical structure in the model allows us to capture diel vertical movement of jellyfish and other zooplankton taxa, which will be informed by field sampling.
 
-#Current parameterization of jellyfish (‘Gelatinous zooplankton’)
+#Current parameterization of ‘Gelatinous zooplankton’
 
-In its initial version, the AMPS included one ‘Gelatinous zooplankton’ functional group, which included Aurelia as well as other scyphozoans, larvaceans, siphonophores, and ctenophores. Other plankton groups, including jellyfish prey, are aggregated into five additional functional groups (Table 1). The composition of the ‘Gelatinous zooplankton’ functional group was based on samples collected throughout Puget Sound in 2011 and 2014-2017 using zooplankton nets. These nets are likely to entirely miss larger medusae, so we added information from extensive surface trawl sampling of larger jellyfish and pelagic fish undertaken in 2011 across all basins of Puget Sound. We interpolated missing data (per polygon) based on the average of all sampled polygons of similar bottom depth (i.e., with the same number of Atlantis depth layers). Total abundance of gelatinous zooplankton (per Atlantis polygon) was then taken as the sum of large and small jellyfish abundance.
+In its [initial version](https://repository.library.noaa.gov/view/noaa/40463), the AMPS included one ‘Gelatinous zooplankton’ functional group, which encompassed scyphozoans, larvaceans, siphonophores, and ctenophores. Other plankton groups, including jellyfish prey, were aggregated into five additional functional groups (Table 1). The composition of the ‘Gelatinous zooplankton’ functional group was based on samples collected throughout Puget Sound in 2011 and 2014-2017 using zooplankton nets. These nets are likely to entirely miss larger medusae, so we added information from extensive surface trawl sampling of larger jellyfish and pelagic fish undertaken in 2011 across all basins of Puget Sound. We interpolated missing data (per polygon) based on the average of all sampled polygons of similar bottom depth (i.e., with the same number of Atlantis depth layers). Total abundance of gelatinous zooplankton (per Atlantis polygon) was then taken as the sum of large and small jellyfish abundance.
 
 <img width="540" src="https://user-images.githubusercontent.com/11339490/205162222-6d57fb7f-7bb0-475e-9359-8fa689c80dcf.png">
 
@@ -29,9 +29,7 @@ In its initial version, the AMPS included one ‘Gelatinous zooplankton’ funct
 #| 
 knitr::kable(readr::read_csv(here::here("inputs","guilds_table.csv")), format="html", caption = "Table 1. Plankton groups in the Atlantis Model of Puget Sound.")
 ```
-Gelatinous zooplankton diets were compiled from multiple sources, focused on Puget Sound when available [@Costello2002; @Purcell1990]; these are studies from Puget Sound, but do not include Aurelia diets, instead describing the diet of small hydromedusae such as Aglantha and Obelia. Currently, diet of gelatinous zooplankton in the AMPS is: 48.3% microzooplankton; 24.7% mesozooplankton (copepods); and 27% other zooplankton including barnacle larvae, appendicularians, and bivalve larvae. As an approximation, rate parameters, specifically growth and clearance rates, were taken from the California Current Atlantis model [@Kaplan2017; @Marshall2017]. This diet composition is overly weighted toward small gelatinous zooplankton and would benefit from improved parameterization.
-
-
+Gelatinous zooplankton diets were compiled from multiple sources, focused on Puget Sound when available [@Costello2002; @Purcell1990]; these are studies from Puget Sound, but do not include *Aurelia* diet, instead describing the diet of small hydromedusae such as *Aglantha* and *Obelia*. Currently, diet of gelatinous zooplankton in the AMPS is: 48.3% microzooplankton; 24.7% mesozooplankton (copepods); and 27% other zooplankton including barnacle larvae, appendicularians, and bivalve larvae. As an approximation, rate parameters, specifically growth and clearance rates, were taken from the California Current Atlantis model [@Kaplan2017; @Marshall2017]. 
 
 
 
@@ -43,7 +41,7 @@ source(here::here("libraries.R")) #need to figure out which ones are actually ne
 ```
 
 
-## Update spatial distribution
+## Updated spatial distribution
 
 We used the results from Green et al. who examined interspecific variation in species-specific response of jellyfish adult life stages to environmental variation and anthropogenic influence, and projected future changes in these parameters in Puget Sound. They used results from a field survey to predict the presence of seven jellyfish species across six sub basins in Puget Sound. They modeled the probability of species presence as a function of site-specific parameters (geomorphic type, anthropogenic land use) and observation-specific variables (salinity, temperature, depth). Their presence/absence models indicated strong interspecific variation in the habitat preferences of jellyfish to environmental parameters such as temperature and geomorphic type, as well as varying sensitivity to potential anthropogenic effects on nearshore waters. 
 We used the embayments derived by Green et al. (embayment_unit_revised.shp) and classified additional coastline segments from data collected by [The Salmon and Steelhead Habitat Inventory and Assessment Program](http://nwifc.org/about-us/habitat/sshiap/) (SSHIAP) (geomorph_ps_s.shp from Geodatabase SSHIAP_Marine.gdb>Geomorph_PS_S). Geomorphology categories beach, modified, shoreline, bluff, and platform categories were aggregated and reclassified as exposed; all types of delta were assigned to the delta category. 

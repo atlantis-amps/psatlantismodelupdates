@@ -1,0 +1,15 @@
+title: "About"
+about:
+  template: solana
+  image: Hem_headshot_2021.jpg
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com/hmorzaria
+    - icon: github
+      text: Github
+      href: https://github.com/hmorzaria
+      
+---
+
+Maintained by [Hem Nalini Morzaria-Luna](https://namedrop.io/hemnalinimorzarialuna), Ph.D., marine ecologist with [Long Live the Kings](https://lltk.org) and a developer of the Atlantis Model for Puget Sound. Her research is focused on translating modeling approaches for the management and conservation of coastal and marine resources and assessing how anthropogenic impacts influence planning and conservation decisions; my current focus is on the impacts of climate change and cumulative human impacts. Full CV available [here](https://hmorzaria.github.io/hemnalinimorzarialuna.quarto.io/)  

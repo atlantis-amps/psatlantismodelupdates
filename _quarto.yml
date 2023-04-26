@@ -33,18 +33,15 @@ website:
     contents:
       - href: index.qmd
         text: Home
+      - href: about.qmd
+        text: About
       - href: content/jellyfish.qmd
-        text: Add content
-      - href: content/customizing.qmd
-        text: Customizing
-      - href: content/rendering.qmd
-        text: Rendering
-      - href: content/rmarkdown.Rmd
-        text: R Markdown files
-      - href: content/code.qmd
-        text: Code in your files
-      - href: content/acknowledgements.qmd
-        text: Acknowledgements
+        text: Jellyfish
+      - href: content/salmon.qmd
+        text: Salmon
+      - href: content/residents.qmd
+        text: Southern Residents
+      
 
 format:
   html:

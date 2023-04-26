@@ -1,12 +1,13 @@
 ---
 title: "Atlantis Model for Puget Sound"
 subtitle: "Updates to model parametrization"
+author: "Hem Nalini Morzaria-Luna"
 page-layout: full
 bibliography: jellyfishbiblio.bib
 csl: ecology.csl
 ---
 
-This website records changes to the Atlantis Model for Puget Sound from the original published model in this [Technical memorandum](https://repository.library.noaa.gov/view/noaa/40463)
+This website records changes to the Atlantis Model for Puget Sound (AMPS) from the original published model described in the [Technical memorandum](https://repository.library.noaa.gov/view/noaa/40463)
 
 Morzaria-Luna H, Kaplan IC, Harvey CJ, Girardin R, Fulton EA, MacCready P, Chasco B, Horne P, Schmidt M. 2022. Design and Parameterization of a Spatially Explicit Atlantis Ecosystem Model for Puget Sound. Northwest Fisheries Science Center (U.S.). NOAA technical memorandum NMFS-NWFSC 177. DOI : https://doi.org/10.25923/tnp6-mf67
 
@@ -25,10 +26,10 @@ The AMPS has 89 polygons that extend over 9652 km2, including 60 water column po
 
 ## Atlantis Model for Puget Sound Applications
 
-* Explore whether top-down processes - predation and bottom-up processes—including competition and primary productivity—have led to shifts in prey availability, timing, and quality for juvenile Chinook and coho salmon. 
+* Explore whether top-down processes - predation and bottom-up processes—including competition and primary productivity—have led to shifts in prey availability, timing, and quality for juvenile Chinook and coho salmon. [In prep](https://hmorzaria.github.io/pssalmonsurvival/). 
 
-* Provide insight into the ecosystem effects of management actions aimed at Southern Resident Killer Whales.Turn on GitHub Pages under Settings > Pages . You will set pages to be made from the gh-pages branch and root directory.
+* Provide insight into the ecosystem effects of management actions aimed at Southern Resident Killer Whales. WA Sea Grant project.
 
-* Examine the ecological role of increasing jellyfish populations
+* Examine the ecological role of increasing jellyfish populations. WA Sea Grant project.
 
-* Edit the repo description and Readme to add a link to the webpage. When you edit the description, you will see the link url in the url box or you can click on the Actions tab or the  Settings > Pages page to find the url.
+* Link the AMPS to a watershed model and a biogeochemical model through the [Puget Sound Integrated Modeling Framework](https://www.pugetsoundinstitute.org/about/pugetsoundmodeling/)
