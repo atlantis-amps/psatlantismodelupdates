@@ -1,25 +1,25 @@
-project: 
+project:
   type: website
 
-website: 
+website:
   page-navigation: true
-  title: "Atlantis Model for Puget Sound" 
-  site-url: "https://hmorzaria.github.io/psatlantismodelupdates/" 
+  title: "Atlantis Model for Puget Sound"
+  site-url: "https://hmorzaria.github.io/psatlantismodelupdates/"
   repo-url: "https://github.com/hmorzaria/psatlantismodelupdates"
   repo-actions: [edit, source, issue]
   favicon: images/favicon.ico
-  
+
   page-footer:
     right: "This page is built with [Quarto](https://quarto.org/)."
     left: "&copy; CC-1.0"
-  
+
   sidebar:
     background: "#D9E3E4"
     logo: "https://user-images.githubusercontent.com/11339490/204617034-60925058-5fa4-468c-ad50-6c5719757066.jpg"
     favicon: images/favicon.ico
     pinned: true
     align: center
-    tools: 
+    tools:
       - icon: globe
         href: https://nmfs-opensci.github.io
         text: "NMFS Open Science"
@@ -37,16 +37,18 @@ website:
         text: About
       - href: content/jellyfish.qmd
         text: Jellyfish
+      - href: content/foodweb.qmd
+        text: Foodweb
       - href: content/salmon.qmd
         text: Salmon
       - href: content/residents.qmd
-        text: Southern Residents
-      
+        text: Resident orcas
+
 
 format:
   html:
     theme:
-      light: [cosmo, theme.scss] 
+      light: [cosmo, theme.scss]
       dark: [cosmo, theme-dark.scss]
     code-copy: true
     code-overflow: wrap
@@ -57,4 +59,4 @@ filters:
   - include-files.lua
   - quarto
 
-  
+

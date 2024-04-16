@@ -1,21 +1,133 @@
 ---
-title: Rendering
+title: Resident orcas
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
-The repo includes a GitHub Action that will render (build) the website automatically when you make changes to the files. It will be pushed to the `gh-pages` branch.
+Resident orcas simulate the Southern Resident Killer Whale endemic
+population
 
-But when you are developing your content, you will want to render it locally. 
+-   Updated the diet using Ford et al. 1998, Ford & Ellis, 2006, Ford
+    2009, Hanson et al., 2010 & 2021 and Hermann et al. 2015
+    
+```{r}
 
-## Step 1. Make sure you have a recent RStudio
+source("/home/atlantis/psatlantismodelupdates/inputs/libraries.R")
+#External drive (currently G:) /Azure_download/ dietps
+#Original data in Diet_database_V1_no_figures.xlsx
+#Diet data estimated using Dirichelet in Diet_PS_rev2023.R
+#Generated MLE of diet contributions
+#diet matrix sums proportions to 1, created to illustrate diets
 
-Have you updated RStudio since about August 2022? No? Then update to a newer version of RStudio. In general, you want to keep RStudio updated and it is required to have a recent version to use Quarto.
+func.groups <- readr::read_csv(here::here("inputs","PugetSoundAtlantisFunctionalGroups.csv")) %>% 
+  dplyr::mutate(prey = Code)
 
-## Step 2. Clone and create RStudio project
+diet.matrix <- data.table::fread(here::here("inputs","ps_diet_matrix_Dec_2023.csv"))
 
-First, clone the repo onto your local computer. How? You can click File > New Project and then select "Version Control". Paste in the url of the repository. That will clone the repo on to your local computer. When you make changes, you will need to push those up.
+prey.order <- c("Pacific Herring Puget Sound","Pacific Herring Cherry Point",
+                "Chinook Hatch Subyearling","Chinook Hatch Yearling",  "Chinook other Subyearling", "Chinook Snohomish Subyearling","Chinook Skagit Subyearling","Chinook Skagit Yearling","Chinook other Yearling",            
+                "Chinook Duwamish Subyearling", "Chinook Hood Canal Subyearling", "Chinook Nisqually Subyearling","Chinook Nisqually Yearling",
+                "Chum Fall Subyearling", "Chum Hood Canal summer run Subyearling","Chum Hatch Subyearling",  
+                "Coho Deep South Yearling", "Coho Hatch Yearling","Coho Skagit Yearling", "Coho other Yearling",    
+                "Pink Salmon Subyearling", "Strait of Georgia salmonids", "Other salmonids",
+                "Large demersal predators", "Small demersal fish",  "Small-mouthed Flatfish", "Piscivorous flatfish",  
+                "Demersal rockfish", "Midwater rockfish",   "Demersal vulnerable rockfish",        
+                "Skates",  
+                "Squid")  
 
-## Step 3. Render within RStudio
 
-RStudio will recognize that this is a Quarto project by the presence of the `_quarto.yml` file and will see the "Build" tab.  Click the "Render website" button to render to the `_site` folder.
 
-**Previewing:** You can either click `index.html` in the `_site` folder and specify "preview in browser" or set up RStudio to preview to the viewer panel. To do the latter, go to Tools > Global Options > R Markdown. Then select "Show output preview in: Viewer panel". 
+fill <- c("violet","violetred3",
+          "lightsalmon","lightsalmon1","lightsalmon2","lightsalmon3","lightsalmon4","salmon","salmon1","salmon2","salmon3","salmon4","lightcoral",
+          "rosybrown1","rosybrown2","rosybrown3",
+          "indianred","indianred1","indianred2","indianred3",
+          "sienna1","sienna2","sienna3",
+          "deepskyblue4","dodgerblue4","navyblue","lightsteelblue3",
+          "red1","red2","red4",
+          "plum2",
+          "deeppink"
+          
+)
+
+          "dodgerblue", "dodgerblue2","dodgerblue4","dodgerblue3",
+
+diet.matrix.ROR <- diet.matrix %>% 
+  dplyr::filter(predator=="Resident Orca") %>% 
+  tidyr::pivot_longer(cols=(BB:DC_s), names_to="prey") %>% 
+  dplyr::filter(value!=0) %>% 
+  droplevels() %>% 
+  dplyr::left_join(func.groups, by="prey") %>% 
+  dplyr::mutate(prey = as.factor(`Long Name`)) 
+
+diet.matrix.ROR$prey <- factor(diet.matrix.ROR$prey, levels = prey.order)
+
+ror.diet.plot <- diet.matrix.ROR %>%  
+  dplyr::filter(pred_stage=="adult") %>% 
+  ggplot2::ggplot(ggplot2::aes(x=pred_stage, y=value, fill = prey)) + 
+  ggplot2::geom_bar(stat = "identity") +
+  ggplot2::coord_flip() +
+  scale_fill_manual(values=fill)+
+  labs(x = "Resident orcas (adult)",y="Proportion") +
+  #facet_wrap(~prey)+
+  theme_bw()+
+  theme(legend.position="bottom",
+        legend.title = element_blank())
+
+invert.data %>% 
+  group_by(Predator, prey) %>% 
+  summarise(mean_prop = mean(proportion)) %>% 
+  ungroup %>% 
+  left_join(invert.tot.prop, by="Predator") %>% 
+  mutate(norm_prop = mean_prop/tot_prop) %>% 
+  ggplot(aes(Predator, norm_prop, fill=prey))+
+  geom_bar(stat="identity")+
+  coord_flip()+
+  scale_fill_manual(values=fill)+
+  labs(x = "Predator",y="Proportion")+
+  #  facet_wrap(~Predator)+
+  theme_bw()+
+  theme(legend.position="bottom",
+
+
+```
+    
+
+-   Updated diet proportions for Chinook populations from Hanson et al.
+    2021
+
+-   Spatial distributions based on SRKW sightings. Estimated based on
+    Thorson et al. 2015
+
+``` {r}
+    install.packages("sdmTMB", dependencies = TRUE)
+
+```
+
+-   Seasonal distribution
+
+-   Fecundity. Fishery Management Council Working Group, data from Eric
+    Ward, https://nwfsc-cb.github.io/srkw-status/.
+
+**References**
+
+Ford, J.K.B., G.A. Ellis, L.G. Barrett-Lennard, A.B. Morton, R.S. Palm &
+K.C. Balcomb. 1998. Dietary specialization in two sympatric populations
+of killer whales (*Orcinus orca)* in coastal British Columbia and
+adjacent waters. Canadian Journal of Zoology-Revue Canadienne de
+Zoologie 76: 1456--1471.
+
+Ford, J.K.B. & G.M. Ellis. 2006. Selective foraging by fish-eating
+killer whales *Orcinus orca* in British Columbia. Mar. Ecol. Prog. Ser.
+316: 185--199.
+
+Ford, J.K.B. 2009. Chinook salmon predation by resident killer whales:
+Seasonal and regional selectivity, stock identity of prey, and
+consumption rates. Canadian Science Advisory Secretariat = Secrétariat
+canadien de consultation scientifique.
+
+Thorson, J.T., Shelton, A.O., Ward, E.J., Skaug, H.J., 2015.
+Geostatistical delta-generalized linear mixed models improve precision
+for estimated abundance indices for West Coast groundfishes. ICES J.
+Mar. Sci. J. Cons. 72(5), 1297--1310. doi:10.1093/icesjms/fsu243. URL:
+<http://icesjms.oxfordjournals.org/content/72/5/1297>

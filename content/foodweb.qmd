@@ -1,0 +1,13 @@
+---
+title: Updates to the food web
+---
+
+## August 2023
+
+1. Updated code to combine diet data studies 
+2. Updated salmon supplementation (see Salmon page for details). 
+Supplementation proportions in the biology PRM are by functional group and consider stage in the functional group file
+currently only juveniles are supplemented. IsSupplemented value of 1 means all life history stages will consume the supplemental feed, a value of 2 is juveniles only and a value of 
+3 is adults only. 
+3. Updated ROR diet (see Resident orcas page for details)
+

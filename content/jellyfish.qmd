@@ -1,5 +1,5 @@
 ---
-title: Jellyfish functional group
+title: Addition of a jellyfish functional group
 author: "Hem Nalini Morzaria-Luna"
 format:
   html:
@@ -43,7 +43,7 @@ source(here::here("libraries.R")) #need to figure out which ones are actually ne
 
 ## Updated spatial distribution
 
-We used the results from Green et al. who examined interspecific variation in species-specific response of jellyfish adult life stages to environmental variation and anthropogenic influence, and projected future changes in these parameters in Puget Sound. They used results from a field survey to predict the presence of seven jellyfish species across six sub basins in Puget Sound. They modeled the probability of species presence as a function of site-specific parameters (geomorphic type, anthropogenic land use) and observation-specific variables (salinity, temperature, depth). Their presence/absence models indicated strong interspecific variation in the habitat preferences of jellyfish to environmental parameters such as temperature and geomorphic type, as well as varying sensitivity to potential anthropogenic effects on nearshore waters. 
+We used the results from Green et al. who examined interspecific variation in species-specific response of jellyfish adult life stages to environmental variation and anthropogenic influence, and projected future changes in these parameters in Puget Sound. They used results from a field survey to predict the presence of seven jellyfish species across six sub basins in Puget Sound. They modeled the probability of species presence as a function of site-specific parameters (geomorphic type, anthropogenic land use) and observation-specific variables (salinity, temperature, depth). Their presence/absence models indicated strong interspecific variation in the habitat preferences of jellyfish to environmental parameters such as temperature and geomorphic type, as well as varying sensitivity to potential anthropogenic effects on nearshore waters. <i>Aurelia</i> individuals were associated with large and small backwater embayments rather than exposed shorelines, and human development within these embayments was shown to decrease the probability of presence. 
 We used the embayments derived by Green et al. (embayment_unit_revised.shp) and classified additional coastline segments from data collected by [The Salmon and Steelhead Habitat Inventory and Assessment Program](http://nwifc.org/about-us/habitat/sshiap/) (SSHIAP) (geomorph_ps_s.shp from Geodatabase SSHIAP_Marine.gdb>Geomorph_PS_S). Geomorphology categories beach, modified, shoreline, bluff, and platform categories were aggregated and reclassified as exposed; all types of delta were assigned to the delta category. 
 We also derived percent used landcover classes at 30 m resolution (szline_GSU_identity_Spj_HUC_NHD_dissolve_DU_sum_LU.shp). 
 
@@ -82,90 +82,20 @@ geomorph.units <- geomorph.shp %>%
                                                    dplyr::if_else(grepl("drowned channel", GeoMorph),"exposed", GeoMorph)))) 
 
 
-landcover.shp <- st_read(here::here("inputs","RevisedInputs","szline_GSU_identity_Spj_HUC_NHD_dissolve_DU_sum_LU.shp"))
+landcover.shp <- sf::st_read(here::here("inputs","RevisedInputs","szline_GSU_identity_Spj_HUC_NHD_dissolve_DU_sum_LU.shp"))
 
 embayment.areas <- embayment.shp %>% 
   dplyr::filter(GeoMorph %in% c("large bay","small bay"))
 
 geomorph.data <- geomorph.units %>% 
   dplyr::filter(GeoMorph %in% c("exposed","delta"))
+
+plot(geomorph.data)
+plot(embayment.areas)
  
 ```
 
-Following Green et al. we used data from the Puget Sound Nearshore Ecosystem Restoration Project (PSNERP), an initiative led by the Washington Department of Fish and Wildlife (WDFW) in partnership with the U.S. Army Corps of Engineers (Corps) to assign geomorphology classification to Atlantis polygons
 
-https://wdfw.wa.gov/species-habitats/habitat-recovery/puget-sound/psnerp
-
-https://wdfw.maps.arcgis.com/apps/webappviewer/index.html?id=adfd521d37774e868e0e974cc03860df to assign geomorphic types to sampling areas.
-
-Used landcover classes at 30 m resolution. Development classes were based on the NCCOS' Coastal Change and Analysis Program (C-CAP, 2006 analysis year). Nationally standardized, raster-based inventories of land cover for the coastal areas of the U.S. Data are derived, through the Coastal Change Analysis Program, from the analysis of multiple dates of remotely sensed imagery. https://coast.noaa.gov/digitalcoast/tools/lca.html. Land classification scheme https://coast.noaa.gov/data/digitalcoast/pdf/ccap-class-scheme-regional.pdf
-
-Calculate %land cover classes per
-
-```{r}
-#| echo: false
-
-atlantis.polygons <- sf::st_read(here::here("inputs","bgm_Puget_Sound_89b_0p0001_NAD83.shp"))
-
-#this is the area selected for data 
-land.cover.area <- sf::st_read(here::here("inputs","Job736234_2006_CCAP_index.shp"))
-
-world <- rnaturalearth::ne_countries(scale = "large", returnclass = "sf")
-
-#check that the land cover area matches Atlantis polygons
-ggplot2::ggplot(data = world) +
-ggplot2::geom_sf(data = land.cover.area) +
-ggplot2::geom_sf(data = atlantis.polygons)
-
-
-land.cover.raster <- raster::raster(here("inputs","Job736234_2006_CCAP.tif"))
-
-#crop.raster <- st_crop(land.cover.raster, atlantis.polygons)
-
-#DEM boundaries of watershed
-#buffer 200 m from the shoreline, is catchment
-
-
-#Agricultural, also Grassland (8)
-land.cover.raster.ag <- land.cover.raster
-land.cover.raster.ag[land.cover.raster.ag>=7] <- 0
-land.cover.raster.ag[land.cover.raster.ag<=5] <- 0
-
-land.cover.raster.ag.df <- as.data.frame(land.cover.raster.ag, xy = TRUE)
-
-land.cover.plot <- ggplot2::ggplot() +
-  ggplot2::geom_raster(data = land.cover.raster.ag.df , aes(x = x, y = y, fill = Job736234_2006_CCAP)) + 
-  ggplot2::coord_quickmap() 
-
-#land.cover.plot
-
-#Agricultural categories (6) cultivated crops and (7) pasture
-land.cover.raster.ag <- land.cover.raster
-land.cover.raster.ag[land.cover.raster.ag>=8] <- 0
-land.cover.raster.ag[land.cover.raster.ag<=5] <- 0
-
-land.cover.raster.ag.df <- as.data.frame(land.cover.raster.ag, xy = TRUE)
-
-ag.plot <- ggplot2::ggplot() +
-  ggplot2::geom_raster(data = land.cover.raster.ag.df , aes(x = x, y = y, fill = Job736234_2006_CCAP)) + 
-  ggplot2::coord_quickmap() 
-
-
-#Development categories High (2), Medium (3), Low (4)
-land.cover.raster.dev <- land.cover.raster
-land.cover.raster.dev[land.cover.raster.dev>=6] <- 0
-
-land.cover.raster.dev.df <- as.data.frame(land.cover.raster.dev, xy = TRUE)
-
-dev.plot <- ggplot2::ggplot() +
-  ggplot2::geom_raster(data = land.cover.raster.dev.df , aes(x = x, y = y, fill = Job736234_2006_CCAP)) + 
-  ggplot2::coord_quickmap() 
-
-dev.plot
-```
-
-
-Model from Green et al. In prep,
 
 ```{r}
 #read in dataset 
@@ -230,3 +160,76 @@ summary(PLmodel)
 
 ```
 
+
+
+Following Green et al. we used data from the Puget Sound Nearshore Ecosystem Restoration Project (PSNERP), an initiative led by the Washington Department of Fish and Wildlife (WDFW) in partnership with the U.S. Army Corps of Engineers (Corps) to assign geomorphology classification to Atlantis polygons
+
+https://wdfw.wa.gov/species-habitats/habitat-recovery/puget-sound/psnerp
+
+https://wdfw.maps.arcgis.com/apps/webappviewer/index.html?id=adfd521d37774e868e0e974cc03860df to assign geomorphic types to sampling areas.
+
+Used landcover classes at 30 m resolution. Development classes were based on the NCCOS' Coastal Change and Analysis Program (C-CAP, 2006 analysis year). Nationally standardized, raster-based inventories of land cover for the coastal areas of the U.S. Data are derived, through the Coastal Change Analysis Program, from the analysis of multiple dates of remotely sensed imagery. https://coast.noaa.gov/digitalcoast/tools/lca.html. Land classification scheme https://coast.noaa.gov/data/digitalcoast/pdf/ccap-class-scheme-regional.pdf
+
+Calculate %land cover classes per
+
+```{r alternate estimate, eval=FALSE, include=FALSE}
+#| echo: false
+
+atlantis.polygons <- sf::st_read(here::here("inputs","bgm_Puget_Sound_89b_0p0001_NAD83.shp"))
+
+#this is the area selected for data 
+land.cover.area <- sf::st_read(here::here("inputs","Job736234_2006_CCAP_index.shp"))
+
+world <- rnaturalearth::ne_countries(scale = "large", returnclass = "sf")
+
+#check that the land cover area matches Atlantis polygons
+ggplot2::ggplot(data = world) +
+ggplot2::geom_sf(data = land.cover.area) +
+ggplot2::geom_sf(data = atlantis.polygons)
+
+
+land.cover.raster <- raster::raster(here("inputs","Job736234_2006_CCAP.tif"))
+
+#crop.raster <- st_crop(land.cover.raster, atlantis.polygons)
+
+#DEM boundaries of watershed
+#buffer 200 m from the shoreline, is catchment
+
+
+#Agricultural, also Grassland (8)
+land.cover.raster.ag <- land.cover.raster
+land.cover.raster.ag[land.cover.raster.ag>=7] <- 0
+land.cover.raster.ag[land.cover.raster.ag<=5] <- 0
+
+land.cover.raster.ag.df <- as.data.frame(land.cover.raster.ag, xy = TRUE)
+
+land.cover.plot <- ggplot2::ggplot() +
+  ggplot2::geom_raster(data = land.cover.raster.ag.df , aes(x = x, y = y, fill = Job736234_2006_CCAP)) + 
+  ggplot2::coord_quickmap() 
+
+#land.cover.plot
+
+#Agricultural categories (6) cultivated crops and (7) pasture
+land.cover.raster.ag <- land.cover.raster
+land.cover.raster.ag[land.cover.raster.ag>=8] <- 0
+land.cover.raster.ag[land.cover.raster.ag<=5] <- 0
+
+land.cover.raster.ag.df <- as.data.frame(land.cover.raster.ag, xy = TRUE)
+
+ag.plot <- ggplot2::ggplot() +
+  ggplot2::geom_raster(data = land.cover.raster.ag.df , aes(x = x, y = y, fill = Job736234_2006_CCAP)) + 
+  ggplot2::coord_quickmap() 
+
+
+#Development categories High (2), Medium (3), Low (4)
+land.cover.raster.dev <- land.cover.raster
+land.cover.raster.dev[land.cover.raster.dev>=6] <- 0
+
+land.cover.raster.dev.df <- as.data.frame(land.cover.raster.dev, xy = TRUE)
+
+dev.plot <- ggplot2::ggplot() +
+  ggplot2::geom_raster(data = land.cover.raster.dev.df , aes(x = x, y = y, fill = Job736234_2006_CCAP)) + 
+  ggplot2::coord_quickmap() 
+
+dev.plot
+```
