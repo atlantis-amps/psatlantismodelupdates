@@ -73,20 +73,7 @@ ror.diet.plot <- diet.matrix.ROR %>%
   theme(legend.position="bottom",
         legend.title = element_blank())
 
-invert.data %>% 
-  group_by(Predator, prey) %>% 
-  summarise(mean_prop = mean(proportion)) %>% 
-  ungroup %>% 
-  left_join(invert.tot.prop, by="Predator") %>% 
-  mutate(norm_prop = mean_prop/tot_prop) %>% 
-  ggplot(aes(Predator, norm_prop, fill=prey))+
-  geom_bar(stat="identity")+
-  coord_flip()+
-  scale_fill_manual(values=fill)+
-  labs(x = "Predator",y="Proportion")+
-  #  facet_wrap(~Predator)+
-  theme_bw()+
-  theme(legend.position="bottom")
+
 
 
 ```
