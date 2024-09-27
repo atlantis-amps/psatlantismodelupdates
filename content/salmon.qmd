@@ -3,7 +3,7 @@ title: Salmon groups
 ---
 
 # Diet 
-
+Updated diet values, including insect supplementation
 ## Insect supplementation to salmon diet 
 Proportions in the biology PRM are by functional group and consider stage in the functional group file
 currently only juveniles are supplemented

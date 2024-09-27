@@ -5,7 +5,7 @@ website:
   page-navigation: true
   title: "Atlantis Model for Puget Sound"
   site-url: "https://hmorzaria.github.io/psatlantismodelupdates/"
-  repo-url: "https://github.com/hmorzaria/psatlantismodelupdates"
+  repo-url: "https://github.com/atlantis-amps/psatlantismodelupdates"
   repo-actions: [edit, source, issue]
   favicon: images/favicon.ico
 
@@ -35,14 +35,16 @@ website:
         text: Home
       - href: about.qmd
         text: About
-      - href: content/jellyfish.qmd
-        text: Jellyfish
-      - href: content/foodweb.qmd
-        text: Foodweb
       - href: content/salmon.qmd
         text: Salmon
+      - href: content/jellyfish.qmd
+        text: Jellyfish
       - href: content/residents.qmd
         text: Resident orcas
+      - href: content/foodweb.qmd
+        text: Foodweb
+      - href: content/acknowledgments.qmd
+        text: Acknowledgments
 
 
 format:
