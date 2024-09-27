@@ -3,7 +3,10 @@ install.packages("rnaturalearthhires", repos = "http://packages.ropensci.org", t
 .packages = c("tidyverse","devtools","readxl",
               "sp","sf","rnaturalearth",
               "rnaturalearthdata","here", "raster", "exactextractr",
-              "glmmTMB","knitr","readr")
+              "glmmTMB","knitr","readr", "rlang", "ggplot2","ggrepel",
+              "mapview","rgdal","formattable","ggpubr","RColorBrewer",
+              "grDevices")
+
 
 # .packages = c("tidyverse","devtools","readxl",
 #               "sp","sf","GISTools","rgdal",
@@ -19,6 +22,6 @@ install.packages("rnaturalearthhires", repos = "http://packages.ropensci.org", t
 
 if(length(.packages[!.inst]) > 0) install.packages(.packages[!.inst], )
 
-# Load packages into session 
+# Load packages into session
 lapply(.packages, require, character.only=TRUE)
 
