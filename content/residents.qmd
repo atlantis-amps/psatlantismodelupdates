@@ -45,12 +45,11 @@ fill <- c("violet","violetred3",
           "sienna1","sienna2","sienna3",
           "deepskyblue4","dodgerblue4","navyblue","lightsteelblue3",
           "red1","red2","red4",
-          "plum2",
-          "deeppink"
+          "turquoise",
+          "turquoise4"
           
 )
 
-          "dodgerblue", "dodgerblue2","dodgerblue4","dodgerblue3",
 
 diet.matrix.ROR <- diet.matrix %>% 
   dplyr::filter(predator=="Resident Orca") %>% 
@@ -87,7 +86,7 @@ invert.data %>%
   labs(x = "Predator",y="Proportion")+
   #  facet_wrap(~Predator)+
   theme_bw()+
-  theme(legend.position="bottom",
+  theme(legend.position="bottom")
 
 
 ```

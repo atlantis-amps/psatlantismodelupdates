@@ -98,6 +98,8 @@ plot(embayment.areas)
 
 
 ```{r}
+#| echo: false
+#| eval: false
 #read in dataset 
 jellydf <- readxl::read_excel(here::here("inputs","Revised_Compiled_Data.xlsx"))
 

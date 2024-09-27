@@ -28,8 +28,9 @@ The AMPS has 89 polygons that extend over 9652 km2, including 60 water column po
 
 * Explore whether top-down processes - predation and bottom-up processes—including competition and primary productivity—have led to shifts in prey availability, timing, and quality for juvenile Chinook and coho salmon. [In prep](https://hmorzaria.github.io/pssalmonsurvival/). 
 
+* Link the AMPS to a watershed model and a biogeochemical model through the [Puget Sound Integrated Modeling Framework](https://www.pugetsoundinstitute.org/about/pugetsoundmodeling/)
+
 * Provide insight into the ecosystem effects of management actions aimed at Southern Resident Killer Whales. WA Sea Grant project.
 
 * Examine the ecological role of increasing jellyfish populations. WA Sea Grant project.
 
-* Link the AMPS to a watershed model and a biogeochemical model through the [Puget Sound Integrated Modeling Framework](https://www.pugetsoundinstitute.org/about/pugetsoundmodeling/)
