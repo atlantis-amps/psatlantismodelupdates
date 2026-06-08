@@ -1,0 +1,14 @@
+---
+title: "diets"
+---
+
+##Pacific Halibut 
+Pacific Halibut diet was updated as existing diet in the AMPS only reflected young juveniles. We used data from 
+St-Pierre, Gilbert, and Robert J. Trumble. 2000. Diet of juvenile Pacific halibut. International Pacific Halibut Commission. Technical Report No. 43. Seattle, WA 16 pp
+
+
+##*Aurelia labiata*
+We added diet for *Aurelia labiata* jellyfish group, considering that Aurelia spp exhibit size-based and temporal shifts in trophic position (Fleming et al. 2015) and can prey on a wide variety of individuals (Sun  et al. 2021). We used the diet proportions for Aurelia coerulea reported by Sun et al. 2015, as this study used DNA metabarcoding to characterize the diet for two stages of Aurelia, polyps and ephyrae.
+
+Fleming, N.E., Harrod, C., Newton, J. and Houghton, J.D., 2015. Not all jellyfish are equal: isotopic evidence for inter-and intraspecific variation in jellyfish trophic ecology. PeerJ, 3, p.e1110.
+Sun, Tingting, Lei Wang, Jianmin Zhao, and Zhijun Dong. "Application of DNA metabarcoding to characterize the diet of the moon jellyfish Aurelia coerulea polyps and ephyrae." Acta Oceanologica Sinica 40 (2021): 160-167.

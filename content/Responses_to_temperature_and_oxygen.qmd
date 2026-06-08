@@ -1,0 +1,155 @@
+---
+title: "Responses to Temperature and Oxygen"
+format: html
+---
+
+## Overview
+
+Marine organisms exhibit complex responses to temperature and environmental drivers, with effects that vary between species, life stages, geographic regions, and other factors. We represented sensitivities to temperature and oxygen using the following options in Atlantis:
+
+- Thermal niches for movement
+- Thermal niches for spawning
+- Unimodal bioenergetic response to temperature
+- Temperature-dependent respiration
+- Minimum oxygen concentration (ectotherms only)
+
+## Literature Review Methodology
+
+We obtained the parameters for functional group responses to temperature and oxygen by conducting a literature review. The quantity and quality of the information available on sensitivity to temperature and oxygen was highly variable between species. For some species, more than one source was available for some parameters. Where no information was available for a species, we used information from related taxa. 
+
+Larvae and eggs are not explicitly represented in Atlantis, and there is no ontogenetic separation for most biological parameters that define functional responses to environmental drivers. Therefore, parameter values for adults were preferred where available. Where information from Puget Sound or the Salish Sea was not available, sources from other geographic regions were used instead, with preference for studies from neighboring geographic regions (e.g., US Pacific Northwest, US West Coast, or Alaska). 
+
+### Scoring System
+
+Where multiple studies were found for a parameter for a species, we used a scoring rubric to select between parameter values. When scoring a study, we consider the following factors hierarchically: study type, species, life stage, and geographic location. We considered study type to be the most important factor contributing to the score of a parameter because thermal tolerance thresholds can assume different meanings depending on the methodology and aims of a study.
+
+Single-species values were averaged to obtain parameter values for multispecies functional groups.
+
+::: {.callout-note}
+## Table 1: Scoring System
+Scoring system to weigh parameter values from multiple sources. The total score S is computed as S = (W*z). *Values for eggs/embryos/larvae are scored 1 for parameters related to min_spawn_temp and max_spawn_temp. In case of a tie, parameter values were averaged.
+:::
+
+| Criterion | Weight (W) | Scores (z) |
+|-----------|------------|------------|
+| **Study type** | 5 | Experiment - 1<br>Model - 0.5<br>Global database - 0.25<br>Field observation - 0.1 |
+| **Species** | 4 | Same species - 1<br>Same genus - 0.5<br>Same family - 0.25<br>Generic/other - 0.1 |
+| **Life stage** | 3 | Adult - 1<br>Juvenile - 0.5<br>Egg/embryo/larva - 0.25* |
+| **Location** | 2 | PS/Salish Sea/Pacific Northwest - 1<br>NE Pacific - 0.5<br>Global/Other location - 0.25 |
+
+## Temperature
+
+### Thermal Tolerance Niches
+
+We imposed restriction to the spatial distributions of functional groups in the model by setting values of minimum and maximum tolerated temperature (parameters `min_move_temp` and `max_move_temp` in Atlantis). For many species in the model, particularly for Pacific salmon, we could find several observational studies that linked the presence of a species with the temperatures observed in the field. However, the tolerance limits in Atlantis were intended to be a broad range of temperatures at which a species could occur. As such, we preferred using the broad thermal envelope identified for each species by AquaMaps (Kaschner et al. 2019). AquaMaps (www.aquamaps.org) is a public global database of model-based, large-scale predictions of species occurrences that provides information on species environmental envelopes, including their preferred thermal range.
+
+To capture the effect of temperature on the reproduction of stenothermic species, we parameterized spawning limitations based on the available information on thermal limits for spawning, egg hatching, and larval survival. In Atlantis, the user can define the maximum and minimum values of temperature that allow spawning to occur (parameters `min_spawn_temp` and `max_spawn_temp`). These parameters work by preventing the spawning process from occurring if temperature in a cell is outside the defined range, meaning that effects of temperature on eggs or larvae are implicit. Eggs and larvae are not explicitly represented in Atlantis, and it is therefore impossible to distinguish between the effects of temperature on different pre-recruitment stages.
+
+### Bioenergetic Responses to Temperature
+
+#### Consumption
+
+Atlantis allows to represent bioenergetic responses to temperature for ectotherms. We applied a dome-shaped bioenergetic response of ectotherm metabolism to increasing temperature. The response curve follows the formulation of Kitchell et al. (1977) and is applied sensu Rovellini et al. (2024). Briefly, a temperature-dependent correction factor for metabolism $T_{corr}$ is calculated as:
+
+$$T_{corr} = \frac{V^X \cdot e^{X(1-V)}}{(e^{X})^{0.98(1-V)}}$$
+
+Where:
+
+$$V = \frac{T_{CM} - T}{T_{CM} - T_{C0}}$$
+
+$$X = \frac{(ln(Q_{10})(T_{CM} - T_{C0} + 2))^2}{400}$$
+
+Where $T_{C0}$ is the temperature of highest consumption, $T_{CM}$ is the water temperature above which no consumption occurs, and $Q_{10}$ approximates the slope of the ascending limb of the curve. In Atlantis, the multiplier gets applied to consumption-dependent growth (parameters `mum` and `C`), and also to the mortality terms (`mL` and `mQ`).
+
+#### Respiration
+
+Atlantis allows to represent maintenance costs via implicit assimilation efficiency and, for age-structured groups, by modeling temperature- and weight-dependent respiration explicitly. We turned on respiration, as this feature was turned off in the original version of the model. Then, we imposed an effect of temperature on fish respiration R (the daily N weight lost to respiration) as:
+
+$$R = K_A \cdot W^{K_B} \cdot e^{K_{tmp} \cdot T}$$
+
+Where $K_A$ is the allometric respiration constant (mg N mg⁻¹ N d⁻¹), $W$ is the individual's dry weight in mg N, $K_B$ is the allometric respiration exponent, and $K_{tmp}$ is a constant. Parameters $K_A$ and $K_B$ were specific for each functional group, while $K_{tmp}$ is written in Atlantis to have one value for all teleosts and one for all chondrichthyans (0.086 and 0.075, respectively). 
+
+Notably, respiration costs in Atlantis are represented as consumed dry weight, instead of oxygen. This also meant that the units of most of the parameter values obtained from the literature had to be converted accordingly.
+
+::: {.callout-note}
+## Table 2: Bioenergetic and Respiration Parameters
+Bioenergetic and respiration parameters for fish groups from the literature review.
+:::
+
+| Group | Q10 | TC0 (°C) | TCM (°C) | KA | KB |
+|-------|-----|----------|----------|----|----|
+| Pacific Herring Puget Sound | 2.20 | 14.20 | 17.90 | 0.0019 | 0.773 |
+| Pacific Herring Cherry Point | 2.20 | 14.20 | 17.90 | 0.0019 | 0.773 |
+| Small Planktivorous Fish | 2.75 | 17.00 | 19.00 | 0.0017 | 0.190 |
+| Perch | 2.75 | 15.00 | 20.00 | 0.0023 | 0.780 |
+| Chinook Hatch Yearling | 2.50 | 15.00 | 22.40 | 0.0015 | 0.783 |
+| Chinook Hatch Subyearling | 2.50 | 15.00 | 22.40 | 0.0015 | 0.783 |
+| Chinook Skagit Yearling | 2.50 | 15.00 | 22.40 | 0.0015 | 0.783 |
+| Chinook Skagit Subyearling | 2.50 | 15.00 | 22.40 | 0.0015 | 0.783 |
+| Chinook Snohomish Subyearling | 2.50 | 15.00 | 22.40 | 0.0015 | 0.783 |
+| Chinook Duwamish Subyearling | 2.50 | 15.00 | 22.40 | 0.0015 | 0.783 |
+| Chinook Nisqually Yearling | 2.50 | 15.00 | 22.40 | 0.0015 | 0.783 |
+| Chinook Nisqually Subyearling | 2.50 | 15.00 | 22.40 | 0.0015 | 0.783 |
+| Chinook Hood Canal Subyearling | 2.50 | 15.00 | 22.40 | 0.0015 | 0.783 |
+| Chinook other Yearling | 2.50 | 15.00 | 22.40 | 0.0015 | 0.783 |
+| Chinook other Subyearling | 2.50 | 15.00 | 22.40 | 0.0015 | 0.783 |
+| Chinook resident Hood canal | 2.50 | 15.00 | 22.40 | 0.0015 | 0.783 |
+| Chinook resident North Puget Sound | 2.50 | 15.00 | 22.40 | 0.0015 | 0.783 |
+| Chinook resident central south Puget Sound | 2.50 | 15.00 | 22.40 | 0.0015 | 0.783 |
+| Coho Hatch Yearling | 2.75 | 18.00 | 24.00 | 0.0015 | 0.783 |
+| Coho Skagit Yearling | 2.75 | 18.00 | 24.00 | 0.0015 | 0.783 |
+| Coho Deep South Yearling | 2.75 | 18.00 | 24.00 | 0.0015 | 0.783 |
+| Coho other Yearling | 2.75 | 18.00 | 24.00 | 0.0015 | 0.783 |
+| Coho resident Puget Sound wide | 2.75 | 18.00 | 24.00 | 0.0015 | 0.783 |
+| Coho resident Deep South Yearling | 2.75 | 18.00 | 24.00 | 0.0015 | 0.783 |
+| Chum Hatch Subyearling | 2.75 | 15.80 | 21.07 | 0.0023 | 0.780 |
+| Chum Fall Subyearling | 2.75 | 15.80 | 21.07 | 0.0023 | 0.780 |
+| Chum Hood Canal summer run Subyearling | 2.75 | 15.80 | 21.07 | 0.0023 | 0.780 |
+| Pink Salmon Subyearling | 2.75 | 15.00 | 20.00 | 0.0023 | 0.780 |
+| Other salmonids | 2.75 | 17.40 | 25.14 | 0.0008 | 0.791 |
+| Strait of Georgia salmonids | 2.50 | 15.00 | 22.40 | 0.0015 | 0.783 |
+| Hake_Large gadoids | 2.50 | 10.57 | 15.50 | 0.0033 | 0.794 |
+| Large demersal predators | 2.50 | 15.00 | 20.00 | 0.0015 | 0.775 |
+| Demersal rockfish | 2.75 | 15.00 | 20.00 | 0.0081 | 0.752 |
+| Midwater rockfish | 2.75 | 15.75 | 21.00 | 0.0081 | 0.752 |
+| Demersal vulnerable rockfish | 2.80 | 17.83 | 23.00 | 0.0057 | 0.752 |
+| Midwater vulnerable rockfish | 2.75 | 15.00 | 20.00 | 0.0081 | 0.752 |
+| Small demersal fish | 4.50 | 20.50 | 21.50 | 0.0009 | 0.668 |
+| Small-mouthed Flatfish | 1.76 | 9.50 | 21.00 | 0.0023 | 0.780 |
+| Piscivorous flatfish | 2.79 | 16.74 | 22.00 | 0.0023 | 0.780 |
+| Spiny dogfish | 1.76 | 19.00 | 25.00 | 0.0037 | 0.860 |
+| Sixgill Shark | 2.75 | 15.00 | 20.00 | 0.0023 | 0.780 |
+| Skates | 2.75 | 15.00 | 20.00 | 0.0023 | 0.780 |
+| Ratfish | 2.75 | 15.00 | 20.00 | 0.0023 | 0.780 |
+
+### Marine Mammal Respiration
+
+For marine mammals, we express the respiration as a function of weight W only, assuming that water temperature does not impact the metabolism rate for endotherm species. Similarly, we assume that bird respiration rates are not a function of the water temperature. For these groups, the respiration is expressed as follows:
+
+$$R = K_A \cdot W^{K_B}$$
+
+where $K_A$ is the allometric respiration constant (g N·mg⁻¹ N·d⁻¹), $W$ is the individual's dry weight in mg N, $K_B$ is the allometric respiration exponent, and $K_{tmp}$ is a constant. Parameters $K_A$ and $K_B$ were specific for each functional group.
+
+::: {.callout-note}
+## Table 3: Marine Mammal and Bird Parameters
+Bioenergetic and respiration parameters for marine mammal and bird groups from the literature review.
+:::
+
+| Group | KA | KB |
+|-------|----|----|
+| Resident orca | 0.024241 | 0.75 |
+| Transient orcas | 0.024241 | 0.75 |
+| California sea lions | 0.052212 | 0.75 |
+| California Sea Lion | 0.039015 | 0.75 |
+| Harbor seal | 0.019651 | 0.75 |
+| Harbor seals | 0.028114 | 0.75 |
+| Humpback | 0.024241 | 0.75 |
+| Piscivorous seabirds | 0.0005478955 | 0.774 |
+| Non-piscivorous seabirds | 0.0005478955 | 0.774 |
+| Raptors | 0.0005478955 | 0.774 |
+
+## Oxygen Sensitivity
+
+Water-breathing organisms are limited by the concentration of dissolved oxygen available in the water. While oxygen consumption, and therefore susceptibility to oxygen limitation, varies dynamically with body weight and temperature in ectotherms, oxygen concentration is not explicitly included in the current formulation of respiration and bioenergetic responses in Atlantis. 
+
+However, to capture the lethal effects of anoxic conditions, which are known to occur in Puget Sound, we imposed lower limits of dissolved oxygen below which mortality occurs (Atlantis parameters `XXX_min_O2` for age-structured groups, and `KO2LIM_XXX` for biomass pools). Parameter values were obtained from the R package published at https://github.com/tessington/metabolic_index (Essington et al., in prep.). We used the predicted posterior medians of the critical oxygen partial pressure for each taxon, converted from kPa to mg m⁻³ using the R package "respR".
