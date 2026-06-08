@@ -5,7 +5,7 @@ Sys.setlocale("LC_CTYPE", "en_US.UTF-8")# https://www.r-bloggers.com/web-scrapin
 
 # List of packages for session
 .packages = c("devtools", "stringi","data.table","tidyverse","stringr","R.utils",
-              "magrittr","future","parallel","here","sdmTMB","readr")
+              "magrittr","future","parallel","here","sdmTMB","readr","formatR")
 #install.packages(.packages, dependencies = TRUE)
 
 # Load packages into session
