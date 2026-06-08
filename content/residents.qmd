@@ -5,6 +5,20 @@ editor:
     wrap: 72
 ---
 
+```{r}
+#| message: false
+#| warning: false
+
+library(readr)
+library(ggplot2)
+install.packages("sdmTMB", dependencies = TRUE)
+library(sdmTMB)
+library(data.table)
+library(dplyr)
+library(tidyr)
+library(sf)
+library(rnaturalearthdata)
+```
 Resident orcas simulate the Southern Resident Killer Whale endemic
 population
 
@@ -66,11 +80,11 @@ ror.diet.plot <- diet.matrix.ROR %>%
   ggplot2::ggplot(ggplot2::aes(x=pred_stage, y=value, fill = prey)) + 
   ggplot2::geom_bar(stat = "identity") +
   ggplot2::coord_flip() +
-  scale_fill_manual(values=fill)+
-  labs(x = "Resident orcas (adult)",y="Proportion") +
+  ggplot2::scale_fill_manual(values=fill)+
+  ggplot2::labs(x = "Resident orcas (adult)",y="Proportion") +
   #facet_wrap(~prey)+
-  theme_bw()+
-  theme(legend.position="bottom",
+  ggplot2::theme_bw()+
+  ggplot2::theme(legend.position="bottom",
         legend.title = element_blank())
 
 
@@ -84,11 +98,6 @@ ror.diet.plot <- diet.matrix.ROR %>%
 
 -   Spatial distributions based on SRKW sightings. Estimated based on
     Thorson et al. 2015
-
-``` {r}
-    install.packages("sdmTMB", dependencies = TRUE)
-
-```
 
 -   Seasonal distribution
 

@@ -9,6 +9,16 @@ bibliography: jellyfishbiblio.bib
 csl: ecology.csl
 ---
 
+
+```{r}
+#| message: false
+#| warning: false
+
+library(knitr)
+library(here)
+library(readr)
+```
+
 ## Addition of a Jellyfish functional group
 
 <img width="540" alt="image" src="https://user-images.githubusercontent.com/11339490/204919117-510c0fbb-99d0-43e8-abc4-f5fe7c4beef6.png">
