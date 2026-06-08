@@ -37,7 +37,7 @@ website:
         text: About
       - href: content/salmon.qmd
         text: Salmon
-      - href: content/jellyfish.qmd
+      - href: content/jellyfishtext.qmd
         text: Jellyfish
       - href: content/residents.qmd
         text: Resident orcas

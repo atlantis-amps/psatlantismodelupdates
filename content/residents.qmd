@@ -8,8 +8,7 @@ editor:
 Resident orcas simulate the Southern Resident Killer Whale endemic
 population
 
--   Updated the diet using Ford et al. 1998, Ford & Ellis, 2006, Ford
-    2009, Hanson et al., 2010 & 2021 and Hermann et al. 2015
+-   Updated the diet using Ford et al. 1998, Ford & Ellis, 2006, Ford 2009, Hanson et al., 2010 & 2021 and Hermann et al. 2015
     
 ```{r}
 #| echo: false
@@ -321,23 +320,10 @@ write.csv(whalesin10_atlantis,here::here("inputs","AtlantisBox_occurrence","SRKW
 
 **References**
 
-Ford, J.K.B., G.A. Ellis, L.G. Barrett-Lennard, A.B. Morton, R.S. Palm &
-K.C. Balcomb. 1998. Dietary specialization in two sympatric populations
-of killer whales (*Orcinus orca)* in coastal British Columbia and
-adjacent waters. Canadian Journal of Zoology-Revue Canadienne de
-Zoologie 76: 1456--1471.
+Ford, J.K.B., G.A. Ellis, L.G. Barrett-Lennard, A.B. Morton, R.S. Palm & K.C. Balcomb. 1998. Dietary specialization in two sympatric populations of killer whales (*Orcinus orca)* in coastal British Columbia and adjacent waters. Canadian Journal of Zoology-Revue Canadienne de Zoologie 76: 1456--1471.
 
-Ford, J.K.B. & G.M. Ellis. 2006. Selective foraging by fish-eating
-killer whales *Orcinus orca* in British Columbia. Mar. Ecol. Prog. Ser.
-316: 185--199.
+Ford, J.K.B. & G.M. Ellis. 2006. Selective foraging by fish-eating killer whales *Orcinus orca* in British Columbia. Mar. Ecol. Prog. Ser. 316: 185--199.
 
-Ford, J.K.B. 2009. Chinook salmon predation by resident killer whales:
-Seasonal and regional selectivity, stock identity of prey, and
-consumption rates. Canadian Science Advisory Secretariat = Secrétariat
-canadien de consultation scientifique.
+Ford, J.K.B. 2009. Chinook salmon predation by resident killer whales: Seasonal and regional selectivity, stock identity of prey, and consumption rates. Canadian Science Advisory Secretariat = Secrétariat canadien de consultation scientifique.
 
-Thorson, J.T., Shelton, A.O., Ward, E.J., Skaug, H.J., 2015.
-Geostatistical delta-generalized linear mixed models improve precision
-for estimated abundance indices for West Coast groundfishes. ICES J.
-Mar. Sci. J. Cons. 72(5), 1297--1310. doi:10.1093/icesjms/fsu243. URL:
-<http://icesjms.oxfordjournals.org/content/72/5/1297>
+Thorson, J.T., Shelton, A.O., Ward, E.J., Skaug, H.J., 2015. Geostatistical delta-generalized linear mixed models improve precision for estimated abundance indices for West Coast groundfishes. ICES J. Mar. Sci. J. Cons. 72(5), 1297--1310. doi:10.1093/icesjms/fsu243. URL: <http://icesjms.oxfordjournals.org/content/72/5/1297>
