@@ -1,11 +1,12 @@
 install.packages("rnaturalearthhires", repos = "http://packages.ropensci.org", type = "source")
 
-.packages = c("tidyverse","devtools","readxl",
+.packages = c("dplyr","devtools","readxl",
               "sp","sf","rnaturalearth",
               "rnaturalearthdata","here", "raster", "exactextractr",
               "glmmTMB","knitr","readr", "rlang", "ggplot2","ggrepel",
-              "mapview","rgdal","formattable","ggpubr","RColorBrewer",
-              "grDevices","readr")
+              "mapview","formattable","RColorBrewer",
+              "grDevices","readr","stringi","data.table","tidyr","stringr","R.utils",
+              "magrittr","future","parallel","here","sdmTMB","formatR")
 
 
 # .packages = c("tidyverse","devtools","readxl",

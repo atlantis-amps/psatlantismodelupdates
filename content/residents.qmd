@@ -27,7 +27,7 @@ population
 ```{r}
 #| echo: false
 #| eval: true 
-source("/home/atlantis/psatlantismodelupdates/inputs/libraries.R")
+source(here::here("libraries.R")) #need to figure out which ones are actually needed
 #External drive (currently G:) /Azure_download/ dietps
 #Original data in Diet_database_V1_no_figures.xlsx
 #Diet data estimated using Dirichelet in Diet_PS_rev2023.R
