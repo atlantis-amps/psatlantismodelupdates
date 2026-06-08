@@ -2,6 +2,13 @@
 title: Salmon groups
 ---
 
+```{r}
+#| message: false
+#| warning: false
+
+library(knitr)
+library(readr)
+```
 # Diet 
 Updated diet values, including insect supplementation
 ## Insect supplementation to salmon diet 
