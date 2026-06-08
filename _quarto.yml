@@ -35,8 +35,18 @@ website:
         text: Home
       - href: about.qmd
         text: About
+      - href: content/Initial_conditions.qmd
+        text: Initial conditions
+      - href: content/Parameter_updates_during_calibration.qmd
+        text: Calibration
+      - href: content/diet.qmd
+        text: Diets
+      - href: content/KDEP.qmd
+        text: Biological parameters
+      - href: content/Responses_to_temperature_and_oxygen.qmd
+        text: Response to temperature and O2
       - href: content/salmon.qmd
-        text: Salmon
+        text: Salmon gorups
       - href: content/jellyfishtext.qmd
         text: Jellyfish
       - href: content/residents.qmd
@@ -45,6 +55,10 @@ website:
         text: Foodweb
       - href: content/acknowledgments.qmd
         text: Acknowledgments
+      - href: content/Parametrization_contaminant_submodule_PCBs.qmd.qmd
+        text: PCBs
+
+      
 
 
 format:

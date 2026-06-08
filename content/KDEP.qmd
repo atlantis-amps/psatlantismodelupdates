@@ -1,0 +1,11 @@
+---
+title: "KDEP"
+format: html
+---
+
+## KDEP Parameter Updates
+
+Updated parameter to more closely resemble parameters in the California Current and Gulf of Mexico models:
+
+- **0.001** for most fish
+- **0.1** for bivalves

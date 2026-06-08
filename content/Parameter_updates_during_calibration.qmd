@@ -1,0 +1,53 @@
+---
+title: "Parameter Updates During Calibration Process"
+format: html
+---
+
+## Overview
+
+The calibration process involved substantial structural and parametric modifications to improve model stability and ecological realism. A heuristic, multi-objective evolutionary algorithm was used to calibrate the model in a semi-automated way.
+
+## Calibration Phases
+
+### No-Fishing Calibration Phase
+
+During the no-fishing calibration phase, calibration targeted observed biomass and weight-at-age data. The following parameters were calibrated:
+
+| Parameter | Groups |
+|-----------|--------|
+| `mum` | All species |
+| `BHalpha` | Fish groups |
+| `KDENR` | Marine mammals and seabirds |
+| `mQ` | Zooplankton |
+
+### Fishing Activation Phase
+
+When the fishing process was activated, catch data was added as a calibration target, and `mFC` (fishing mortality) was calibrated for all exploited groups.
+
+## Manual Adjustments
+
+Between automated calibration runs, targeted manual adjustments were made to improve emergent ecosystem dynamics. These included:
+
+### 1. Maturation Ogives
+
+Maturation ogives were modified to prevent unrealistic population growth in species using a "recruits-per-adult" reproduction option. In particular, reproduction was disabled for the first age class to avoid numerical instabilities caused by exponential recruitment feedback.
+
+### 2. Benthic Species Spatial Distribution
+
+Benthic species spatial distribution was corrected by activating a model flag that enforces habitat mapping based on input data, ensuring consistency with spatial constraints.
+
+### 3. Predation Mortality Rates
+
+Predation mortality rates (`mQ`) were initially set to zero for all groups, except juvenile stages of age-structured species, for which `mQ` remained active to prevent uncontrolled demographic expansion during calibration.
+
+### 4. Starvation Mortality Responses
+
+Starvation mortality responses were enhanced by increasing the sensitivity to food limitation:
+
+- `Kthreshm` was increased (from X to X)
+- `mStrav` was also raised (from X to X)
+- `flag_shrink` parameter was set to 1, enabling individuals to lose structural or reserve biomass under starvation conditions
+
+::: {.callout-note}
+Note: Specific values for the parameter increases need to be filled in where marked with "X to X".
+:::

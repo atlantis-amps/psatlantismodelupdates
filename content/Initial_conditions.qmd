@@ -1,0 +1,20 @@
+---
+title: "Initial Conditions"
+format: html
+---
+
+## Initial Biomass Revisions
+
+We revised the initial biomasses of several groups to prevent unrealistic collapses under predation pressure in the first years of simulation. Specifically, we increased the initial biomasses of shrimp and the three phytoplankton functional groups (small, medium and large).
+
+### Zooplankton
+
+Initial biomass was increased **10 times**, based on the average biomass predicted by the SSM.
+
+### Shrimp
+
+Shrimp biomass was increased from **2,659 t** to **50,000 t**, informed by regional biomass estimates from the Ecopath model (Harvey et al. 2010).
+
+## Reference
+
+Harvey, C.J., Williams, G.D. and Levin, P.S., 2010. Food web structure and trophic control in central Puget Sound. Estuaries and Coasts, 33(6), pp.1360-1376.
