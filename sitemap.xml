@@ -1,35 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://hmorzaria.github.io/psatlantismodelupdates/content/rendering.html</loc>
-    <lastmod>2022-11-29T21:25:36.960Z</lastmod>
+    <loc>https://hmorzaria.github.io/psatlantismodelupdates/index.html</loc>
+    <lastmod>2026-06-09T17:46:17.249Z</lastmod>
   </url>
   <url>
-    <loc>https://hmorzaria.github.io/psatlantismodelupdates/content/rmarkdown.html</loc>
-    <lastmod>2022-11-29T21:25:41.724Z</lastmod>
+    <loc>https://hmorzaria.github.io/psatlantismodelupdates/content/KDEP.html</loc>
+    <lastmod>2026-06-09T17:46:17.249Z</lastmod>
   </url>
   <url>
-    <loc>https://hmorzaria.github.io/psatlantismodelupdates/content/code.html</loc>
-    <lastmod>2022-11-29T21:25:43.180Z</lastmod>
+    <loc>https://hmorzaria.github.io/psatlantismodelupdates/content/jellyfishtext.html</loc>
+    <lastmod>2026-06-09T17:46:17.249Z</lastmod>
   </url>
   <url>
-    <loc>https://hmorzaria.github.io/psatlantismodelupdates/content/customizing.html</loc>
-    <lastmod>2022-11-29T21:25:43.632Z</lastmod>
+    <loc>https://hmorzaria.github.io/psatlantismodelupdates/content/diet.html</loc>
+    <lastmod>2026-06-09T17:46:17.249Z</lastmod>
   </url>
   <url>
-    <loc>https://hmorzaria.github.io/psatlantismodelupdates/content/jellyfish.html</loc>
-    <lastmod>2022-11-29T21:25:44.120Z</lastmod>
+    <loc>https://hmorzaria.github.io/psatlantismodelupdates/content/Parametrization_contaminant_submodule_PCBs.html</loc>
+    <lastmod>2026-06-09T17:46:17.249Z</lastmod>
   </url>
   <url>
-    <loc>https://hmorzaria.github.io/psatlantismodelupdates/content/publishing.html</loc>
-    <lastmod>2022-11-29T21:25:44.592Z</lastmod>
+    <loc>https://hmorzaria.github.io/psatlantismodelupdates/content/Initial_conditions.html</loc>
+    <lastmod>2026-06-09T17:46:17.248Z</lastmod>
   </url>
   <url>
     <loc>https://hmorzaria.github.io/psatlantismodelupdates/content/acknowledgements.html</loc>
-    <lastmod>2022-11-29T21:25:45.028Z</lastmod>
+    <lastmod>2026-06-09T17:46:17.249Z</lastmod>
   </url>
   <url>
-    <loc>https://hmorzaria.github.io/psatlantismodelupdates/index.html</loc>
-    <lastmod>2022-11-29T21:25:45.536Z</lastmod>
+    <loc>https://hmorzaria.github.io/psatlantismodelupdates/content/about.html</loc>
+    <lastmod>2026-06-09T17:46:17.249Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hmorzaria.github.io/psatlantismodelupdates/content/salmon.html</loc>
+    <lastmod>2026-06-09T17:46:17.249Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hmorzaria.github.io/psatlantismodelupdates/content/Responses_to_temperature_and_oxygen.html</loc>
+    <lastmod>2026-06-09T17:46:17.249Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hmorzaria.github.io/psatlantismodelupdates/content/foodweb.html</loc>
+    <lastmod>2026-06-09T17:46:17.249Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hmorzaria.github.io/psatlantismodelupdates/content/residents.html</loc>
+    <lastmod>2026-06-09T17:46:17.249Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hmorzaria.github.io/psatlantismodelupdates/content/Parameter_updates_during_calibration.html</loc>
+    <lastmod>2026-06-09T17:46:17.249Z</lastmod>
   </url>
 </urlset>

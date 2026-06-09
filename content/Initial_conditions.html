@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Acknowledgments – Atlantis Model for Puget Sound</title>
+<title>Initial Conditions – Atlantis Model for Puget Sound</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -32,6 +32,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../content/Parameter_updates_during_calibration.html" rel="next">
+<link href="../about.qmd" rel="prev">
 <link href="../images/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -249,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Acknowledgments</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/Initial_conditions.html">Initial conditions</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -294,7 +296,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/Initial_conditions.html" class="sidebar-item-text sidebar-link">
+  <a href="../content/Initial_conditions.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Initial conditions</span></a>
   </div>
 </li>
@@ -363,8 +365,19 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#initial-biomass-revisions" id="toc-initial-biomass-revisions" class="nav-link active" data-scroll-target="#initial-biomass-revisions">Initial Biomass Revisions</a>
+  <ul class="collapse">
+  <li><a href="#zooplankton" id="toc-zooplankton" class="nav-link" data-scroll-target="#zooplankton">Zooplankton</a></li>
+  <li><a href="#shrimp" id="toc-shrimp" class="nav-link" data-scroll-target="#shrimp">Shrimp</a></li>
+  </ul></li>
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/edit/main/content/Initial_conditions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/blob/main/content/Initial_conditions.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -372,7 +385,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Acknowledgments</h1>
+<h1 class="title">Initial Conditions</h1>
 </div>
 
 
@@ -389,9 +402,24 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This repo and GitHub Action was based on the tutorial by Openscapes <a href="https://github.com/Openscapes/quarto-website-tutorial">quarto-website-tutorial</a> by Julia Lowndes and Stefanie Butland.</p>
+<section id="initial-biomass-revisions" class="level2">
+<h2 class="anchored" data-anchor-id="initial-biomass-revisions">Initial Biomass Revisions</h2>
+<p>We revised the initial biomasses of several groups to prevent unrealistic collapses under predation pressure in the first years of simulation. Specifically, we increased the initial biomasses of shrimp and the three phytoplankton functional groups (small, medium and large).</p>
+<section id="zooplankton" class="level3">
+<h3 class="anchored" data-anchor-id="zooplankton">Zooplankton</h3>
+<p>Initial biomass was increased <strong>10 times</strong>, based on the average biomass predicted by the SSM.</p>
+</section>
+<section id="shrimp" class="level3">
+<h3 class="anchored" data-anchor-id="shrimp">Shrimp</h3>
+<p>Shrimp biomass was increased from <strong>2,659 t</strong> to <strong>50,000 t</strong>, informed by regional biomass estimates from the Ecopath model (Harvey et al.&nbsp;2010).</p>
+</section>
+</section>
+<section id="reference" class="level2">
+<h2 class="anchored" data-anchor-id="reference">Reference</h2>
+<p>Harvey, C.J., Williams, G.D. and Levin, P.S., 2010. Food web structure and trophic control in central Puget Sound. Estuaries and Coasts, 33(6), pp.1360-1376.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -807,6 +835,18 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../about.qmd" class="pagination-link" aria-label="About">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">About</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../content/Parameter_updates_during_calibration.html" class="pagination-link" aria-label="Calibration">
+        <span class="nav-page-text">Calibration</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -815,7 +855,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/edit/main/content/acknowledgements.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/blob/main/content/acknowledgements.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/edit/main/content/Initial_conditions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/blob/main/content/Initial_conditions.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

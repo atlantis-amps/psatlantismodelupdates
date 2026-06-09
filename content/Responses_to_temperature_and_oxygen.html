@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Acknowledgments – Atlantis Model for Puget Sound</title>
+<title>Responses to Temperature and Oxygen – Atlantis Model for Puget Sound</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -32,6 +32,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../content/salmon.html" rel="next">
+<link href="../content/KDEP.html" rel="prev">
 <link href="../images/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -75,6 +77,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -249,7 +280,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Acknowledgments</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/Responses_to_temperature_and_oxygen.html">Response to temperature and O2</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -318,7 +349,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/Responses_to_temperature_and_oxygen.html" class="sidebar-item-text sidebar-link">
+  <a href="../content/Responses_to_temperature_and_oxygen.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Response to temperature and O2</span></a>
   </div>
 </li>
@@ -363,8 +394,25 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#literature-review-methodology" id="toc-literature-review-methodology" class="nav-link" data-scroll-target="#literature-review-methodology">Literature Review Methodology</a>
+  <ul class="collapse">
+  <li><a href="#scoring-system" id="toc-scoring-system" class="nav-link" data-scroll-target="#scoring-system">Scoring System</a></li>
+  </ul></li>
+  <li><a href="#temperature" id="toc-temperature" class="nav-link" data-scroll-target="#temperature">Temperature</a>
+  <ul class="collapse">
+  <li><a href="#thermal-tolerance-niches" id="toc-thermal-tolerance-niches" class="nav-link" data-scroll-target="#thermal-tolerance-niches">Thermal Tolerance Niches</a></li>
+  <li><a href="#bioenergetic-responses-to-temperature" id="toc-bioenergetic-responses-to-temperature" class="nav-link" data-scroll-target="#bioenergetic-responses-to-temperature">Bioenergetic Responses to Temperature</a></li>
+  <li><a href="#marine-mammal-respiration" id="toc-marine-mammal-respiration" class="nav-link" data-scroll-target="#marine-mammal-respiration">Marine Mammal Respiration</a></li>
+  </ul></li>
+  <li><a href="#oxygen-sensitivity" id="toc-oxygen-sensitivity" class="nav-link" data-scroll-target="#oxygen-sensitivity">Oxygen Sensitivity</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/edit/main/content/Responses_to_temperature_and_oxygen.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/blob/main/content/Responses_to_temperature_and_oxygen.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -372,7 +420,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Acknowledgments</h1>
+<h1 class="title">Responses to Temperature and Oxygen</h1>
 </div>
 
 
@@ -389,9 +437,569 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This repo and GitHub Action was based on the tutorial by Openscapes <a href="https://github.com/Openscapes/quarto-website-tutorial">quarto-website-tutorial</a> by Julia Lowndes and Stefanie Butland.</p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>Marine organisms exhibit complex responses to temperature and environmental drivers, with effects that vary between species, life stages, geographic regions, and other factors. We represented sensitivities to temperature and oxygen using the following options in Atlantis:</p>
+<ul>
+<li>Thermal niches for movement</li>
+<li>Thermal niches for spawning</li>
+<li>Unimodal bioenergetic response to temperature</li>
+<li>Temperature-dependent respiration</li>
+<li>Minimum oxygen concentration (ectotherms only)</li>
+</ul>
+</section>
+<section id="literature-review-methodology" class="level2">
+<h2 class="anchored" data-anchor-id="literature-review-methodology">Literature Review Methodology</h2>
+<p>We obtained the parameters for functional group responses to temperature and oxygen by conducting a literature review. The quantity and quality of the information available on sensitivity to temperature and oxygen was highly variable between species. For some species, more than one source was available for some parameters. Where no information was available for a species, we used information from related taxa.</p>
+<p>Larvae and eggs are not explicitly represented in Atlantis, and there is no ontogenetic separation for most biological parameters that define functional responses to environmental drivers. Therefore, parameter values for adults were preferred where available. Where information from Puget Sound or the Salish Sea was not available, sources from other geographic regions were used instead, with preference for studies from neighboring geographic regions (e.g., US Pacific Northwest, US West Coast, or Alaska).</p>
+<section id="scoring-system" class="level3">
+<h3 class="anchored" data-anchor-id="scoring-system">Scoring System</h3>
+<p>Where multiple studies were found for a parameter for a species, we used a scoring rubric to select between parameter values. When scoring a study, we consider the following factors hierarchically: study type, species, life stage, and geographic location. We considered study type to be the most important factor contributing to the score of a parameter because thermal tolerance thresholds can assume different meanings depending on the methodology and aims of a study.</p>
+<p>Single-species values were averaged to obtain parameter values for multispecies functional groups.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Table 1: Scoring System
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Scoring system to weigh parameter values from multiple sources. The total score S is computed as S = (W<em>z). </em>Values for eggs/embryos/larvae are scored 1 for parameters related to min_spawn_temp and max_spawn_temp. In case of a tie, parameter values were averaged.</p>
+</div>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 34%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Criterion</th>
+<th>Weight (W)</th>
+<th>Scores (z)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Study type</strong></td>
+<td>5</td>
+<td>Experiment - 1<br>Model - 0.5<br>Global database - 0.25<br>Field observation - 0.1</td>
+</tr>
+<tr class="even">
+<td><strong>Species</strong></td>
+<td>4</td>
+<td>Same species - 1<br>Same genus - 0.5<br>Same family - 0.25<br>Generic/other - 0.1</td>
+</tr>
+<tr class="odd">
+<td><strong>Life stage</strong></td>
+<td>3</td>
+<td>Adult - 1<br>Juvenile - 0.5<br>Egg/embryo/larva - 0.25*</td>
+</tr>
+<tr class="even">
+<td><strong>Location</strong></td>
+<td>2</td>
+<td>PS/Salish Sea/Pacific Northwest - 1<br>NE Pacific - 0.5<br>Global/Other location - 0.25</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="temperature" class="level2">
+<h2 class="anchored" data-anchor-id="temperature">Temperature</h2>
+<section id="thermal-tolerance-niches" class="level3">
+<h3 class="anchored" data-anchor-id="thermal-tolerance-niches">Thermal Tolerance Niches</h3>
+<p>We imposed restriction to the spatial distributions of functional groups in the model by setting values of minimum and maximum tolerated temperature (parameters <code>min_move_temp</code> and <code>max_move_temp</code> in Atlantis). For many species in the model, particularly for Pacific salmon, we could find several observational studies that linked the presence of a species with the temperatures observed in the field. However, the tolerance limits in Atlantis were intended to be a broad range of temperatures at which a species could occur. As such, we preferred using the broad thermal envelope identified for each species by AquaMaps (Kaschner et al.&nbsp;2019). AquaMaps (www.aquamaps.org) is a public global database of model-based, large-scale predictions of species occurrences that provides information on species environmental envelopes, including their preferred thermal range.</p>
+<p>To capture the effect of temperature on the reproduction of stenothermic species, we parameterized spawning limitations based on the available information on thermal limits for spawning, egg hatching, and larval survival. In Atlantis, the user can define the maximum and minimum values of temperature that allow spawning to occur (parameters <code>min_spawn_temp</code> and <code>max_spawn_temp</code>). These parameters work by preventing the spawning process from occurring if temperature in a cell is outside the defined range, meaning that effects of temperature on eggs or larvae are implicit. Eggs and larvae are not explicitly represented in Atlantis, and it is therefore impossible to distinguish between the effects of temperature on different pre-recruitment stages.</p>
+</section>
+<section id="bioenergetic-responses-to-temperature" class="level3">
+<h3 class="anchored" data-anchor-id="bioenergetic-responses-to-temperature">Bioenergetic Responses to Temperature</h3>
+<section id="consumption" class="level4">
+<h4 class="anchored" data-anchor-id="consumption">Consumption</h4>
+<p>Atlantis allows to represent bioenergetic responses to temperature for ectotherms. We applied a dome-shaped bioenergetic response of ectotherm metabolism to increasing temperature. The response curve follows the formulation of Kitchell et al.&nbsp;(1977) and is applied sensu Rovellini et al.&nbsp;(2024). Briefly, a temperature-dependent correction factor for metabolism <span class="math inline">\(T_{corr}\)</span> is calculated as:</p>
+<p><span class="math display">\[T_{corr} = \frac{V^X \cdot e^{X(1-V)}}{(e^{X})^{0.98(1-V)}}\]</span></p>
+<p>Where:</p>
+<p><span class="math display">\[V = \frac{T_{CM} - T}{T_{CM} - T_{C0}}\]</span></p>
+<p><span class="math display">\[X = \frac{(ln(Q_{10})(T_{CM} - T_{C0} + 2))^2}{400}\]</span></p>
+<p>Where <span class="math inline">\(T_{C0}\)</span> is the temperature of highest consumption, <span class="math inline">\(T_{CM}\)</span> is the water temperature above which no consumption occurs, and <span class="math inline">\(Q_{10}\)</span> approximates the slope of the ascending limb of the curve. In Atlantis, the multiplier gets applied to consumption-dependent growth (parameters <code>mum</code> and <code>C</code>), and also to the mortality terms (<code>mL</code> and <code>mQ</code>).</p>
+</section>
+<section id="respiration" class="level4">
+<h4 class="anchored" data-anchor-id="respiration">Respiration</h4>
+<p>Atlantis allows to represent maintenance costs via implicit assimilation efficiency and, for age-structured groups, by modeling temperature- and weight-dependent respiration explicitly. We turned on respiration, as this feature was turned off in the original version of the model. Then, we imposed an effect of temperature on fish respiration R (the daily N weight lost to respiration) as:</p>
+<p><span class="math display">\[R = K_A \cdot W^{K_B} \cdot e^{K_{tmp} \cdot T}\]</span></p>
+<p>Where <span class="math inline">\(K_A\)</span> is the allometric respiration constant (mg N mg⁻¹ N d⁻¹), <span class="math inline">\(W\)</span> is the individual’s dry weight in mg N, <span class="math inline">\(K_B\)</span> is the allometric respiration exponent, and <span class="math inline">\(K_{tmp}\)</span> is a constant. Parameters <span class="math inline">\(K_A\)</span> and <span class="math inline">\(K_B\)</span> were specific for each functional group, while <span class="math inline">\(K_{tmp}\)</span> is written in Atlantis to have one value for all teleosts and one for all chondrichthyans (0.086 and 0.075, respectively).</p>
+<p>Notably, respiration costs in Atlantis are represented as consumed dry weight, instead of oxygen. This also meant that the units of most of the parameter values obtained from the literature had to be converted accordingly.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Table 2: Bioenergetic and Respiration Parameters
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Bioenergetic and respiration parameters for fish groups from the literature review.</p>
+</div>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 12%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 10%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Group</th>
+<th>Q10</th>
+<th>TC0 (°C)</th>
+<th>TCM (°C)</th>
+<th>KA</th>
+<th>KB</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pacific Herring Puget Sound</td>
+<td>2.20</td>
+<td>14.20</td>
+<td>17.90</td>
+<td>0.0019</td>
+<td>0.773</td>
+</tr>
+<tr class="even">
+<td>Pacific Herring Cherry Point</td>
+<td>2.20</td>
+<td>14.20</td>
+<td>17.90</td>
+<td>0.0019</td>
+<td>0.773</td>
+</tr>
+<tr class="odd">
+<td>Small Planktivorous Fish</td>
+<td>2.75</td>
+<td>17.00</td>
+<td>19.00</td>
+<td>0.0017</td>
+<td>0.190</td>
+</tr>
+<tr class="even">
+<td>Perch</td>
+<td>2.75</td>
+<td>15.00</td>
+<td>20.00</td>
+<td>0.0023</td>
+<td>0.780</td>
+</tr>
+<tr class="odd">
+<td>Chinook Hatch Yearling</td>
+<td>2.50</td>
+<td>15.00</td>
+<td>22.40</td>
+<td>0.0015</td>
+<td>0.783</td>
+</tr>
+<tr class="even">
+<td>Chinook Hatch Subyearling</td>
+<td>2.50</td>
+<td>15.00</td>
+<td>22.40</td>
+<td>0.0015</td>
+<td>0.783</td>
+</tr>
+<tr class="odd">
+<td>Chinook Skagit Yearling</td>
+<td>2.50</td>
+<td>15.00</td>
+<td>22.40</td>
+<td>0.0015</td>
+<td>0.783</td>
+</tr>
+<tr class="even">
+<td>Chinook Skagit Subyearling</td>
+<td>2.50</td>
+<td>15.00</td>
+<td>22.40</td>
+<td>0.0015</td>
+<td>0.783</td>
+</tr>
+<tr class="odd">
+<td>Chinook Snohomish Subyearling</td>
+<td>2.50</td>
+<td>15.00</td>
+<td>22.40</td>
+<td>0.0015</td>
+<td>0.783</td>
+</tr>
+<tr class="even">
+<td>Chinook Duwamish Subyearling</td>
+<td>2.50</td>
+<td>15.00</td>
+<td>22.40</td>
+<td>0.0015</td>
+<td>0.783</td>
+</tr>
+<tr class="odd">
+<td>Chinook Nisqually Yearling</td>
+<td>2.50</td>
+<td>15.00</td>
+<td>22.40</td>
+<td>0.0015</td>
+<td>0.783</td>
+</tr>
+<tr class="even">
+<td>Chinook Nisqually Subyearling</td>
+<td>2.50</td>
+<td>15.00</td>
+<td>22.40</td>
+<td>0.0015</td>
+<td>0.783</td>
+</tr>
+<tr class="odd">
+<td>Chinook Hood Canal Subyearling</td>
+<td>2.50</td>
+<td>15.00</td>
+<td>22.40</td>
+<td>0.0015</td>
+<td>0.783</td>
+</tr>
+<tr class="even">
+<td>Chinook other Yearling</td>
+<td>2.50</td>
+<td>15.00</td>
+<td>22.40</td>
+<td>0.0015</td>
+<td>0.783</td>
+</tr>
+<tr class="odd">
+<td>Chinook other Subyearling</td>
+<td>2.50</td>
+<td>15.00</td>
+<td>22.40</td>
+<td>0.0015</td>
+<td>0.783</td>
+</tr>
+<tr class="even">
+<td>Chinook resident Hood canal</td>
+<td>2.50</td>
+<td>15.00</td>
+<td>22.40</td>
+<td>0.0015</td>
+<td>0.783</td>
+</tr>
+<tr class="odd">
+<td>Chinook resident North Puget Sound</td>
+<td>2.50</td>
+<td>15.00</td>
+<td>22.40</td>
+<td>0.0015</td>
+<td>0.783</td>
+</tr>
+<tr class="even">
+<td>Chinook resident central south Puget Sound</td>
+<td>2.50</td>
+<td>15.00</td>
+<td>22.40</td>
+<td>0.0015</td>
+<td>0.783</td>
+</tr>
+<tr class="odd">
+<td>Coho Hatch Yearling</td>
+<td>2.75</td>
+<td>18.00</td>
+<td>24.00</td>
+<td>0.0015</td>
+<td>0.783</td>
+</tr>
+<tr class="even">
+<td>Coho Skagit Yearling</td>
+<td>2.75</td>
+<td>18.00</td>
+<td>24.00</td>
+<td>0.0015</td>
+<td>0.783</td>
+</tr>
+<tr class="odd">
+<td>Coho Deep South Yearling</td>
+<td>2.75</td>
+<td>18.00</td>
+<td>24.00</td>
+<td>0.0015</td>
+<td>0.783</td>
+</tr>
+<tr class="even">
+<td>Coho other Yearling</td>
+<td>2.75</td>
+<td>18.00</td>
+<td>24.00</td>
+<td>0.0015</td>
+<td>0.783</td>
+</tr>
+<tr class="odd">
+<td>Coho resident Puget Sound wide</td>
+<td>2.75</td>
+<td>18.00</td>
+<td>24.00</td>
+<td>0.0015</td>
+<td>0.783</td>
+</tr>
+<tr class="even">
+<td>Coho resident Deep South Yearling</td>
+<td>2.75</td>
+<td>18.00</td>
+<td>24.00</td>
+<td>0.0015</td>
+<td>0.783</td>
+</tr>
+<tr class="odd">
+<td>Chum Hatch Subyearling</td>
+<td>2.75</td>
+<td>15.80</td>
+<td>21.07</td>
+<td>0.0023</td>
+<td>0.780</td>
+</tr>
+<tr class="even">
+<td>Chum Fall Subyearling</td>
+<td>2.75</td>
+<td>15.80</td>
+<td>21.07</td>
+<td>0.0023</td>
+<td>0.780</td>
+</tr>
+<tr class="odd">
+<td>Chum Hood Canal summer run Subyearling</td>
+<td>2.75</td>
+<td>15.80</td>
+<td>21.07</td>
+<td>0.0023</td>
+<td>0.780</td>
+</tr>
+<tr class="even">
+<td>Pink Salmon Subyearling</td>
+<td>2.75</td>
+<td>15.00</td>
+<td>20.00</td>
+<td>0.0023</td>
+<td>0.780</td>
+</tr>
+<tr class="odd">
+<td>Other salmonids</td>
+<td>2.75</td>
+<td>17.40</td>
+<td>25.14</td>
+<td>0.0008</td>
+<td>0.791</td>
+</tr>
+<tr class="even">
+<td>Strait of Georgia salmonids</td>
+<td>2.50</td>
+<td>15.00</td>
+<td>22.40</td>
+<td>0.0015</td>
+<td>0.783</td>
+</tr>
+<tr class="odd">
+<td>Hake_Large gadoids</td>
+<td>2.50</td>
+<td>10.57</td>
+<td>15.50</td>
+<td>0.0033</td>
+<td>0.794</td>
+</tr>
+<tr class="even">
+<td>Large demersal predators</td>
+<td>2.50</td>
+<td>15.00</td>
+<td>20.00</td>
+<td>0.0015</td>
+<td>0.775</td>
+</tr>
+<tr class="odd">
+<td>Demersal rockfish</td>
+<td>2.75</td>
+<td>15.00</td>
+<td>20.00</td>
+<td>0.0081</td>
+<td>0.752</td>
+</tr>
+<tr class="even">
+<td>Midwater rockfish</td>
+<td>2.75</td>
+<td>15.75</td>
+<td>21.00</td>
+<td>0.0081</td>
+<td>0.752</td>
+</tr>
+<tr class="odd">
+<td>Demersal vulnerable rockfish</td>
+<td>2.80</td>
+<td>17.83</td>
+<td>23.00</td>
+<td>0.0057</td>
+<td>0.752</td>
+</tr>
+<tr class="even">
+<td>Midwater vulnerable rockfish</td>
+<td>2.75</td>
+<td>15.00</td>
+<td>20.00</td>
+<td>0.0081</td>
+<td>0.752</td>
+</tr>
+<tr class="odd">
+<td>Small demersal fish</td>
+<td>4.50</td>
+<td>20.50</td>
+<td>21.50</td>
+<td>0.0009</td>
+<td>0.668</td>
+</tr>
+<tr class="even">
+<td>Small-mouthed Flatfish</td>
+<td>1.76</td>
+<td>9.50</td>
+<td>21.00</td>
+<td>0.0023</td>
+<td>0.780</td>
+</tr>
+<tr class="odd">
+<td>Piscivorous flatfish</td>
+<td>2.79</td>
+<td>16.74</td>
+<td>22.00</td>
+<td>0.0023</td>
+<td>0.780</td>
+</tr>
+<tr class="even">
+<td>Spiny dogfish</td>
+<td>1.76</td>
+<td>19.00</td>
+<td>25.00</td>
+<td>0.0037</td>
+<td>0.860</td>
+</tr>
+<tr class="odd">
+<td>Sixgill Shark</td>
+<td>2.75</td>
+<td>15.00</td>
+<td>20.00</td>
+<td>0.0023</td>
+<td>0.780</td>
+</tr>
+<tr class="even">
+<td>Skates</td>
+<td>2.75</td>
+<td>15.00</td>
+<td>20.00</td>
+<td>0.0023</td>
+<td>0.780</td>
+</tr>
+<tr class="odd">
+<td>Ratfish</td>
+<td>2.75</td>
+<td>15.00</td>
+<td>20.00</td>
+<td>0.0023</td>
+<td>0.780</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="marine-mammal-respiration" class="level3">
+<h3 class="anchored" data-anchor-id="marine-mammal-respiration">Marine Mammal Respiration</h3>
+<p>For marine mammals, we express the respiration as a function of weight W only, assuming that water temperature does not impact the metabolism rate for endotherm species. Similarly, we assume that bird respiration rates are not a function of the water temperature. For these groups, the respiration is expressed as follows:</p>
+<p><span class="math display">\[R = K_A \cdot W^{K_B}\]</span></p>
+<p>where <span class="math inline">\(K_A\)</span> is the allometric respiration constant (g N·mg⁻¹ N·d⁻¹), <span class="math inline">\(W\)</span> is the individual’s dry weight in mg N, <span class="math inline">\(K_B\)</span> is the allometric respiration exponent, and <span class="math inline">\(K_{tmp}\)</span> is a constant. Parameters <span class="math inline">\(K_A\)</span> and <span class="math inline">\(K_B\)</span> were specific for each functional group.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Table 3: Marine Mammal and Bird Parameters
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Bioenergetic and respiration parameters for marine mammal and bird groups from the literature review.</p>
+</div>
+</div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Group</th>
+<th>KA</th>
+<th>KB</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Resident orca</td>
+<td>0.024241</td>
+<td>0.75</td>
+</tr>
+<tr class="even">
+<td>Transient orcas</td>
+<td>0.024241</td>
+<td>0.75</td>
+</tr>
+<tr class="odd">
+<td>California sea lions</td>
+<td>0.052212</td>
+<td>0.75</td>
+</tr>
+<tr class="even">
+<td>California Sea Lion</td>
+<td>0.039015</td>
+<td>0.75</td>
+</tr>
+<tr class="odd">
+<td>Harbor seal</td>
+<td>0.019651</td>
+<td>0.75</td>
+</tr>
+<tr class="even">
+<td>Harbor seals</td>
+<td>0.028114</td>
+<td>0.75</td>
+</tr>
+<tr class="odd">
+<td>Humpback</td>
+<td>0.024241</td>
+<td>0.75</td>
+</tr>
+<tr class="even">
+<td>Piscivorous seabirds</td>
+<td>0.0005478955</td>
+<td>0.774</td>
+</tr>
+<tr class="odd">
+<td>Non-piscivorous seabirds</td>
+<td>0.0005478955</td>
+<td>0.774</td>
+</tr>
+<tr class="even">
+<td>Raptors</td>
+<td>0.0005478955</td>
+<td>0.774</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="oxygen-sensitivity" class="level2">
+<h2 class="anchored" data-anchor-id="oxygen-sensitivity">Oxygen Sensitivity</h2>
+<p>Water-breathing organisms are limited by the concentration of dissolved oxygen available in the water. While oxygen consumption, and therefore susceptibility to oxygen limitation, varies dynamically with body weight and temperature in ectotherms, oxygen concentration is not explicitly included in the current formulation of respiration and bioenergetic responses in Atlantis.</p>
+<p>However, to capture the lethal effects of anoxic conditions, which are known to occur in Puget Sound, we imposed lower limits of dissolved oxygen below which mortality occurs (Atlantis parameters <code>XXX_min_O2</code> for age-structured groups, and <code>KO2LIM_XXX</code> for biomass pools). Parameter values were obtained from the R package published at https://github.com/tessington/metabolic_index (Essington et al., in prep.). We used the predicted posterior medians of the critical oxygen partial pressure for each taxon, converted from kPa to mg m⁻³ using the R package “respR”.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -807,6 +1415,18 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../content/KDEP.html" class="pagination-link" aria-label="Biological parameters">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Biological parameters</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../content/salmon.html" class="pagination-link" aria-label="Salmon gorups">
+        <span class="nav-page-text">Salmon gorups</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -815,7 +1435,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/edit/main/content/acknowledgements.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/blob/main/content/acknowledgements.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/edit/main/content/Responses_to_temperature_and_oxygen.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/blob/main/content/Responses_to_temperature_and_oxygen.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

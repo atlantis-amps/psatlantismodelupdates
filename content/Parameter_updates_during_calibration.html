@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Acknowledgments – Atlantis Model for Puget Sound</title>
+<title>Parameter Updates During Calibration Process – Atlantis Model for Puget Sound</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -32,6 +32,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../content/diet.html" rel="next">
+<link href="../content/Initial_conditions.html" rel="prev">
 <link href="../images/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -249,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Acknowledgments</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/Parameter_updates_during_calibration.html">Calibration</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -300,7 +302,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/Parameter_updates_during_calibration.html" class="sidebar-item-text sidebar-link">
+  <a href="../content/Parameter_updates_during_calibration.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Calibration</span></a>
   </div>
 </li>
@@ -363,8 +365,26 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#calibration-phases" id="toc-calibration-phases" class="nav-link" data-scroll-target="#calibration-phases">Calibration Phases</a>
+  <ul class="collapse">
+  <li><a href="#no-fishing-calibration-phase" id="toc-no-fishing-calibration-phase" class="nav-link" data-scroll-target="#no-fishing-calibration-phase">No-Fishing Calibration Phase</a></li>
+  <li><a href="#fishing-activation-phase" id="toc-fishing-activation-phase" class="nav-link" data-scroll-target="#fishing-activation-phase">Fishing Activation Phase</a></li>
+  </ul></li>
+  <li><a href="#manual-adjustments" id="toc-manual-adjustments" class="nav-link" data-scroll-target="#manual-adjustments">Manual Adjustments</a>
+  <ul class="collapse">
+  <li><a href="#maturation-ogives" id="toc-maturation-ogives" class="nav-link" data-scroll-target="#maturation-ogives">1. Maturation Ogives</a></li>
+  <li><a href="#benthic-species-spatial-distribution" id="toc-benthic-species-spatial-distribution" class="nav-link" data-scroll-target="#benthic-species-spatial-distribution">2. Benthic Species Spatial Distribution</a></li>
+  <li><a href="#predation-mortality-rates" id="toc-predation-mortality-rates" class="nav-link" data-scroll-target="#predation-mortality-rates">3. Predation Mortality Rates</a></li>
+  <li><a href="#starvation-mortality-responses" id="toc-starvation-mortality-responses" class="nav-link" data-scroll-target="#starvation-mortality-responses">4. Starvation Mortality Responses</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/edit/main/content/Parameter_updates_during_calibration.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/blob/main/content/Parameter_updates_during_calibration.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -372,7 +392,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Acknowledgments</h1>
+<h1 class="title">Parameter Updates During Calibration Process</h1>
 </div>
 
 
@@ -389,9 +409,87 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This repo and GitHub Action was based on the tutorial by Openscapes <a href="https://github.com/Openscapes/quarto-website-tutorial">quarto-website-tutorial</a> by Julia Lowndes and Stefanie Butland.</p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>The calibration process involved substantial structural and parametric modifications to improve model stability and ecological realism. A heuristic, multi-objective evolutionary algorithm was used to calibrate the model in a semi-automated way.</p>
+</section>
+<section id="calibration-phases" class="level2">
+<h2 class="anchored" data-anchor-id="calibration-phases">Calibration Phases</h2>
+<section id="no-fishing-calibration-phase" class="level3">
+<h3 class="anchored" data-anchor-id="no-fishing-calibration-phase">No-Fishing Calibration Phase</h3>
+<p>During the no-fishing calibration phase, calibration targeted observed biomass and weight-at-age data. The following parameters were calibrated:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Groups</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mum</code></td>
+<td>All species</td>
+</tr>
+<tr class="even">
+<td><code>BHalpha</code></td>
+<td>Fish groups</td>
+</tr>
+<tr class="odd">
+<td><code>KDENR</code></td>
+<td>Marine mammals and seabirds</td>
+</tr>
+<tr class="even">
+<td><code>mQ</code></td>
+<td>Zooplankton</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="fishing-activation-phase" class="level3">
+<h3 class="anchored" data-anchor-id="fishing-activation-phase">Fishing Activation Phase</h3>
+<p>When the fishing process was activated, catch data was added as a calibration target, and <code>mFC</code> (fishing mortality) was calibrated for all exploited groups.</p>
+</section>
+</section>
+<section id="manual-adjustments" class="level2">
+<h2 class="anchored" data-anchor-id="manual-adjustments">Manual Adjustments</h2>
+<p>Between automated calibration runs, targeted manual adjustments were made to improve emergent ecosystem dynamics. These included:</p>
+<section id="maturation-ogives" class="level3">
+<h3 class="anchored" data-anchor-id="maturation-ogives">1. Maturation Ogives</h3>
+<p>Maturation ogives were modified to prevent unrealistic population growth in species using a “recruits-per-adult” reproduction option. In particular, reproduction was disabled for the first age class to avoid numerical instabilities caused by exponential recruitment feedback.</p>
+</section>
+<section id="benthic-species-spatial-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="benthic-species-spatial-distribution">2. Benthic Species Spatial Distribution</h3>
+<p>Benthic species spatial distribution was corrected by activating a model flag that enforces habitat mapping based on input data, ensuring consistency with spatial constraints.</p>
+</section>
+<section id="predation-mortality-rates" class="level3">
+<h3 class="anchored" data-anchor-id="predation-mortality-rates">3. Predation Mortality Rates</h3>
+<p>Predation mortality rates (<code>mQ</code>) were initially set to zero for all groups, except juvenile stages of age-structured species, for which <code>mQ</code> remained active to prevent uncontrolled demographic expansion during calibration.</p>
+</section>
+<section id="starvation-mortality-responses" class="level3">
+<h3 class="anchored" data-anchor-id="starvation-mortality-responses">4. Starvation Mortality Responses</h3>
+<p>Starvation mortality responses were enhanced by increasing the sensitivity to food limitation:</p>
+<ul>
+<li><code>Kthreshm</code> was increased (from X to X)</li>
+<li><code>mStrav</code> was also raised (from X to X)</li>
+<li><code>flag_shrink</code> parameter was set to 1, enabling individuals to lose structural or reserve biomass under starvation conditions</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note: Specific values for the parameter increases need to be filled in where marked with “X to X”.</p>
+</div>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -807,6 +905,18 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../content/Initial_conditions.html" class="pagination-link" aria-label="Initial conditions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Initial conditions</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../content/diet.html" class="pagination-link" aria-label="Diets">
+        <span class="nav-page-text">Diets</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -815,7 +925,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/edit/main/content/acknowledgements.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/blob/main/content/acknowledgements.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/edit/main/content/Parameter_updates_during_calibration.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/blob/main/content/Parameter_updates_during_calibration.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

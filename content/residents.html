@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Acknowledgments – Atlantis Model for Puget Sound</title>
+<title>Resident orcas – Atlantis Model for Puget Sound</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -32,6 +67,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../content/foodweb.html" rel="next">
+<link href="../content/jellyfishtext.html" rel="prev">
 <link href="../images/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -249,7 +286,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Acknowledgments</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/residents.html">Resident orcas</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -336,7 +373,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/residents.html" class="sidebar-item-text sidebar-link">
+  <a href="../content/residents.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Resident orcas</span></a>
   </div>
 </li>
@@ -372,7 +409,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Acknowledgments</h1>
+<h1 class="title">Resident orcas</h1>
 </div>
 
 
@@ -389,7 +426,256 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This repo and GitHub Action was based on the tutorial by Openscapes <a href="https://github.com/Openscapes/quarto-website-tutorial">quarto-website-tutorial</a> by Julia Lowndes and Stefanie Butland.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Resident orcas simulate the Southern Resident Killer Whale endemic population</p>
+<ul>
+<li>Updated the diet using Ford et al.&nbsp;1998, Ford &amp; Ellis, 2006, Ford 2009, Hanson et al., 2010 &amp; 2021 and Hermann et al.&nbsp;2015</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Installing package into '/home/runner/work/_temp/Library'
+(as 'lib' is unspecified)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: devtools</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: usethis</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: readxl</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: sp</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: rnaturalearth</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: rnaturalearthdata</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'rnaturalearthdata'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:rnaturalearth':
+
+    countries110</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: here</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>here() starts at /home/runner/work/psatlantismodelupdates/psatlantismodelupdates</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: raster</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Error: package or namespace load failed for 'raster' in dyn.load(file, DLLpath = DLLpath, ...):
+ unable to load shared object '/home/runner/work/_temp/Library/terra/libs/terra.so':
+  libproj.so.25: cannot open shared object file: No such file or directory</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: exactextractr</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Error: package or namespace load failed for 'exactextractr' in dyn.load(file, DLLpath = DLLpath, ...):
+ unable to load shared object '/home/runner/work/_temp/Library/terra/libs/terra.so':
+  libproj.so.25: cannot open shared object file: No such file or directory</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: glmmTMB</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: knitr</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: rlang</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'rlang'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:data.table':
+
+    :=</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: ggrepel</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: mapview</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Error: package or namespace load failed for 'mapview' in dyn.load(file, DLLpath = DLLpath, ...):
+ unable to load shared object '/home/runner/work/_temp/Library/terra/libs/terra.so':
+  libproj.so.25: cannot open shared object file: No such file or directory</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: formattable</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: RColorBrewer</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: stringi</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: stringr</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: R.utils</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: R.oo</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: R.methodsS3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>R.methodsS3 v1.8.2 (2022-06-13 22:00:14 UTC) successfully loaded. See ?R.methodsS3 for help.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>R.oo v1.27.1 (2025-05-02 21:00:05 UTC) successfully loaded. See ?R.oo for help.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'R.oo'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:R.methodsS3':
+
+    throw</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:rlang':
+
+    abort, ll</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:devtools':
+
+    check, unload</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:methods':
+
+    getClasses, getMethods</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    attach, detach, load, save</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>R.utils v2.13.0 (2025-02-24 21:20:02 UTC) successfully loaded. See ?R.utils for help.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'R.utils'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:rlang':
+
+    env</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:tidyr':
+
+    extract</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:utils':
+
+    timestamp</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    cat, commandArgs, getOption, isOpen, nullfile, parse, use, warnings</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: magrittr</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'magrittr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:R.utils':
+
+    extract</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:R.oo':
+
+    equals</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:rlang':
+
+    set_names</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:tidyr':
+
+    extract</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: future</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'future'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:R.utils':
+
+    reset</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: parallel</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: formatR</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 73 Columns: 28
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (5): OldCode, Code, Name, Long Name, GroupType
+dbl (23): Index, IsTurnedOn, NumCohorts, NumGeneTypes, NumStages, NumSpawns,...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<ul>
+<li><p>Updated diet proportions for Chinook populations from Hanson et al.&nbsp;2021</p></li>
+<li><p>Spatial distributions based on SRKW sightings. Estimated based on Thorson et al.&nbsp;2015</p></li>
+<li><p>Seasonal distribution</p></li>
+</ul>
+<p>We updated spatial distribution based on orca master data of killer whale sightings for the years 2011 - 2020. Laura Kohen (NOAA-Western Regional Center, Protected Species Division) carried out the following analysis: To match sightings of Southern Resident killer whales to Puget Sound Atlantis boxes. First, sightings are filtered to only sightings where there was confidence that the sighting was of Southern Resident killer whales (vs other killer whale populations). Specifically, data is filtered to sightings where the “likely pod” is either SRKW, SRs, J, K, or L; so excludes any sightings where the sighting could only be identified to the “orca” level (not more specific). Also excludes sightings that were specified as transients, Northern residents, “not orcas”, or HBs (humpbacks). Data was then filtered to years 2011-2020. From there, we filtered down to unique day-quadrant sightings. Specifically, if there are any 2+ sightings with the same date and Whale Museum specified quadrant number, we only keep 1 sighting with that day-quadrant combo. This is to remove sightings from multiple sources that can inflate occurrence in an area. Note, this then means that there could be multiple sightings on the same day in the same Atlantis box, but they will all be in different Whale Museum quadrants.</p>
+<p>Note also that data was filtered down to only sightings with a whale museum identified quadrant number because these will occur in the Salish sea. Note that Whale Museum quadrant extend passed the Atlantis box domain (we do not have a shapefile of the quadrants but image is included with data). This may miss a few sightings if a quadrant was not specified by the Whale Museum but not a large amount.</p>
+<p>With the sightings data, sightings were converted to an sf object with latitude and longitude. Then, based on the CRS of the Atlantis polygons, the SRKW sightings sf were projected to the same CRS as the Atlantis polygons so that all are in the same sf space/same traget coordinate reference system (function st_transform). Then using st_intersection, this function finds the Atlantis polygons that each sighting falls into.</p>
+<p>The final output file has for all the day-quadrant unique SRKW sightings from 2011-2020, the date (including month, day, year) and the Atlantis polygon where the sighting fell.</p>
+<ul>
+<li>Fecundity. Fishery Management Council Working Group, data from Eric Ward, https://nwfsc-cb.github.io/srkw-status/.</li>
+</ul>
+<p><strong>References</strong></p>
+<p>Ford, J.K.B., G.A. Ellis, L.G. Barrett-Lennard, A.B. Morton, R.S. Palm &amp; K.C. Balcomb. 1998. Dietary specialization in two sympatric populations of killer whales (<em>Orcinus orca)</em> in coastal British Columbia and adjacent waters. Canadian Journal of Zoology-Revue Canadienne de Zoologie 76: 1456–1471.</p>
+<p>Ford, J.K.B. &amp; G.M. Ellis. 2006. Selective foraging by fish-eating killer whales <em>Orcinus orca</em> in British Columbia. Mar.&nbsp;Ecol. Prog. Ser. 316: 185–199.</p>
+<p>Ford, J.K.B. 2009. Chinook salmon predation by resident killer whales: Seasonal and regional selectivity, stock identity of prey, and consumption rates. Canadian Science Advisory Secretariat = Secrétariat canadien de consultation scientifique.</p>
+<p>Thorson, J.T., Shelton, A.O., Ward, E.J., Skaug, H.J., 2015. Geostatistical delta-generalized linear mixed models improve precision for estimated abundance indices for West Coast groundfishes. ICES J. Mar.&nbsp;Sci. J. Cons. 72(5), 1297–1310. doi:10.1093/icesjms/fsu243. URL: <a href="http://icesjms.oxfordjournals.org/content/72/5/1297" class="uri">http://icesjms.oxfordjournals.org/content/72/5/1297</a></p>
 
 
 
@@ -807,6 +1093,18 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../content/jellyfishtext.html" class="pagination-link" aria-label="Jellyfish">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Jellyfish</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../content/foodweb.html" class="pagination-link" aria-label="Foodweb">
+        <span class="nav-page-text">Foodweb</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -815,7 +1113,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/edit/main/content/acknowledgements.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/blob/main/content/acknowledgements.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/edit/main/content/residents.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/blob/main/content/residents.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/atlantis-amps/psatlantismodelupdates/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
