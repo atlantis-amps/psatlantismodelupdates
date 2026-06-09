@@ -4,6 +4,10 @@ on:
 
 name: Render and Publish
 
+# Grant write access to the repository contents
+permissions:
+  contents: write
+  
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
