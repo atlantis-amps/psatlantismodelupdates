@@ -46,16 +46,16 @@ website:
       - href: content/Responses_to_temperature_and_oxygen.qmd
         text: Response to temperature and O2
       - href: content/salmon.qmd
-        text: Salmon gorups
+        text: Salmon groups
       - href: content/jellyfishtext.qmd
         text: Jellyfish
       - href: content/residents.qmd
         text: Resident orcas
       - href: content/foodweb.qmd
         text: Foodweb
-      - href: content/acknowledgments.qmd
+      - href: content/acknowledgements.qmd
         text: Acknowledgments
-      - href: content/Parametrization_contaminant_submodule_PCBs.qmd.qmd
+      - href: content/Parametrization_contaminant_submodule_PCBs.qmd
         text: PCBs
 
       

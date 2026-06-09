@@ -1,5 +1,5 @@
 ---
-title: "KDEP"
+title: "Biological parameters"
 format: html
 ---
 

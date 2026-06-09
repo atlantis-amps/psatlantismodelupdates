@@ -1,5 +1,5 @@
 ---
-title: "Responses to Temperature and Oxygen"
+title: "Responses to temperature and oxygen"
 format: html
 ---
 

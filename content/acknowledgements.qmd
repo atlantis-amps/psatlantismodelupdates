@@ -2,4 +2,6 @@
 title: Acknowledgments
 ---
 
+Model updates 2022-2026 were funded by the Puget Sound Integrated Modeling Framework project, a grant to the University of Washington-Tacoma by the Allen Family Foundation
+
 This repo and GitHub Action was based on the tutorial by Openscapes [quarto-website-tutorial](https://github.com/Openscapes/quarto-website-tutorial) by Julia Lowndes and Stefanie Butland.
