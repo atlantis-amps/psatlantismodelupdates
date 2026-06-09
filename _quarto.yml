@@ -13,6 +13,7 @@ website:
     right: "This page is built with [Quarto](https://quarto.org/)."
     left: "&copy; CC-1.0"
 
+  bibliography: content/references.bib
   sidebar:
     background: "#D9E3E4"
     logo: "https://user-images.githubusercontent.com/11339490/204617034-60925058-5fa4-468c-ad50-6c5719757066.jpg"
