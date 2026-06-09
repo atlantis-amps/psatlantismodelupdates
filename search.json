@@ -40,138 +40,6 @@
     ]
   },
   {
-    "objectID": "content/KDEP.html",
-    "href": "content/KDEP.html",
-    "title": "KDEP",
-    "section": "",
-    "text": "Updated parameter to more closely resemble parameters in the California Current and Gulf of Mexico models:\n\n0.001 for most fish\n0.1 for bivalves",
-    "crumbs": [
-      "Biological parameters"
-    ]
-  },
-  {
-    "objectID": "content/KDEP.html#kdep-parameter-updates",
-    "href": "content/KDEP.html#kdep-parameter-updates",
-    "title": "KDEP",
-    "section": "",
-    "text": "Updated parameter to more closely resemble parameters in the California Current and Gulf of Mexico models:\n\n0.001 for most fish\n0.1 for bivalves",
-    "crumbs": [
-      "Biological parameters"
-    ]
-  },
-  {
-    "objectID": "content/jellyfishtext.html",
-    "href": "content/jellyfishtext.html",
-    "title": "Addition of a jellyfish functional group",
-    "section": "",
-    "text": "Code\nlibrary(knitr)\nlibrary(here)\nlibrary(readr)",
-    "crumbs": [
-      "Jellyfish"
-    ]
-  },
-  {
-    "objectID": "content/jellyfishtext.html#addition-of-a-jellyfish-functional-group",
-    "href": "content/jellyfishtext.html#addition-of-a-jellyfish-functional-group",
-    "title": "Addition of a jellyfish functional group",
-    "section": "Addition of a Jellyfish functional group",
-    "text": "Addition of a Jellyfish functional group\n\nThe model simulates food web dynamics using 73 biological groups, including one gelatinous zooplankton. While much effort centered on characterizing pelagic fish abundance, diets, and distribution during the development of the AMPS, data on these attributes are scarcer for jellyfish in Puget Sound. We use data from field studies, mesocosms, and relevant global literature to add a new functional group, based on the jellyfish Aurelia. We incorporate information on total consumption rates of Aurelia on their prey and composition of Aurelia diet.\nAs part of a WA Sea Grant project, led by Julie Kiester (University of Washington), “Ecosystem impacts of the jellyfish Aurelia labiata in Puget Sound”, we will quantify the ecosystem effects of changing jellyfish populations in Puget Sound. We will examine scenarios that integrate results from mesocosms and field studies part of this grant to understand the ecological role of jellyfish in Puget Sound, and their effects on other species including salmon and forage fish. Spatial representation in the Atlantis Model for Puget Sound (AMPS) will allow us to test the impact of spatial aggregations of Aurelia identified in aerial monitoring by EOPS, for instance in South Sound inlets. Vertical structure in the model allows us to capture diel vertical movement of jellyfish and other zooplankton taxa, which will be informed by field sampling.\n#Current parameterization of ‘Gelatinous zooplankton’\nIn its initial version, the AMPS included one ‘Gelatinous zooplankton’ functional group, which encompassed scyphozoans, larvaceans, siphonophores, and ctenophores. Other plankton groups, including jellyfish prey, were aggregated into five additional functional groups (Table 1). The composition of the ‘Gelatinous zooplankton’ functional group was based on samples collected throughout Puget Sound in 2011 and 2014-2017 using zooplankton nets. These nets are likely to entirely miss larger medusae, so we added information from extensive surface trawl sampling of larger jellyfish and pelagic fish undertaken in 2011 across all basins of Puget Sound. We interpolated missing data (per polygon) based on the average of all sampled polygons of similar bottom depth (i.e., with the same number of Atlantis depth layers). Total abundance of gelatinous zooplankton (per Atlantis polygon) was then taken as the sum of large and small jellyfish abundance.\n\n\n\nCode\n#| column: page\n#| \nknitr::kable(readr::read_csv(here::here(\"inputs\",\"guilds_table.csv\")), format=\"html\", caption = \"Table 1. Plankton groups in the Atlantis Model of Puget Sound.\")\n\n\nRows: 6 Columns: 3\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): Functional group, Representative Species, Common name\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\nTable 1. Plankton groups in the Atlantis Model of Puget Sound.\n\n\nFunctional group\nRepresentative Species\nCommon name\n\n\n\n\nGelatinous zooplankton\nCnidaria, Ctenophora, Scyphozoa; Appendicularia, Thaliacea; Mollusca; Aequorea victoria, Aurelia labiata, Cyanea capillata, Phacellophora camtschatica\nSmall hydromedusae, comb jellies, urochordates, larvaceans, pelagic salps, thecosomes and gymnosomes + crystal jelly, moon jelly, lion's mane jelly, fried egg jelly, siphonophore\n\n\nLarge phytoplankton\nSkeletonema, Chaetoceros, Thalassiosira, and Coscinodiscus; Coccolithophore\nDiatoms + Coccolithophore\n\n\nSmall phytoplankton\nGymnodinium, Gonyaulax, Pyramimonas and Dichtyocha\nDinoflagellates + phytoflagellates\n\n\nMicrozooplankton\nCiliates, dinoflagellates including Noctiluca, foraminiferans, and radiolarians\nUnicellular heterotrophic protozoans, larval stage of benthic invertebrates, rotifers\n\n\nMesozooplankton\nCalanus pacificus; Acartia, Pseudocalanus, Paracalanus, and Eucalanus\nCopepods\n\n\nLarge zooplankton\nChaetognaths, pelagic shrimp (e.g., Sergestidae and Pasiphaeidae), hyperiid amphipods, pelagic larval stages of benthic macroinvertebrates, large predatory copepods, euphausiids\nChaetognaths, pelagic shrimp (e.g., families Sergestidae and Pasiphaeidae, Caridea), hyperiid amphipods, the pelagic larval stages of benthic macroinvertebrates, and large predatory copepods ; euphausiids\n\n\n\n\n\nGelatinous zooplankton diets were compiled from multiple sources, focused on Puget Sound when available (Costello2002?, Purcell1990?); these are studies from Puget Sound, but do not include Aurelia diet, instead describing the diet of small hydromedusae such as Aglantha and Obelia. Currently, diet of gelatinous zooplankton in the AMPS is: 48.3% microzooplankton; 24.7% mesozooplankton (copepods); and 27% other zooplankton including barnacle larvae, appendicularians, and bivalve larvae. As an approximation, rate parameters, specifically growth and clearance rates, were taken from the California Current Atlantis model (Kaplan2017?, Marshall2017?).\n\n\nCode\n#| label: load-packages\n#| include: false\nsource(here::here(\"libraries.R\")) #need to figure out which ones are actually needed\n\n\nInstalling package into '/home/runner/work/_temp/Library'\n(as 'lib' is unspecified)\n\n\nLoading required package: dplyr\n\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n\nLoading required package: devtools\n\n\nLoading required package: usethis\n\n\nLoading required package: readxl\n\n\nLoading required package: sp\n\n\nLoading required package: rnaturalearth\n\n\nLoading required package: rnaturalearthdata\n\n\n\nAttaching package: 'rnaturalearthdata'\n\n\nThe following object is masked from 'package:rnaturalearth':\n\n    countries110\n\n\nLoading required package: raster\n\n\nError: package or namespace load failed for 'raster' in dyn.load(file, DLLpath = DLLpath, ...):\n unable to load shared object '/home/runner/work/_temp/Library/terra/libs/terra.so':\n  libproj.so.25: cannot open shared object file: No such file or directory\n\n\nLoading required package: exactextractr\n\n\nError: package or namespace load failed for 'exactextractr' in dyn.load(file, DLLpath = DLLpath, ...):\n unable to load shared object '/home/runner/work/_temp/Library/terra/libs/terra.so':\n  libproj.so.25: cannot open shared object file: No such file or directory\n\n\nLoading required package: glmmTMB\n\n\nLoading required package: rlang\n\n\nLoading required package: ggplot2\n\n\nLoading required package: ggrepel\n\n\nLoading required package: mapview\n\n\nError: package or namespace load failed for 'mapview' in dyn.load(file, DLLpath = DLLpath, ...):\n unable to load shared object '/home/runner/work/_temp/Library/terra/libs/terra.so':\n  libproj.so.25: cannot open shared object file: No such file or directory\n\n\nLoading required package: formattable\n\n\nLoading required package: RColorBrewer\n\n\nLoading required package: stringi\n\n\nLoading required package: data.table\n\n\n\nAttaching package: 'data.table'\n\n\nThe following object is masked from 'package:rlang':\n\n    :=\n\n\nThe following objects are masked from 'package:dplyr':\n\n    between, first, last\n\n\nThe following object is masked from 'package:base':\n\n    %notin%\n\n\nLoading required package: tidyr\n\n\nLoading required package: stringr\n\n\nLoading required package: R.utils\n\n\nLoading required package: R.oo\n\n\nLoading required package: R.methodsS3\n\n\nR.methodsS3 v1.8.2 (2022-06-13 22:00:14 UTC) successfully loaded. See ?R.methodsS3 for help.\n\n\nR.oo v1.27.1 (2025-05-02 21:00:05 UTC) successfully loaded. See ?R.oo for help.\n\n\n\nAttaching package: 'R.oo'\n\n\nThe following object is masked from 'package:R.methodsS3':\n\n    throw\n\n\nThe following objects are masked from 'package:rlang':\n\n    abort, ll\n\n\nThe following objects are masked from 'package:devtools':\n\n    check, unload\n\n\nThe following objects are masked from 'package:methods':\n\n    getClasses, getMethods\n\n\nThe following objects are masked from 'package:base':\n\n    attach, detach, load, save\n\n\nR.utils v2.13.0 (2025-02-24 21:20:02 UTC) successfully loaded. See ?R.utils for help.\n\n\n\nAttaching package: 'R.utils'\n\n\nThe following object is masked from 'package:tidyr':\n\n    extract\n\n\nThe following object is masked from 'package:rlang':\n\n    env\n\n\nThe following object is masked from 'package:utils':\n\n    timestamp\n\n\nThe following objects are masked from 'package:base':\n\n    cat, commandArgs, getOption, isOpen, nullfile, parse, use, warnings\n\n\nLoading required package: magrittr\n\n\n\nAttaching package: 'magrittr'\n\n\nThe following object is masked from 'package:R.utils':\n\n    extract\n\n\nThe following object is masked from 'package:R.oo':\n\n    equals\n\n\nThe following object is masked from 'package:tidyr':\n\n    extract\n\n\nThe following object is masked from 'package:rlang':\n\n    set_names\n\n\nLoading required package: future\n\n\n\nAttaching package: 'future'\n\n\nThe following object is masked from 'package:R.utils':\n\n    reset\n\n\nLoading required package: parallel\n\n\nLoading required package: formatR",
-    "crumbs": [
-      "Jellyfish"
-    ]
-  },
-  {
-    "objectID": "content/jellyfishtext.html#updated-spatial-distribution",
-    "href": "content/jellyfishtext.html#updated-spatial-distribution",
-    "title": "Addition of a jellyfish functional group",
-    "section": "Updated spatial distribution",
-    "text": "Updated spatial distribution\nWe used the results from Green et al. who examined interspecific variation in species-specific response of jellyfish adult life stages to environmental variation and anthropogenic influence, and projected future changes in these parameters in Puget Sound. They used results from a field survey to predict the presence of seven jellyfish species across six sub basins in Puget Sound. They modeled the probability of species presence as a function of site-specific parameters (geomorphic type, anthropogenic land use) and observation-specific variables (salinity, temperature, depth). Their presence/absence models indicated strong interspecific variation in the habitat preferences of jellyfish to environmental parameters such as temperature and geomorphic type, as well as varying sensitivity to potential anthropogenic effects on nearshore waters. Aurelia individuals were associated with large and small backwater embayments rather than exposed shorelines, and human development within these embayments was shown to decrease the probability of presence. We used the embayments derived by Green et al. (embayment_unit_revised.shp) and classified additional coastline segments from data collected by The Salmon and Steelhead Habitat Inventory and Assessment Program (SSHIAP) (geomorph_ps_s.shp from Geodatabase SSHIAP_Marine.gdb&gt;Geomorph_PS_S). Geomorphology categories beach, modified, shoreline, bluff, and platform categories were aggregated and reclassified as exposed; all types of delta were assigned to the delta category. We also derived percent used landcover classes at 30 m resolution (szline_GSU_identity_Spj_HUC_NHD_dissolve_DU_sum_LU.shp).\nDevelopment classes were based on the NCCOS’ Coastal Change and Analysis Program (C-CAP, 2006 analysis year). Nationally standardized, raster-based inventories of land cover for the coastal areas of the U.S. Data are derived, through the Coastal Change Analysis Program, from the analysis of multiple dates of remotely sensed imagery. https://coast.noaa.gov/digitalcoast/tools/lca.html. Land classification scheme https://coast.noaa.gov/data/digitalcoast/pdf/ccap-class-scheme-regional.pdf\nFollowing Green et al. we used data from the Puget Sound Nearshore Ecosystem Restoration Project (PSNERP), an initiative led by the Washington Department of Fish and Wildlife (WDFW) in partnership with the U.S. Army Corps of Engineers (Corps) to assign geomorphology classification to Atlantis polygons\nhttps://wdfw.wa.gov/species-habitats/habitat-recovery/puget-sound/psnerp\nhttps://wdfw.maps.arcgis.com/apps/webappviewer/index.html?id=adfd521d37774e868e0e974cc03860df to assign geomorphic types to sampling areas.\nUsed landcover classes at 30 m resolution. Development classes were based on the NCCOS’ Coastal Change and Analysis Program (C-CAP, 2006 analysis year). Nationally standardized, raster-based inventories of land cover for the coastal areas of the U.S. Data are derived, through the Coastal Change Analysis Program, from the analysis of multiple dates of remotely sensed imagery. https://coast.noaa.gov/digitalcoast/tools/lca.html. Land classification scheme https://coast.noaa.gov/data/digitalcoast/pdf/ccap-class-scheme-regional.pdf",
-    "crumbs": [
-      "Jellyfish"
-    ]
-  },
-  {
-    "objectID": "content/diet.html",
-    "href": "content/diet.html",
-    "title": "diets",
-    "section": "",
-    "text": "##Pacific Halibut Pacific Halibut diet was updated as existing diet in the AMPS only reflected young juveniles. We used data from St-Pierre, Gilbert, and Robert J. Trumble. 2000. Diet of juvenile Pacific halibut. International Pacific Halibut Commission. Technical Report No. 43. Seattle, WA 16 pp\n##Aurelia labiata We added diet for Aurelia labiata jellyfish group, considering that Aurelia spp exhibit size-based and temporal shifts in trophic position (Fleming et al. 2015) and can prey on a wide variety of individuals (Sun et al. 2021). We used the diet proportions for Aurelia coerulea reported by Sun et al. 2015, as this study used DNA metabarcoding to characterize the diet for two stages of Aurelia, polyps and ephyrae.\nFleming, N.E., Harrod, C., Newton, J. and Houghton, J.D., 2015. Not all jellyfish are equal: isotopic evidence for inter-and intraspecific variation in jellyfish trophic ecology. PeerJ, 3, p.e1110. Sun, Tingting, Lei Wang, Jianmin Zhao, and Zhijun Dong. “Application of DNA metabarcoding to characterize the diet of the moon jellyfish Aurelia coerulea polyps and ephyrae.” Acta Oceanologica Sinica 40 (2021): 160-167.",
-    "crumbs": [
-      "Diets"
-    ]
-  },
-  {
-    "objectID": "content/Parametrization_contaminant_submodule_PCBs.html",
-    "href": "content/Parametrization_contaminant_submodule_PCBs.html",
-    "title": "Parametrization of the Contaminant Submodule for PCBs",
-    "section": "",
-    "text": "Polychlorinated biphenyls (PCBs 118, 138, and 153) were incorporated into the model using data from the SSM. These congeners were introduced into the system via habitat (water or sediment), phytoplankton, and detritus."
-  },
-  {
-    "objectID": "content/Parametrization_contaminant_submodule_PCBs.html#overview",
-    "href": "content/Parametrization_contaminant_submodule_PCBs.html#overview",
-    "title": "Parametrization of the Contaminant Submodule for PCBs",
-    "section": "",
-    "text": "Polychlorinated biphenyls (PCBs 118, 138, and 153) were incorporated into the model using data from the SSM. These congeners were introduced into the system via habitat (water or sediment), phytoplankton, and detritus."
-  },
-  {
-    "objectID": "content/Parametrization_contaminant_submodule_PCBs.html#implementation",
-    "href": "content/Parametrization_contaminant_submodule_PCBs.html#implementation",
-    "title": "Parametrization of the Contaminant Submodule for PCBs",
-    "section": "Implementation",
-    "text": "Implementation\n\nUptake and Transfer\n\nUptake activation: Uptake was activated for zooplankton, enabling trophic transfer and bioaccumulation throughout the food web\nTracking: Accumulation and transfer were explicitly tracked for each congener\nMaternal transfer: Maternal transfer of contaminants was enabled in Atlantis and implemented for this case study\n\n\n\nBiological Effects\nEffects on growth, mortality, and reproduction were based on the equations presented in Lovindeer et al. (2025):\n\nReproductive effects: Generalized to allow for two additional response shapes using the same functional form as for growth\nParameterization: Lethal and sublethal responses were parameterized using a meta-analysis of contaminant impact studies\nApplication: Biological effects were applied based on the total PCB body concentration\n\n\n\nConcentration Estimation\nA conversion factor was applied to estimate total PCB concentrations from individual congener levels."
-  },
-  {
-    "objectID": "content/Parametrization_contaminant_submodule_PCBs.html#initial-conditions",
-    "href": "content/Parametrization_contaminant_submodule_PCBs.html#initial-conditions",
-    "title": "Parametrization of the Contaminant Submodule for PCBs",
-    "section": "Initial Conditions",
-    "text": "Initial Conditions\nInitial conditions were derived from observational data, focusing on concentrations measured after the year 2000.\n\n\n\n\n\n\nWarning\n\n\n\nFurther details on data sources and conditions are needed for complete documentation."
-  },
-  {
-    "objectID": "content/Parametrization_contaminant_submodule_PCBs.html#reference",
-    "href": "content/Parametrization_contaminant_submodule_PCBs.html#reference",
-    "title": "Parametrization of the Contaminant Submodule for PCBs",
-    "section": "Reference",
-    "text": "Reference\nLovindeer et al., 2025. [Full citation to be added]"
-  },
-  {
-    "objectID": "content/Initial_conditions.html",
-    "href": "content/Initial_conditions.html",
-    "title": "Initial Conditions",
-    "section": "",
-    "text": "We revised the initial biomasses of several groups to prevent unrealistic collapses under predation pressure in the first years of simulation. Specifically, we increased the initial biomasses of shrimp and the three phytoplankton functional groups (small, medium and large).\n\n\nInitial biomass was increased 10 times, based on the average biomass predicted by the SSM.\n\n\n\nShrimp biomass was increased from 2,659 t to 50,000 t, informed by regional biomass estimates from the Ecopath model (Harvey et al. 2010).",
-    "crumbs": [
-      "Initial conditions"
-    ]
-  },
-  {
-    "objectID": "content/Initial_conditions.html#initial-biomass-revisions",
-    "href": "content/Initial_conditions.html#initial-biomass-revisions",
-    "title": "Initial Conditions",
-    "section": "",
-    "text": "We revised the initial biomasses of several groups to prevent unrealistic collapses under predation pressure in the first years of simulation. Specifically, we increased the initial biomasses of shrimp and the three phytoplankton functional groups (small, medium and large).\n\n\nInitial biomass was increased 10 times, based on the average biomass predicted by the SSM.\n\n\n\nShrimp biomass was increased from 2,659 t to 50,000 t, informed by regional biomass estimates from the Ecopath model (Harvey et al. 2010).",
-    "crumbs": [
-      "Initial conditions"
-    ]
-  },
-  {
-    "objectID": "content/Initial_conditions.html#reference",
-    "href": "content/Initial_conditions.html#reference",
-    "title": "Initial Conditions",
-    "section": "Reference",
-    "text": "Reference\nHarvey, C.J., Williams, G.D. and Levin, P.S., 2010. Food web structure and trophic control in central Puget Sound. Estuaries and Coasts, 33(6), pp.1360-1376.",
-    "crumbs": [
-      "Initial conditions"
-    ]
-  },
-  {
-    "objectID": "content/acknowledgements.html",
-    "href": "content/acknowledgements.html",
-    "title": "Acknowledgments",
-    "section": "",
-    "text": "This repo and GitHub Action was based on the tutorial by Openscapes quarto-website-tutorial by Julia Lowndes and Stefanie Butland."
-  },
-  {
     "objectID": "content/about.html",
     "href": "content/about.html",
     "title": "Atlantis Model for Puget Sound",
@@ -179,93 +47,43 @@
     "text": "title: “About” about: template: solana image: Hem_headshot_2021.jpg links: - icon: twitter text: twitter href: https://twitter.com/hmorzaria - icon: github text: Github href: https://github.com/hmorzaria\n\nMaintained by Hem Nalini Morzaria-Luna, Ph.D., marine ecologist with Long Live the Kings and developer of the Atlantis Model for Puget Sound. Her research is focused on translating modeling approaches for the management and conservation of coastal and marine resources and assessing how anthropogenic impacts influence planning and conservation decisions; my current focus is on the impacts of climate change and cumulative human impacts. Full CV available here"
   },
   {
+    "objectID": "content/diet.html",
+    "href": "content/diet.html",
+    "title": "Diets",
+    "section": "",
+    "text": "Pacific Halibut diet was updated as existing diet in the AMPS only reflected young juveniles. We used data from St-Pierre, Gilbert, and Robert J. Trumble. 2000. Diet of juvenile Pacific halibut. International Pacific Halibut Commission. Technical Report No. 43. Seattle, WA 16 pp",
+    "crumbs": [
+      "Diets"
+    ]
+  },
+  {
+    "objectID": "content/diet.html#pacific-halibut",
+    "href": "content/diet.html#pacific-halibut",
+    "title": "Diets",
+    "section": "",
+    "text": "Pacific Halibut diet was updated as existing diet in the AMPS only reflected young juveniles. We used data from St-Pierre, Gilbert, and Robert J. Trumble. 2000. Diet of juvenile Pacific halibut. International Pacific Halibut Commission. Technical Report No. 43. Seattle, WA 16 pp",
+    "crumbs": [
+      "Diets"
+    ]
+  },
+  {
+    "objectID": "content/diet.html#aurelia-labiata",
+    "href": "content/diet.html#aurelia-labiata",
+    "title": "Diets",
+    "section": "Aurelia labiata",
+    "text": "Aurelia labiata\nWe added diet for Aurelia labiata jellyfish group, considering that Aurelia spp exhibit size-based and temporal shifts in trophic position (Fleming et al. 2015) and can prey on a wide variety of individuals (Sun et al. 2021). We used the diet proportions for Aurelia coerulea reported by Sun et al. 2015, as this study used DNA metabarcoding to characterize the diet for two stages of Aurelia, polyps and ephyrae.\nFleming, N.E., Harrod, C., Newton, J. and Houghton, J.D., 2015. Not all jellyfish are equal: isotopic evidence for inter-and intraspecific variation in jellyfish trophic ecology. PeerJ, 3, p.e1110. Sun, Tingting, Lei Wang, Jianmin Zhao, and Zhijun Dong. “Application of DNA metabarcoding to characterize the diet of the moon jellyfish Aurelia coerulea polyps and ephyrae.” Acta Oceanologica Sinica 40 (2021): 160-167.",
+    "crumbs": [
+      "Diets"
+    ]
+  },
+  {
     "objectID": "content/salmon.html",
     "href": "content/salmon.html",
     "title": "Salmon groups",
     "section": "",
-    "text": "library(knitr)\nlibrary(readr)\n\n\nDiet\nUpdated diet values, including insect supplementation ## Insect supplementation to salmon diet Proportions in the biology PRM are by functional group and consider stage in the functional group file currently only juveniles are supplemented IsSupplemented value of 1 means all life history stages will consume the supplemental feed, a value of 2 is juveniles only and a value of 3 is adults only.\n\n#| column: page\n#| \nknitr::kable(readr::read_csv(here::here(\"inputs\",\"juvsalmon_insect_table.csv\")), format=\"html\", caption = \"Table 1. Updated insect supplementation for juvenile salmon groups.\")\n\nRows: 21 Columns: 4\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): predator_stage, predator, Code\ndbl (1): scaled_prop\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\nTable 1. Updated insect supplementation for juvenile salmon groups.\n\n\npredator_stage\npredator\nCode\nscaled_prop\n\n\n\n\njuvenile\nChinook Duwamish Subyearling\nCDS\n0.0470430\n\n\njuvenile\nChinook Hood Canal Subyearling\nCHC\n0.0470430\n\n\njuvenile\nChinook Hatch Subyearling\nCHS\n0.0468742\n\n\njuvenile\nChinook Hatch Yearling\nCHY\n0.0465317\n\n\njuvenile\nChinook other Subyearling\nCKS\n0.0470430\n\n\njuvenile\nChum Fall Subyearling\nCMF\n0.0469464\n\n\njuvenile\nChum Hood Canal summer run Subyearling\nCMH\n0.0469464\n\n\njuvenile\nChum Hatch Subyearling\nCMS\n0.0469464\n\n\njuvenile\nChinook Nisqually Subyearling\nCNS\n0.0470430\n\n\njuvenile\nChinook Nisqually Yearling\nCNY\n0.0470430\n\n\njuvenile\nCoho Deep South Yearling\nCOD\n0.0397610\n\n\njuvenile\nCoho Hatch Yearling\nCOH\n0.0393054\n\n\njuvenile\nCoho Skagit Yearling\nCOS\n0.0397610\n\n\njuvenile\nCoho other Yearling\nCOY\n0.0397610\n\n\njuvenile\nChinook Snohomish Subyearling\nCSN\n0.0470430\n\n\njuvenile\nChinook Skagit Subyearling\nCSS\n0.0470430\n\n\njuvenile\nChinook Skagit Yearling\nCSY\n0.0470430\n\n\njuvenile\nChinook other Yearling\nCYE\n0.0470430\n\n\njuvenile\nPink Salmon Subyearling\nPIS\n0.0748009\n\n\njuvenile\nStrait of Georgia salmonids\nSAF\n0.0470430\n\n\njuvenile\nOther salmonids\nSAL\n0.0674299",
+    "text": "Diet\nUpdated diet values, including insect supplementation ## Insect supplementation to salmon diet Proportions in the biology PRM are by functional group and consider stage in the functional group file currently only juveniles are supplemented IsSupplemented value of 1 means all life history stages will consume the supplemental feed, a value of 2 is juveniles only and a value of 3 is adults only.\n\n\nRows: 21 Columns: 4\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): predator_stage, predator, Code\ndbl (1): scaled_prop\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\nTable 1. Updated insect supplementation for juvenile salmon groups.\n\n\npredator_stage\npredator\nCode\nscaled_prop\n\n\n\n\njuvenile\nChinook Duwamish Subyearling\nCDS\n0.0470430\n\n\njuvenile\nChinook Hood Canal Subyearling\nCHC\n0.0470430\n\n\njuvenile\nChinook Hatch Subyearling\nCHS\n0.0468742\n\n\njuvenile\nChinook Hatch Yearling\nCHY\n0.0465317\n\n\njuvenile\nChinook other Subyearling\nCKS\n0.0470430\n\n\njuvenile\nChum Fall Subyearling\nCMF\n0.0469464\n\n\njuvenile\nChum Hood Canal summer run Subyearling\nCMH\n0.0469464\n\n\njuvenile\nChum Hatch Subyearling\nCMS\n0.0469464\n\n\njuvenile\nChinook Nisqually Subyearling\nCNS\n0.0470430\n\n\njuvenile\nChinook Nisqually Yearling\nCNY\n0.0470430\n\n\njuvenile\nCoho Deep South Yearling\nCOD\n0.0397610\n\n\njuvenile\nCoho Hatch Yearling\nCOH\n0.0393054\n\n\njuvenile\nCoho Skagit Yearling\nCOS\n0.0397610\n\n\njuvenile\nCoho other Yearling\nCOY\n0.0397610\n\n\njuvenile\nChinook Snohomish Subyearling\nCSN\n0.0470430\n\n\njuvenile\nChinook Skagit Subyearling\nCSS\n0.0470430\n\n\njuvenile\nChinook Skagit Yearling\nCSY\n0.0470430\n\n\njuvenile\nChinook other Yearling\nCYE\n0.0470430\n\n\njuvenile\nPink Salmon Subyearling\nPIS\n0.0748009\n\n\njuvenile\nStrait of Georgia salmonids\nSAF\n0.0470430\n\n\njuvenile\nOther salmonids\nSAL\n0.0674299",
     "crumbs": [
-      "Salmon gorups"
-    ]
-  },
-  {
-    "objectID": "content/Responses_to_temperature_and_oxygen.html",
-    "href": "content/Responses_to_temperature_and_oxygen.html",
-    "title": "Responses to Temperature and Oxygen",
-    "section": "",
-    "text": "Marine organisms exhibit complex responses to temperature and environmental drivers, with effects that vary between species, life stages, geographic regions, and other factors. We represented sensitivities to temperature and oxygen using the following options in Atlantis:\n\nThermal niches for movement\nThermal niches for spawning\nUnimodal bioenergetic response to temperature\nTemperature-dependent respiration\nMinimum oxygen concentration (ectotherms only)",
-    "crumbs": [
-      "Response to temperature and O2"
-    ]
-  },
-  {
-    "objectID": "content/Responses_to_temperature_and_oxygen.html#overview",
-    "href": "content/Responses_to_temperature_and_oxygen.html#overview",
-    "title": "Responses to Temperature and Oxygen",
-    "section": "",
-    "text": "Marine organisms exhibit complex responses to temperature and environmental drivers, with effects that vary between species, life stages, geographic regions, and other factors. We represented sensitivities to temperature and oxygen using the following options in Atlantis:\n\nThermal niches for movement\nThermal niches for spawning\nUnimodal bioenergetic response to temperature\nTemperature-dependent respiration\nMinimum oxygen concentration (ectotherms only)",
-    "crumbs": [
-      "Response to temperature and O2"
-    ]
-  },
-  {
-    "objectID": "content/Responses_to_temperature_and_oxygen.html#literature-review-methodology",
-    "href": "content/Responses_to_temperature_and_oxygen.html#literature-review-methodology",
-    "title": "Responses to Temperature and Oxygen",
-    "section": "Literature Review Methodology",
-    "text": "Literature Review Methodology\nWe obtained the parameters for functional group responses to temperature and oxygen by conducting a literature review. The quantity and quality of the information available on sensitivity to temperature and oxygen was highly variable between species. For some species, more than one source was available for some parameters. Where no information was available for a species, we used information from related taxa.\nLarvae and eggs are not explicitly represented in Atlantis, and there is no ontogenetic separation for most biological parameters that define functional responses to environmental drivers. Therefore, parameter values for adults were preferred where available. Where information from Puget Sound or the Salish Sea was not available, sources from other geographic regions were used instead, with preference for studies from neighboring geographic regions (e.g., US Pacific Northwest, US West Coast, or Alaska).\n\nScoring System\nWhere multiple studies were found for a parameter for a species, we used a scoring rubric to select between parameter values. When scoring a study, we consider the following factors hierarchically: study type, species, life stage, and geographic location. We considered study type to be the most important factor contributing to the score of a parameter because thermal tolerance thresholds can assume different meanings depending on the methodology and aims of a study.\nSingle-species values were averaged to obtain parameter values for multispecies functional groups.\n\n\n\n\n\n\nNoteTable 1: Scoring System\n\n\n\nScoring system to weigh parameter values from multiple sources. The total score S is computed as S = (Wz). Values for eggs/embryos/larvae are scored 1 for parameters related to min_spawn_temp and max_spawn_temp. In case of a tie, parameter values were averaged.\n\n\n\n\n\n\n\n\n\n\nCriterion\nWeight (W)\nScores (z)\n\n\n\n\nStudy type\n5\nExperiment - 1Model - 0.5Global database - 0.25Field observation - 0.1\n\n\nSpecies\n4\nSame species - 1Same genus - 0.5Same family - 0.25Generic/other - 0.1\n\n\nLife stage\n3\nAdult - 1Juvenile - 0.5Egg/embryo/larva - 0.25*\n\n\nLocation\n2\nPS/Salish Sea/Pacific Northwest - 1NE Pacific - 0.5Global/Other location - 0.25",
-    "crumbs": [
-      "Response to temperature and O2"
-    ]
-  },
-  {
-    "objectID": "content/Responses_to_temperature_and_oxygen.html#temperature",
-    "href": "content/Responses_to_temperature_and_oxygen.html#temperature",
-    "title": "Responses to Temperature and Oxygen",
-    "section": "Temperature",
-    "text": "Temperature\n\nThermal Tolerance Niches\nWe imposed restriction to the spatial distributions of functional groups in the model by setting values of minimum and maximum tolerated temperature (parameters min_move_temp and max_move_temp in Atlantis). For many species in the model, particularly for Pacific salmon, we could find several observational studies that linked the presence of a species with the temperatures observed in the field. However, the tolerance limits in Atlantis were intended to be a broad range of temperatures at which a species could occur. As such, we preferred using the broad thermal envelope identified for each species by AquaMaps (Kaschner et al. 2019). AquaMaps (www.aquamaps.org) is a public global database of model-based, large-scale predictions of species occurrences that provides information on species environmental envelopes, including their preferred thermal range.\nTo capture the effect of temperature on the reproduction of stenothermic species, we parameterized spawning limitations based on the available information on thermal limits for spawning, egg hatching, and larval survival. In Atlantis, the user can define the maximum and minimum values of temperature that allow spawning to occur (parameters min_spawn_temp and max_spawn_temp). These parameters work by preventing the spawning process from occurring if temperature in a cell is outside the defined range, meaning that effects of temperature on eggs or larvae are implicit. Eggs and larvae are not explicitly represented in Atlantis, and it is therefore impossible to distinguish between the effects of temperature on different pre-recruitment stages.\n\n\nBioenergetic Responses to Temperature\n\nConsumption\nAtlantis allows to represent bioenergetic responses to temperature for ectotherms. We applied a dome-shaped bioenergetic response of ectotherm metabolism to increasing temperature. The response curve follows the formulation of Kitchell et al. (1977) and is applied sensu Rovellini et al. (2024). Briefly, a temperature-dependent correction factor for metabolism \\(T_{corr}\\) is calculated as:\n\\[T_{corr} = \\frac{V^X \\cdot e^{X(1-V)}}{(e^{X})^{0.98(1-V)}}\\]\nWhere:\n\\[V = \\frac{T_{CM} - T}{T_{CM} - T_{C0}}\\]\n\\[X = \\frac{(ln(Q_{10})(T_{CM} - T_{C0} + 2))^2}{400}\\]\nWhere \\(T_{C0}\\) is the temperature of highest consumption, \\(T_{CM}\\) is the water temperature above which no consumption occurs, and \\(Q_{10}\\) approximates the slope of the ascending limb of the curve. In Atlantis, the multiplier gets applied to consumption-dependent growth (parameters mum and C), and also to the mortality terms (mL and mQ).\n\n\nRespiration\nAtlantis allows to represent maintenance costs via implicit assimilation efficiency and, for age-structured groups, by modeling temperature- and weight-dependent respiration explicitly. We turned on respiration, as this feature was turned off in the original version of the model. Then, we imposed an effect of temperature on fish respiration R (the daily N weight lost to respiration) as:\n\\[R = K_A \\cdot W^{K_B} \\cdot e^{K_{tmp} \\cdot T}\\]\nWhere \\(K_A\\) is the allometric respiration constant (mg N mg⁻¹ N d⁻¹), \\(W\\) is the individual’s dry weight in mg N, \\(K_B\\) is the allometric respiration exponent, and \\(K_{tmp}\\) is a constant. Parameters \\(K_A\\) and \\(K_B\\) were specific for each functional group, while \\(K_{tmp}\\) is written in Atlantis to have one value for all teleosts and one for all chondrichthyans (0.086 and 0.075, respectively).\nNotably, respiration costs in Atlantis are represented as consumed dry weight, instead of oxygen. This also meant that the units of most of the parameter values obtained from the literature had to be converted accordingly.\n\n\n\n\n\n\nNoteTable 2: Bioenergetic and Respiration Parameters\n\n\n\nBioenergetic and respiration parameters for fish groups from the literature review.\n\n\n\n\n\n\n\n\n\n\n\n\n\nGroup\nQ10\nTC0 (°C)\nTCM (°C)\nKA\nKB\n\n\n\n\nPacific Herring Puget Sound\n2.20\n14.20\n17.90\n0.0019\n0.773\n\n\nPacific Herring Cherry Point\n2.20\n14.20\n17.90\n0.0019\n0.773\n\n\nSmall Planktivorous Fish\n2.75\n17.00\n19.00\n0.0017\n0.190\n\n\nPerch\n2.75\n15.00\n20.00\n0.0023\n0.780\n\n\nChinook Hatch Yearling\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook Hatch Subyearling\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook Skagit Yearling\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook Skagit Subyearling\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook Snohomish Subyearling\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook Duwamish Subyearling\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook Nisqually Yearling\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook Nisqually Subyearling\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook Hood Canal Subyearling\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook other Yearling\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook other Subyearling\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook resident Hood canal\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook resident North Puget Sound\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook resident central south Puget Sound\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nCoho Hatch Yearling\n2.75\n18.00\n24.00\n0.0015\n0.783\n\n\nCoho Skagit Yearling\n2.75\n18.00\n24.00\n0.0015\n0.783\n\n\nCoho Deep South Yearling\n2.75\n18.00\n24.00\n0.0015\n0.783\n\n\nCoho other Yearling\n2.75\n18.00\n24.00\n0.0015\n0.783\n\n\nCoho resident Puget Sound wide\n2.75\n18.00\n24.00\n0.0015\n0.783\n\n\nCoho resident Deep South Yearling\n2.75\n18.00\n24.00\n0.0015\n0.783\n\n\nChum Hatch Subyearling\n2.75\n15.80\n21.07\n0.0023\n0.780\n\n\nChum Fall Subyearling\n2.75\n15.80\n21.07\n0.0023\n0.780\n\n\nChum Hood Canal summer run Subyearling\n2.75\n15.80\n21.07\n0.0023\n0.780\n\n\nPink Salmon Subyearling\n2.75\n15.00\n20.00\n0.0023\n0.780\n\n\nOther salmonids\n2.75\n17.40\n25.14\n0.0008\n0.791\n\n\nStrait of Georgia salmonids\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nHake_Large gadoids\n2.50\n10.57\n15.50\n0.0033\n0.794\n\n\nLarge demersal predators\n2.50\n15.00\n20.00\n0.0015\n0.775\n\n\nDemersal rockfish\n2.75\n15.00\n20.00\n0.0081\n0.752\n\n\nMidwater rockfish\n2.75\n15.75\n21.00\n0.0081\n0.752\n\n\nDemersal vulnerable rockfish\n2.80\n17.83\n23.00\n0.0057\n0.752\n\n\nMidwater vulnerable rockfish\n2.75\n15.00\n20.00\n0.0081\n0.752\n\n\nSmall demersal fish\n4.50\n20.50\n21.50\n0.0009\n0.668\n\n\nSmall-mouthed Flatfish\n1.76\n9.50\n21.00\n0.0023\n0.780\n\n\nPiscivorous flatfish\n2.79\n16.74\n22.00\n0.0023\n0.780\n\n\nSpiny dogfish\n1.76\n19.00\n25.00\n0.0037\n0.860\n\n\nSixgill Shark\n2.75\n15.00\n20.00\n0.0023\n0.780\n\n\nSkates\n2.75\n15.00\n20.00\n0.0023\n0.780\n\n\nRatfish\n2.75\n15.00\n20.00\n0.0023\n0.780\n\n\n\n\n\n\nMarine Mammal Respiration\nFor marine mammals, we express the respiration as a function of weight W only, assuming that water temperature does not impact the metabolism rate for endotherm species. Similarly, we assume that bird respiration rates are not a function of the water temperature. For these groups, the respiration is expressed as follows:\n\\[R = K_A \\cdot W^{K_B}\\]\nwhere \\(K_A\\) is the allometric respiration constant (g N·mg⁻¹ N·d⁻¹), \\(W\\) is the individual’s dry weight in mg N, \\(K_B\\) is the allometric respiration exponent, and \\(K_{tmp}\\) is a constant. Parameters \\(K_A\\) and \\(K_B\\) were specific for each functional group.\n\n\n\n\n\n\nNoteTable 3: Marine Mammal and Bird Parameters\n\n\n\nBioenergetic and respiration parameters for marine mammal and bird groups from the literature review.\n\n\n\n\n\nGroup\nKA\nKB\n\n\n\n\nResident orca\n0.024241\n0.75\n\n\nTransient orcas\n0.024241\n0.75\n\n\nCalifornia sea lions\n0.052212\n0.75\n\n\nCalifornia Sea Lion\n0.039015\n0.75\n\n\nHarbor seal\n0.019651\n0.75\n\n\nHarbor seals\n0.028114\n0.75\n\n\nHumpback\n0.024241\n0.75\n\n\nPiscivorous seabirds\n0.0005478955\n0.774\n\n\nNon-piscivorous seabirds\n0.0005478955\n0.774\n\n\nRaptors\n0.0005478955\n0.774",
-    "crumbs": [
-      "Response to temperature and O2"
-    ]
-  },
-  {
-    "objectID": "content/Responses_to_temperature_and_oxygen.html#oxygen-sensitivity",
-    "href": "content/Responses_to_temperature_and_oxygen.html#oxygen-sensitivity",
-    "title": "Responses to Temperature and Oxygen",
-    "section": "Oxygen Sensitivity",
-    "text": "Oxygen Sensitivity\nWater-breathing organisms are limited by the concentration of dissolved oxygen available in the water. While oxygen consumption, and therefore susceptibility to oxygen limitation, varies dynamically with body weight and temperature in ectotherms, oxygen concentration is not explicitly included in the current formulation of respiration and bioenergetic responses in Atlantis.\nHowever, to capture the lethal effects of anoxic conditions, which are known to occur in Puget Sound, we imposed lower limits of dissolved oxygen below which mortality occurs (Atlantis parameters XXX_min_O2 for age-structured groups, and KO2LIM_XXX for biomass pools). Parameter values were obtained from the R package published at https://github.com/tessington/metabolic_index (Essington et al., in prep.). We used the predicted posterior medians of the critical oxygen partial pressure for each taxon, converted from kPa to mg m⁻³ using the R package “respR”.",
-    "crumbs": [
-      "Response to temperature and O2"
-    ]
-  },
-  {
-    "objectID": "content/foodweb.html",
-    "href": "content/foodweb.html",
-    "title": "Updates to the food web",
-    "section": "",
-    "text": "Updated code to combine diet data studies\nUpdated salmon supplementation (see Salmon page for details). Supplementation proportions in the biology PRM are by functional group and consider stage in the functional group file currently only juveniles are supplemented. IsSupplemented value of 1 means all life history stages will consume the supplemental feed, a value of 2 is juveniles only and a value of 3 is adults only.\nUpdated ROR diet (see Resident orcas page for details)",
-    "crumbs": [
-      "Foodweb"
-    ]
-  },
-  {
-    "objectID": "content/foodweb.html#august-2023",
-    "href": "content/foodweb.html#august-2023",
-    "title": "Updates to the food web",
-    "section": "",
-    "text": "Updated code to combine diet data studies\nUpdated salmon supplementation (see Salmon page for details). Supplementation proportions in the biology PRM are by functional group and consider stage in the functional group file currently only juveniles are supplemented. IsSupplemented value of 1 means all life history stages will consume the supplemental feed, a value of 2 is juveniles only and a value of 3 is adults only.\nUpdated ROR diet (see Resident orcas page for details)",
-    "crumbs": [
-      "Foodweb"
-    ]
-  },
-  {
-    "objectID": "content/residents.html",
-    "href": "content/residents.html",
-    "title": "Resident orcas",
-    "section": "",
-    "text": "library(readr)\nlibrary(ggplot2)\nlibrary(data.table)\nlibrary(dplyr)\nlibrary(tidyr)\n\nResident orcas simulate the Southern Resident Killer Whale endemic population\n\nUpdated the diet using Ford et al. 1998, Ford & Ellis, 2006, Ford 2009, Hanson et al., 2010 & 2021 and Hermann et al. 2015\n\n\n\nInstalling package into '/home/runner/work/_temp/Library'\n(as 'lib' is unspecified)\n\n\nLoading required package: devtools\n\n\nLoading required package: usethis\n\n\nLoading required package: readxl\n\n\nLoading required package: sp\n\n\nLoading required package: rnaturalearth\n\n\nLoading required package: rnaturalearthdata\n\n\n\nAttaching package: 'rnaturalearthdata'\n\n\nThe following object is masked from 'package:rnaturalearth':\n\n    countries110\n\n\nLoading required package: here\n\n\nhere() starts at /home/runner/work/psatlantismodelupdates/psatlantismodelupdates\n\n\nLoading required package: raster\n\n\nError: package or namespace load failed for 'raster' in dyn.load(file, DLLpath = DLLpath, ...):\n unable to load shared object '/home/runner/work/_temp/Library/terra/libs/terra.so':\n  libproj.so.25: cannot open shared object file: No such file or directory\n\n\nLoading required package: exactextractr\n\n\nError: package or namespace load failed for 'exactextractr' in dyn.load(file, DLLpath = DLLpath, ...):\n unable to load shared object '/home/runner/work/_temp/Library/terra/libs/terra.so':\n  libproj.so.25: cannot open shared object file: No such file or directory\n\n\nLoading required package: glmmTMB\n\n\nLoading required package: knitr\n\n\nLoading required package: rlang\n\n\n\nAttaching package: 'rlang'\n\n\nThe following object is masked from 'package:data.table':\n\n    :=\n\n\nLoading required package: ggrepel\n\n\nLoading required package: mapview\n\n\nError: package or namespace load failed for 'mapview' in dyn.load(file, DLLpath = DLLpath, ...):\n unable to load shared object '/home/runner/work/_temp/Library/terra/libs/terra.so':\n  libproj.so.25: cannot open shared object file: No such file or directory\n\n\nLoading required package: formattable\n\n\nLoading required package: RColorBrewer\n\n\nLoading required package: stringi\n\n\nLoading required package: stringr\n\n\nLoading required package: R.utils\n\n\nLoading required package: R.oo\n\n\nLoading required package: R.methodsS3\n\n\nR.methodsS3 v1.8.2 (2022-06-13 22:00:14 UTC) successfully loaded. See ?R.methodsS3 for help.\n\n\nR.oo v1.27.1 (2025-05-02 21:00:05 UTC) successfully loaded. See ?R.oo for help.\n\n\n\nAttaching package: 'R.oo'\n\n\nThe following object is masked from 'package:R.methodsS3':\n\n    throw\n\n\nThe following objects are masked from 'package:rlang':\n\n    abort, ll\n\n\nThe following objects are masked from 'package:devtools':\n\n    check, unload\n\n\nThe following objects are masked from 'package:methods':\n\n    getClasses, getMethods\n\n\nThe following objects are masked from 'package:base':\n\n    attach, detach, load, save\n\n\nR.utils v2.13.0 (2025-02-24 21:20:02 UTC) successfully loaded. See ?R.utils for help.\n\n\n\nAttaching package: 'R.utils'\n\n\nThe following object is masked from 'package:rlang':\n\n    env\n\n\nThe following object is masked from 'package:tidyr':\n\n    extract\n\n\nThe following object is masked from 'package:utils':\n\n    timestamp\n\n\nThe following objects are masked from 'package:base':\n\n    cat, commandArgs, getOption, isOpen, nullfile, parse, use, warnings\n\n\nLoading required package: magrittr\n\n\n\nAttaching package: 'magrittr'\n\n\nThe following object is masked from 'package:R.utils':\n\n    extract\n\n\nThe following object is masked from 'package:R.oo':\n\n    equals\n\n\nThe following object is masked from 'package:rlang':\n\n    set_names\n\n\nThe following object is masked from 'package:tidyr':\n\n    extract\n\n\nLoading required package: future\n\n\n\nAttaching package: 'future'\n\n\nThe following object is masked from 'package:R.utils':\n\n    reset\n\n\nLoading required package: parallel\n\n\nLoading required package: formatR\n\n\nRows: 73 Columns: 28\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (5): OldCode, Code, Name, Long Name, GroupType\ndbl (23): Index, IsTurnedOn, NumCohorts, NumGeneTypes, NumStages, NumSpawns,...\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\nUpdated diet proportions for Chinook populations from Hanson et al. 2021\nSpatial distributions based on SRKW sightings. Estimated based on Thorson et al. 2015\nSeasonal distribution\n\nWe updated spatial distribution based on orca master data of killer whale sightings for the years 2011 - 2020. Laura Kohen (NOAA-Western Regional Center, Protected Species Division) carried out the following analysis: To match sightings of Southern Resident killer whales to Puget Sound Atlantis boxes. First, sightings are filtered to only sightings where there was confidence that the sighting was of Southern Resident killer whales (vs other killer whale populations). Specifically, data is filtered to sightings where the “likely pod” is either SRKW, SRs, J, K, or L; so excludes any sightings where the sighting could only be identified to the “orca” level (not more specific). Also excludes sightings that were specified as transients, Northern residents, “not orcas”, or HBs (humpbacks). Data was then filtered to years 2011-2020. From there, we filtered down to unique day-quadrant sightings. Specifically, if there are any 2+ sightings with the same date and Whale Museum specified quadrant number, we only keep 1 sighting with that day-quadrant combo. This is to remove sightings from multiple sources that can inflate occurrence in an area. Note, this then means that there could be multiple sightings on the same day in the same Atlantis box, but they will all be in different Whale Museum quadrants.\nNote also that data was filtered down to only sightings with a whale museum identified quadrant number because these will occur in the Salish sea. Note that Whale Museum quadrant extend passed the Atlantis box domain (we do not have a shapefile of the quadrants but image is included with data). This may miss a few sightings if a quadrant was not specified by the Whale Museum but not a large amount.\nWith the sightings data, sightings were converted to an sf object with latitude and longitude. Then, based on the CRS of the Atlantis polygons, the SRKW sightings sf were projected to the same CRS as the Atlantis polygons so that all are in the same sf space/same traget coordinate reference system (function st_transform). Then using st_intersection, this function finds the Atlantis polygons that each sighting falls into.\nThe final output file has for all the day-quadrant unique SRKW sightings from 2011-2020, the date (including month, day, year) and the Atlantis polygon where the sighting fell.\n\nFecundity. Fishery Management Council Working Group, data from Eric Ward, https://nwfsc-cb.github.io/srkw-status/.\n\nReferences\nFord, J.K.B., G.A. Ellis, L.G. Barrett-Lennard, A.B. Morton, R.S. Palm & K.C. Balcomb. 1998. Dietary specialization in two sympatric populations of killer whales (Orcinus orca) in coastal British Columbia and adjacent waters. Canadian Journal of Zoology-Revue Canadienne de Zoologie 76: 1456–1471.\nFord, J.K.B. & G.M. Ellis. 2006. Selective foraging by fish-eating killer whales Orcinus orca in British Columbia. Mar. Ecol. Prog. Ser. 316: 185–199.\nFord, J.K.B. 2009. Chinook salmon predation by resident killer whales: Seasonal and regional selectivity, stock identity of prey, and consumption rates. Canadian Science Advisory Secretariat = Secrétariat canadien de consultation scientifique.\nThorson, J.T., Shelton, A.O., Ward, E.J., Skaug, H.J., 2015. Geostatistical delta-generalized linear mixed models improve precision for estimated abundance indices for West Coast groundfishes. ICES J. Mar. Sci. J. Cons. 72(5), 1297–1310. doi:10.1093/icesjms/fsu243. URL: http://icesjms.oxfordjournals.org/content/72/5/1297",
-    "crumbs": [
-      "Resident orcas"
+      "Salmon groups"
     ]
   },
   {
@@ -306,6 +124,226 @@
     "text": "Manual Adjustments\nBetween automated calibration runs, targeted manual adjustments were made to improve emergent ecosystem dynamics. These included:\n\n1. Maturation Ogives\nMaturation ogives were modified to prevent unrealistic population growth in species using a “recruits-per-adult” reproduction option. In particular, reproduction was disabled for the first age class to avoid numerical instabilities caused by exponential recruitment feedback.\n\n\n2. Benthic Species Spatial Distribution\nBenthic species spatial distribution was corrected by activating a model flag that enforces habitat mapping based on input data, ensuring consistency with spatial constraints.\n\n\n3. Predation Mortality Rates\nPredation mortality rates (mQ) were initially set to zero for all groups, except juvenile stages of age-structured species, for which mQ remained active to prevent uncontrolled demographic expansion during calibration.\n\n\n4. Starvation Mortality Responses\nStarvation mortality responses were enhanced by increasing the sensitivity to food limitation:\n\nKthreshm was increased (from X to X)\nmStrav was also raised (from X to X)\nflag_shrink parameter was set to 1, enabling individuals to lose structural or reserve biomass under starvation conditions\n\n\n\n\n\n\n\nNote\n\n\n\nNote: Specific values for the parameter increases need to be filled in where marked with “X to X”.",
     "crumbs": [
       "Calibration"
+    ]
+  },
+  {
+    "objectID": "content/jellyfishtext.html",
+    "href": "content/jellyfishtext.html",
+    "title": "Addition of a jellyfish functional group",
+    "section": "",
+    "text": "Code\nlibrary(knitr)\nlibrary(here)\nlibrary(readr)",
+    "crumbs": [
+      "Jellyfish"
+    ]
+  },
+  {
+    "objectID": "content/jellyfishtext.html#addition-of-a-jellyfish-functional-group",
+    "href": "content/jellyfishtext.html#addition-of-a-jellyfish-functional-group",
+    "title": "Addition of a jellyfish functional group",
+    "section": "Addition of a Jellyfish functional group",
+    "text": "Addition of a Jellyfish functional group\n\nThe model simulates food web dynamics using 73 biological groups, including one gelatinous zooplankton. While much effort centered on characterizing pelagic fish abundance, diets, and distribution during the development of the AMPS, data on these attributes are scarcer for jellyfish in Puget Sound. We use data from field studies, mesocosms, and relevant global literature to add a new functional group, based on the jellyfish Aurelia. We incorporate information on total consumption rates of Aurelia on their prey and composition of Aurelia diet.\nAs part of a WA Sea Grant project, led by Julie Kiester (University of Washington), “Ecosystem impacts of the jellyfish Aurelia labiata in Puget Sound”, we will quantify the ecosystem effects of changing jellyfish populations in Puget Sound. We will examine scenarios that integrate results from mesocosms and field studies part of this grant to understand the ecological role of jellyfish in Puget Sound, and their effects on other species including salmon and forage fish. Spatial representation in the Atlantis Model for Puget Sound (AMPS) will allow us to test the impact of spatial aggregations of Aurelia identified in aerial monitoring by EOPS, for instance in South Sound inlets. Vertical structure in the model allows us to capture diel vertical movement of jellyfish and other zooplankton taxa, which will be informed by field sampling.\n#Current parameterization of ‘Gelatinous zooplankton’\nIn its initial version, the AMPS included one ‘Gelatinous zooplankton’ functional group, which encompassed scyphozoans, larvaceans, siphonophores, and ctenophores. Other plankton groups, including jellyfish prey, were aggregated into five additional functional groups (Table 1). The composition of the ‘Gelatinous zooplankton’ functional group was based on samples collected throughout Puget Sound in 2011 and 2014-2017 using zooplankton nets. These nets are likely to entirely miss larger medusae, so we added information from extensive surface trawl sampling of larger jellyfish and pelagic fish undertaken in 2011 across all basins of Puget Sound. We interpolated missing data (per polygon) based on the average of all sampled polygons of similar bottom depth (i.e., with the same number of Atlantis depth layers). Total abundance of gelatinous zooplankton (per Atlantis polygon) was then taken as the sum of large and small jellyfish abundance.\n\n\n\nCode\n#| column: page\n#| \nknitr::kable(readr::read_csv(here::here(\"inputs\",\"guilds_table.csv\")), format=\"html\", caption = \"Table 1. Plankton groups in the Atlantis Model of Puget Sound.\")\n\n\nRows: 6 Columns: 3\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): Functional group, Representative Species, Common name\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\nTable 1. Plankton groups in the Atlantis Model of Puget Sound.\n\n\nFunctional group\nRepresentative Species\nCommon name\n\n\n\n\nGelatinous zooplankton\nCnidaria, Ctenophora, Scyphozoa; Appendicularia, Thaliacea; Mollusca; Aequorea victoria, Aurelia labiata, Cyanea capillata, Phacellophora camtschatica\nSmall hydromedusae, comb jellies, urochordates, larvaceans, pelagic salps, thecosomes and gymnosomes + crystal jelly, moon jelly, lion's mane jelly, fried egg jelly, siphonophore\n\n\nLarge phytoplankton\nSkeletonema, Chaetoceros, Thalassiosira, and Coscinodiscus; Coccolithophore\nDiatoms + Coccolithophore\n\n\nSmall phytoplankton\nGymnodinium, Gonyaulax, Pyramimonas and Dichtyocha\nDinoflagellates + phytoflagellates\n\n\nMicrozooplankton\nCiliates, dinoflagellates including Noctiluca, foraminiferans, and radiolarians\nUnicellular heterotrophic protozoans, larval stage of benthic invertebrates, rotifers\n\n\nMesozooplankton\nCalanus pacificus; Acartia, Pseudocalanus, Paracalanus, and Eucalanus\nCopepods\n\n\nLarge zooplankton\nChaetognaths, pelagic shrimp (e.g., Sergestidae and Pasiphaeidae), hyperiid amphipods, pelagic larval stages of benthic macroinvertebrates, large predatory copepods, euphausiids\nChaetognaths, pelagic shrimp (e.g., families Sergestidae and Pasiphaeidae, Caridea), hyperiid amphipods, the pelagic larval stages of benthic macroinvertebrates, and large predatory copepods ; euphausiids\n\n\n\n\n\nGelatinous zooplankton diets were compiled from multiple sources, focused on Puget Sound when available (Costello2002?, Purcell1990?); these are studies from Puget Sound, but do not include Aurelia diet, instead describing the diet of small hydromedusae such as Aglantha and Obelia. Currently, diet of gelatinous zooplankton in the AMPS is: 48.3% microzooplankton; 24.7% mesozooplankton (copepods); and 27% other zooplankton including barnacle larvae, appendicularians, and bivalve larvae. As an approximation, rate parameters, specifically growth and clearance rates, were taken from the California Current Atlantis model (Kaplan2017?, Marshall2017?).\n\n\nCode\n#| label: load-packages\n#| include: false\nsource(here::here(\"libraries.R\")) #need to figure out which ones are actually needed\n\n\nInstalling package into '/home/runner/work/_temp/Library'\n(as 'lib' is unspecified)\n\n\nLoading required package: dplyr\n\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n\nLoading required package: devtools\n\n\nLoading required package: usethis\n\n\nLoading required package: readxl\n\n\nLoading required package: sp\n\n\nLoading required package: rnaturalearth\n\n\nLoading required package: rnaturalearthdata\n\n\n\nAttaching package: 'rnaturalearthdata'\n\n\nThe following object is masked from 'package:rnaturalearth':\n\n    countries110\n\n\nLoading required package: raster\n\n\nError: package or namespace load failed for 'raster' in dyn.load(file, DLLpath = DLLpath, ...):\n unable to load shared object '/home/runner/work/_temp/Library/terra/libs/terra.so':\n  libproj.so.25: cannot open shared object file: No such file or directory\n\n\nLoading required package: exactextractr\n\n\nError: package or namespace load failed for 'exactextractr' in dyn.load(file, DLLpath = DLLpath, ...):\n unable to load shared object '/home/runner/work/_temp/Library/terra/libs/terra.so':\n  libproj.so.25: cannot open shared object file: No such file or directory\n\n\nLoading required package: glmmTMB\n\n\nLoading required package: rlang\n\n\nLoading required package: ggplot2\n\n\nLoading required package: ggrepel\n\n\nLoading required package: mapview\n\n\nError: package or namespace load failed for 'mapview' in dyn.load(file, DLLpath = DLLpath, ...):\n unable to load shared object '/home/runner/work/_temp/Library/terra/libs/terra.so':\n  libproj.so.25: cannot open shared object file: No such file or directory\n\n\nLoading required package: formattable\n\n\nLoading required package: RColorBrewer\n\n\nLoading required package: stringi\n\n\nLoading required package: data.table\n\n\n\nAttaching package: 'data.table'\n\n\nThe following object is masked from 'package:rlang':\n\n    :=\n\n\nThe following objects are masked from 'package:dplyr':\n\n    between, first, last\n\n\nThe following object is masked from 'package:base':\n\n    %notin%\n\n\nLoading required package: tidyr\n\n\nLoading required package: stringr\n\n\nLoading required package: R.utils\n\n\nLoading required package: R.oo\n\n\nLoading required package: R.methodsS3\n\n\nR.methodsS3 v1.8.2 (2022-06-13 22:00:14 UTC) successfully loaded. See ?R.methodsS3 for help.\n\n\nR.oo v1.27.1 (2025-05-02 21:00:05 UTC) successfully loaded. See ?R.oo for help.\n\n\n\nAttaching package: 'R.oo'\n\n\nThe following object is masked from 'package:R.methodsS3':\n\n    throw\n\n\nThe following objects are masked from 'package:rlang':\n\n    abort, ll\n\n\nThe following objects are masked from 'package:devtools':\n\n    check, unload\n\n\nThe following objects are masked from 'package:methods':\n\n    getClasses, getMethods\n\n\nThe following objects are masked from 'package:base':\n\n    attach, detach, load, save\n\n\nR.utils v2.13.0 (2025-02-24 21:20:02 UTC) successfully loaded. See ?R.utils for help.\n\n\n\nAttaching package: 'R.utils'\n\n\nThe following object is masked from 'package:tidyr':\n\n    extract\n\n\nThe following object is masked from 'package:rlang':\n\n    env\n\n\nThe following object is masked from 'package:utils':\n\n    timestamp\n\n\nThe following objects are masked from 'package:base':\n\n    cat, commandArgs, getOption, isOpen, nullfile, parse, use, warnings\n\n\nLoading required package: magrittr\n\n\n\nAttaching package: 'magrittr'\n\n\nThe following object is masked from 'package:R.utils':\n\n    extract\n\n\nThe following object is masked from 'package:R.oo':\n\n    equals\n\n\nThe following object is masked from 'package:tidyr':\n\n    extract\n\n\nThe following object is masked from 'package:rlang':\n\n    set_names\n\n\nLoading required package: future\n\n\n\nAttaching package: 'future'\n\n\nThe following object is masked from 'package:R.utils':\n\n    reset\n\n\nLoading required package: parallel\n\n\nLoading required package: formatR",
+    "crumbs": [
+      "Jellyfish"
+    ]
+  },
+  {
+    "objectID": "content/jellyfishtext.html#updated-spatial-distribution",
+    "href": "content/jellyfishtext.html#updated-spatial-distribution",
+    "title": "Addition of a jellyfish functional group",
+    "section": "Updated spatial distribution",
+    "text": "Updated spatial distribution\nWe used the results from Green et al. who examined interspecific variation in species-specific response of jellyfish adult life stages to environmental variation and anthropogenic influence, and projected future changes in these parameters in Puget Sound. They used results from a field survey to predict the presence of seven jellyfish species across six sub basins in Puget Sound. They modeled the probability of species presence as a function of site-specific parameters (geomorphic type, anthropogenic land use) and observation-specific variables (salinity, temperature, depth). Their presence/absence models indicated strong interspecific variation in the habitat preferences of jellyfish to environmental parameters such as temperature and geomorphic type, as well as varying sensitivity to potential anthropogenic effects on nearshore waters. Aurelia individuals were associated with large and small backwater embayments rather than exposed shorelines, and human development within these embayments was shown to decrease the probability of presence. We used the embayments derived by Green et al. (embayment_unit_revised.shp) and classified additional coastline segments from data collected by The Salmon and Steelhead Habitat Inventory and Assessment Program (SSHIAP) (geomorph_ps_s.shp from Geodatabase SSHIAP_Marine.gdb&gt;Geomorph_PS_S). Geomorphology categories beach, modified, shoreline, bluff, and platform categories were aggregated and reclassified as exposed; all types of delta were assigned to the delta category. We also derived percent used landcover classes at 30 m resolution (szline_GSU_identity_Spj_HUC_NHD_dissolve_DU_sum_LU.shp).\nDevelopment classes were based on the NCCOS’ Coastal Change and Analysis Program (C-CAP, 2006 analysis year). Nationally standardized, raster-based inventories of land cover for the coastal areas of the U.S. Data are derived, through the Coastal Change Analysis Program, from the analysis of multiple dates of remotely sensed imagery. https://coast.noaa.gov/digitalcoast/tools/lca.html. Land classification scheme https://coast.noaa.gov/data/digitalcoast/pdf/ccap-class-scheme-regional.pdf\nFollowing Green et al. we used data from the Puget Sound Nearshore Ecosystem Restoration Project (PSNERP), an initiative led by the Washington Department of Fish and Wildlife (WDFW) in partnership with the U.S. Army Corps of Engineers (Corps) to assign geomorphology classification to Atlantis polygons\nhttps://wdfw.wa.gov/species-habitats/habitat-recovery/puget-sound/psnerp\nhttps://wdfw.maps.arcgis.com/apps/webappviewer/index.html?id=adfd521d37774e868e0e974cc03860df to assign geomorphic types to sampling areas.\nUsed landcover classes at 30 m resolution. Development classes were based on the NCCOS’ Coastal Change and Analysis Program (C-CAP, 2006 analysis year). Nationally standardized, raster-based inventories of land cover for the coastal areas of the U.S. Data are derived, through the Coastal Change Analysis Program, from the analysis of multiple dates of remotely sensed imagery. https://coast.noaa.gov/digitalcoast/tools/lca.html. Land classification scheme https://coast.noaa.gov/data/digitalcoast/pdf/ccap-class-scheme-regional.pdf",
+    "crumbs": [
+      "Jellyfish"
+    ]
+  },
+  {
+    "objectID": "content/acknowledgements.html",
+    "href": "content/acknowledgements.html",
+    "title": "Acknowledgments",
+    "section": "",
+    "text": "Model updates 2022-2026 were funded by the Puget Sound Integrated Modeling Framework project, a grant to the University of Washington-Tacoma by the Allen Family Foundation\nThis repo and GitHub Action was based on the tutorial by Openscapes quarto-website-tutorial by Julia Lowndes and Stefanie Butland.",
+    "crumbs": [
+      "Acknowledgments"
+    ]
+  },
+  {
+    "objectID": "content/Parametrization_contaminant_submodule_PCBs.html",
+    "href": "content/Parametrization_contaminant_submodule_PCBs.html",
+    "title": "Parametrization of the Contaminant Submodule for PCBs",
+    "section": "",
+    "text": "Polychlorinated biphenyls (PCBs 118, 138, and 153) were incorporated into the model using data from the SSM. These congeners were introduced into the system via habitat (water or sediment), phytoplankton, and detritus.",
+    "crumbs": [
+      "PCBs"
+    ]
+  },
+  {
+    "objectID": "content/Parametrization_contaminant_submodule_PCBs.html#overview",
+    "href": "content/Parametrization_contaminant_submodule_PCBs.html#overview",
+    "title": "Parametrization of the Contaminant Submodule for PCBs",
+    "section": "",
+    "text": "Polychlorinated biphenyls (PCBs 118, 138, and 153) were incorporated into the model using data from the SSM. These congeners were introduced into the system via habitat (water or sediment), phytoplankton, and detritus.",
+    "crumbs": [
+      "PCBs"
+    ]
+  },
+  {
+    "objectID": "content/Parametrization_contaminant_submodule_PCBs.html#implementation",
+    "href": "content/Parametrization_contaminant_submodule_PCBs.html#implementation",
+    "title": "Parametrization of the Contaminant Submodule for PCBs",
+    "section": "Implementation",
+    "text": "Implementation\n\nUptake and Transfer\n\nUptake activation: Uptake was activated for zooplankton, enabling trophic transfer and bioaccumulation throughout the food web\nTracking: Accumulation and transfer were explicitly tracked for each congener\nMaternal transfer: Maternal transfer of contaminants was enabled in Atlantis and implemented for this case study\n\n\n\nBiological Effects\nEffects on growth, mortality, and reproduction were based on the equations presented in Lovindeer et al. (2025):\n\nReproductive effects: Generalized to allow for two additional response shapes using the same functional form as for growth\nParameterization: Lethal and sublethal responses were parameterized using a meta-analysis of contaminant impact studies\nApplication: Biological effects were applied based on the total PCB body concentration\n\n\n\nConcentration Estimation\nA conversion factor was applied to estimate total PCB concentrations from individual congener levels.",
+    "crumbs": [
+      "PCBs"
+    ]
+  },
+  {
+    "objectID": "content/Parametrization_contaminant_submodule_PCBs.html#initial-conditions",
+    "href": "content/Parametrization_contaminant_submodule_PCBs.html#initial-conditions",
+    "title": "Parametrization of the Contaminant Submodule for PCBs",
+    "section": "Initial Conditions",
+    "text": "Initial Conditions\nInitial conditions were derived from observational data, focusing on concentrations measured after the year 2000.\n\n\n\n\n\n\nWarning\n\n\n\nFurther details on data sources and conditions are needed for complete documentation.",
+    "crumbs": [
+      "PCBs"
+    ]
+  },
+  {
+    "objectID": "content/Parametrization_contaminant_submodule_PCBs.html#reference",
+    "href": "content/Parametrization_contaminant_submodule_PCBs.html#reference",
+    "title": "Parametrization of the Contaminant Submodule for PCBs",
+    "section": "Reference",
+    "text": "Reference\nLovindeer et al., 2025. [Full citation to be added]",
+    "crumbs": [
+      "PCBs"
+    ]
+  },
+  {
+    "objectID": "content/Responses_to_temperature_and_oxygen.html",
+    "href": "content/Responses_to_temperature_and_oxygen.html",
+    "title": "Responses to temperature and oxygen",
+    "section": "",
+    "text": "Marine organisms exhibit complex responses to temperature and environmental drivers, with effects that vary between species, life stages, geographic regions, and other factors. We represented sensitivities to temperature and oxygen using the following options in Atlantis:\n\nThermal niches for movement\nThermal niches for spawning\nUnimodal bioenergetic response to temperature\nTemperature-dependent respiration\nMinimum oxygen concentration (ectotherms only)",
+    "crumbs": [
+      "Response to temperature and O2"
+    ]
+  },
+  {
+    "objectID": "content/Responses_to_temperature_and_oxygen.html#overview",
+    "href": "content/Responses_to_temperature_and_oxygen.html#overview",
+    "title": "Responses to temperature and oxygen",
+    "section": "",
+    "text": "Marine organisms exhibit complex responses to temperature and environmental drivers, with effects that vary between species, life stages, geographic regions, and other factors. We represented sensitivities to temperature and oxygen using the following options in Atlantis:\n\nThermal niches for movement\nThermal niches for spawning\nUnimodal bioenergetic response to temperature\nTemperature-dependent respiration\nMinimum oxygen concentration (ectotherms only)",
+    "crumbs": [
+      "Response to temperature and O2"
+    ]
+  },
+  {
+    "objectID": "content/Responses_to_temperature_and_oxygen.html#literature-review-methodology",
+    "href": "content/Responses_to_temperature_and_oxygen.html#literature-review-methodology",
+    "title": "Responses to temperature and oxygen",
+    "section": "Literature Review Methodology",
+    "text": "Literature Review Methodology\nWe obtained the parameters for functional group responses to temperature and oxygen by conducting a literature review. The quantity and quality of the information available on sensitivity to temperature and oxygen was highly variable between species. For some species, more than one source was available for some parameters. Where no information was available for a species, we used information from related taxa.\nLarvae and eggs are not explicitly represented in Atlantis, and there is no ontogenetic separation for most biological parameters that define functional responses to environmental drivers. Therefore, parameter values for adults were preferred where available. Where information from Puget Sound or the Salish Sea was not available, sources from other geographic regions were used instead, with preference for studies from neighboring geographic regions (e.g., US Pacific Northwest, US West Coast, or Alaska).\n\nScoring System\nWhere multiple studies were found for a parameter for a species, we used a scoring rubric to select between parameter values. When scoring a study, we consider the following factors hierarchically: study type, species, life stage, and geographic location. We considered study type to be the most important factor contributing to the score of a parameter because thermal tolerance thresholds can assume different meanings depending on the methodology and aims of a study.\nSingle-species values were averaged to obtain parameter values for multispecies functional groups.\n\n\n\n\n\n\nNoteTable 1: Scoring System\n\n\n\nScoring system to weigh parameter values from multiple sources. The total score S is computed as S = (Wz). Values for eggs/embryos/larvae are scored 1 for parameters related to min_spawn_temp and max_spawn_temp. In case of a tie, parameter values were averaged.\n\n\n\n\n\n\n\n\n\n\nCriterion\nWeight (W)\nScores (z)\n\n\n\n\nStudy type\n5\nExperiment - 1Model - 0.5Global database - 0.25Field observation - 0.1\n\n\nSpecies\n4\nSame species - 1Same genus - 0.5Same family - 0.25Generic/other - 0.1\n\n\nLife stage\n3\nAdult - 1Juvenile - 0.5Egg/embryo/larva - 0.25*\n\n\nLocation\n2\nPS/Salish Sea/Pacific Northwest - 1NE Pacific - 0.5Global/Other location - 0.25",
+    "crumbs": [
+      "Response to temperature and O2"
+    ]
+  },
+  {
+    "objectID": "content/Responses_to_temperature_and_oxygen.html#temperature",
+    "href": "content/Responses_to_temperature_and_oxygen.html#temperature",
+    "title": "Responses to temperature and oxygen",
+    "section": "Temperature",
+    "text": "Temperature\n\nThermal Tolerance Niches\nWe imposed restriction to the spatial distributions of functional groups in the model by setting values of minimum and maximum tolerated temperature (parameters min_move_temp and max_move_temp in Atlantis). For many species in the model, particularly for Pacific salmon, we could find several observational studies that linked the presence of a species with the temperatures observed in the field. However, the tolerance limits in Atlantis were intended to be a broad range of temperatures at which a species could occur. As such, we preferred using the broad thermal envelope identified for each species by AquaMaps (Kaschner et al. 2019). AquaMaps (www.aquamaps.org) is a public global database of model-based, large-scale predictions of species occurrences that provides information on species environmental envelopes, including their preferred thermal range.\nTo capture the effect of temperature on the reproduction of stenothermic species, we parameterized spawning limitations based on the available information on thermal limits for spawning, egg hatching, and larval survival. In Atlantis, the user can define the maximum and minimum values of temperature that allow spawning to occur (parameters min_spawn_temp and max_spawn_temp). These parameters work by preventing the spawning process from occurring if temperature in a cell is outside the defined range, meaning that effects of temperature on eggs or larvae are implicit. Eggs and larvae are not explicitly represented in Atlantis, and it is therefore impossible to distinguish between the effects of temperature on different pre-recruitment stages.\n\n\nBioenergetic Responses to Temperature\n\nConsumption\nAtlantis allows to represent bioenergetic responses to temperature for ectotherms. We applied a dome-shaped bioenergetic response of ectotherm metabolism to increasing temperature. The response curve follows the formulation of Kitchell et al. (1977) and is applied sensu Rovellini et al. (2024). Briefly, a temperature-dependent correction factor for metabolism \\(T_{corr}\\) is calculated as:\n\\[T_{corr} = \\frac{V^X \\cdot e^{X(1-V)}}{(e^{X})^{0.98(1-V)}}\\]\nWhere:\n\\[V = \\frac{T_{CM} - T}{T_{CM} - T_{C0}}\\]\n\\[X = \\frac{(ln(Q_{10})(T_{CM} - T_{C0} + 2))^2}{400}\\]\nWhere \\(T_{C0}\\) is the temperature of highest consumption, \\(T_{CM}\\) is the water temperature above which no consumption occurs, and \\(Q_{10}\\) approximates the slope of the ascending limb of the curve. In Atlantis, the multiplier gets applied to consumption-dependent growth (parameters mum and C), and also to the mortality terms (mL and mQ).\n\n\nRespiration\nAtlantis allows to represent maintenance costs via implicit assimilation efficiency and, for age-structured groups, by modeling temperature- and weight-dependent respiration explicitly. We turned on respiration, as this feature was turned off in the original version of the model. Then, we imposed an effect of temperature on fish respiration R (the daily N weight lost to respiration) as:\n\\[R = K_A \\cdot W^{K_B} \\cdot e^{K_{tmp} \\cdot T}\\]\nWhere \\(K_A\\) is the allometric respiration constant (mg N mg⁻¹ N d⁻¹), \\(W\\) is the individual’s dry weight in mg N, \\(K_B\\) is the allometric respiration exponent, and \\(K_{tmp}\\) is a constant. Parameters \\(K_A\\) and \\(K_B\\) were specific for each functional group, while \\(K_{tmp}\\) is written in Atlantis to have one value for all teleosts and one for all chondrichthyans (0.086 and 0.075, respectively).\nNotably, respiration costs in Atlantis are represented as consumed dry weight, instead of oxygen. This also meant that the units of most of the parameter values obtained from the literature had to be converted accordingly.\n\n\n\n\n\n\nNoteTable 2: Bioenergetic and Respiration Parameters\n\n\n\nBioenergetic and respiration parameters for fish groups from the literature review.\n\n\n\n\n\n\n\n\n\n\n\n\n\nGroup\nQ10\nTC0 (°C)\nTCM (°C)\nKA\nKB\n\n\n\n\nPacific Herring Puget Sound\n2.20\n14.20\n17.90\n0.0019\n0.773\n\n\nPacific Herring Cherry Point\n2.20\n14.20\n17.90\n0.0019\n0.773\n\n\nSmall Planktivorous Fish\n2.75\n17.00\n19.00\n0.0017\n0.190\n\n\nPerch\n2.75\n15.00\n20.00\n0.0023\n0.780\n\n\nChinook Hatch Yearling\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook Hatch Subyearling\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook Skagit Yearling\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook Skagit Subyearling\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook Snohomish Subyearling\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook Duwamish Subyearling\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook Nisqually Yearling\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook Nisqually Subyearling\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook Hood Canal Subyearling\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook other Yearling\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook other Subyearling\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook resident Hood canal\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook resident North Puget Sound\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nChinook resident central south Puget Sound\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nCoho Hatch Yearling\n2.75\n18.00\n24.00\n0.0015\n0.783\n\n\nCoho Skagit Yearling\n2.75\n18.00\n24.00\n0.0015\n0.783\n\n\nCoho Deep South Yearling\n2.75\n18.00\n24.00\n0.0015\n0.783\n\n\nCoho other Yearling\n2.75\n18.00\n24.00\n0.0015\n0.783\n\n\nCoho resident Puget Sound wide\n2.75\n18.00\n24.00\n0.0015\n0.783\n\n\nCoho resident Deep South Yearling\n2.75\n18.00\n24.00\n0.0015\n0.783\n\n\nChum Hatch Subyearling\n2.75\n15.80\n21.07\n0.0023\n0.780\n\n\nChum Fall Subyearling\n2.75\n15.80\n21.07\n0.0023\n0.780\n\n\nChum Hood Canal summer run Subyearling\n2.75\n15.80\n21.07\n0.0023\n0.780\n\n\nPink Salmon Subyearling\n2.75\n15.00\n20.00\n0.0023\n0.780\n\n\nOther salmonids\n2.75\n17.40\n25.14\n0.0008\n0.791\n\n\nStrait of Georgia salmonids\n2.50\n15.00\n22.40\n0.0015\n0.783\n\n\nHake_Large gadoids\n2.50\n10.57\n15.50\n0.0033\n0.794\n\n\nLarge demersal predators\n2.50\n15.00\n20.00\n0.0015\n0.775\n\n\nDemersal rockfish\n2.75\n15.00\n20.00\n0.0081\n0.752\n\n\nMidwater rockfish\n2.75\n15.75\n21.00\n0.0081\n0.752\n\n\nDemersal vulnerable rockfish\n2.80\n17.83\n23.00\n0.0057\n0.752\n\n\nMidwater vulnerable rockfish\n2.75\n15.00\n20.00\n0.0081\n0.752\n\n\nSmall demersal fish\n4.50\n20.50\n21.50\n0.0009\n0.668\n\n\nSmall-mouthed Flatfish\n1.76\n9.50\n21.00\n0.0023\n0.780\n\n\nPiscivorous flatfish\n2.79\n16.74\n22.00\n0.0023\n0.780\n\n\nSpiny dogfish\n1.76\n19.00\n25.00\n0.0037\n0.860\n\n\nSixgill Shark\n2.75\n15.00\n20.00\n0.0023\n0.780\n\n\nSkates\n2.75\n15.00\n20.00\n0.0023\n0.780\n\n\nRatfish\n2.75\n15.00\n20.00\n0.0023\n0.780\n\n\n\n\n\n\nMarine Mammal Respiration\nFor marine mammals, we express the respiration as a function of weight W only, assuming that water temperature does not impact the metabolism rate for endotherm species. Similarly, we assume that bird respiration rates are not a function of the water temperature. For these groups, the respiration is expressed as follows:\n\\[R = K_A \\cdot W^{K_B}\\]\nwhere \\(K_A\\) is the allometric respiration constant (g N·mg⁻¹ N·d⁻¹), \\(W\\) is the individual’s dry weight in mg N, \\(K_B\\) is the allometric respiration exponent, and \\(K_{tmp}\\) is a constant. Parameters \\(K_A\\) and \\(K_B\\) were specific for each functional group.\n\n\n\n\n\n\nNoteTable 3: Marine Mammal and Bird Parameters\n\n\n\nBioenergetic and respiration parameters for marine mammal and bird groups from the literature review.\n\n\n\n\n\nGroup\nKA\nKB\n\n\n\n\nResident orca\n0.024241\n0.75\n\n\nTransient orcas\n0.024241\n0.75\n\n\nCalifornia sea lions\n0.052212\n0.75\n\n\nCalifornia Sea Lion\n0.039015\n0.75\n\n\nHarbor seal\n0.019651\n0.75\n\n\nHarbor seals\n0.028114\n0.75\n\n\nHumpback\n0.024241\n0.75\n\n\nPiscivorous seabirds\n0.0005478955\n0.774\n\n\nNon-piscivorous seabirds\n0.0005478955\n0.774\n\n\nRaptors\n0.0005478955\n0.774",
+    "crumbs": [
+      "Response to temperature and O2"
+    ]
+  },
+  {
+    "objectID": "content/Responses_to_temperature_and_oxygen.html#oxygen-sensitivity",
+    "href": "content/Responses_to_temperature_and_oxygen.html#oxygen-sensitivity",
+    "title": "Responses to temperature and oxygen",
+    "section": "Oxygen Sensitivity",
+    "text": "Oxygen Sensitivity\nWater-breathing organisms are limited by the concentration of dissolved oxygen available in the water. While oxygen consumption, and therefore susceptibility to oxygen limitation, varies dynamically with body weight and temperature in ectotherms, oxygen concentration is not explicitly included in the current formulation of respiration and bioenergetic responses in Atlantis.\nHowever, to capture the lethal effects of anoxic conditions, which are known to occur in Puget Sound, we imposed lower limits of dissolved oxygen below which mortality occurs (Atlantis parameters XXX_min_O2 for age-structured groups, and KO2LIM_XXX for biomass pools). Parameter values were obtained from the R package published at https://github.com/tessington/metabolic_index (Essington et al., in prep.). We used the predicted posterior medians of the critical oxygen partial pressure for each taxon, converted from kPa to mg m⁻³ using the R package “respR”.",
+    "crumbs": [
+      "Response to temperature and O2"
+    ]
+  },
+  {
+    "objectID": "content/Initial_conditions.html",
+    "href": "content/Initial_conditions.html",
+    "title": "Initial Conditions",
+    "section": "",
+    "text": "We revised the initial biomasses of several groups to prevent unrealistic collapses under predation pressure in the first years of simulation. Specifically, we increased the initial biomasses of shrimp and the three phytoplankton functional groups (small, medium and large).\n\n\nInitial biomass was increased 10 times, based on the average biomass predicted by the SSM.\n\n\n\nShrimp biomass was increased from 2,659 t to 50,000 t, informed by regional biomass estimates from the Ecopath model (Harvey et al. 2010).",
+    "crumbs": [
+      "Initial conditions"
+    ]
+  },
+  {
+    "objectID": "content/Initial_conditions.html#initial-biomass-revisions",
+    "href": "content/Initial_conditions.html#initial-biomass-revisions",
+    "title": "Initial Conditions",
+    "section": "",
+    "text": "We revised the initial biomasses of several groups to prevent unrealistic collapses under predation pressure in the first years of simulation. Specifically, we increased the initial biomasses of shrimp and the three phytoplankton functional groups (small, medium and large).\n\n\nInitial biomass was increased 10 times, based on the average biomass predicted by the SSM.\n\n\n\nShrimp biomass was increased from 2,659 t to 50,000 t, informed by regional biomass estimates from the Ecopath model (Harvey et al. 2010).",
+    "crumbs": [
+      "Initial conditions"
+    ]
+  },
+  {
+    "objectID": "content/Initial_conditions.html#reference",
+    "href": "content/Initial_conditions.html#reference",
+    "title": "Initial Conditions",
+    "section": "Reference",
+    "text": "Reference\nHarvey, C.J., Williams, G.D. and Levin, P.S., 2010. Food web structure and trophic control in central Puget Sound. Estuaries and Coasts, 33(6), pp.1360-1376.",
+    "crumbs": [
+      "Initial conditions"
+    ]
+  },
+  {
+    "objectID": "content/KDEP.html",
+    "href": "content/KDEP.html",
+    "title": "Biological parameters",
+    "section": "",
+    "text": "Updated parameter to more closely resemble parameters in the California Current and Gulf of Mexico models:\n\n0.001 for most fish\n0.1 for bivalves",
+    "crumbs": [
+      "Biological parameters"
+    ]
+  },
+  {
+    "objectID": "content/KDEP.html#kdep-parameter-updates",
+    "href": "content/KDEP.html#kdep-parameter-updates",
+    "title": "Biological parameters",
+    "section": "",
+    "text": "Updated parameter to more closely resemble parameters in the California Current and Gulf of Mexico models:\n\n0.001 for most fish\n0.1 for bivalves",
+    "crumbs": [
+      "Biological parameters"
+    ]
+  },
+  {
+    "objectID": "content/foodweb.html",
+    "href": "content/foodweb.html",
+    "title": "Updates to the food web",
+    "section": "",
+    "text": "Updated code to combine diet data studies\nUpdated salmon supplementation (see Salmon page for details). Supplementation proportions in the biology PRM are by functional group and consider stage in the functional group file currently only juveniles are supplemented. IsSupplemented value of 1 means all life history stages will consume the supplemental feed, a value of 2 is juveniles only and a value of 3 is adults only.\nUpdated ROR diet (see Resident orcas page for details)",
+    "crumbs": [
+      "Foodweb"
+    ]
+  },
+  {
+    "objectID": "content/foodweb.html#august-2023",
+    "href": "content/foodweb.html#august-2023",
+    "title": "Updates to the food web",
+    "section": "",
+    "text": "Updated code to combine diet data studies\nUpdated salmon supplementation (see Salmon page for details). Supplementation proportions in the biology PRM are by functional group and consider stage in the functional group file currently only juveniles are supplemented. IsSupplemented value of 1 means all life history stages will consume the supplemental feed, a value of 2 is juveniles only and a value of 3 is adults only.\nUpdated ROR diet (see Resident orcas page for details)",
+    "crumbs": [
+      "Foodweb"
+    ]
+  },
+  {
+    "objectID": "content/residents.html",
+    "href": "content/residents.html",
+    "title": "Resident orcas",
+    "section": "",
+    "text": "Resident orcas simulate the Southern Resident Killer Whale endemic population\n\nUpdated the diet using Ford et al. 1998, Ford & Ellis, 2006, Ford 2009, Hanson et al., 2010 & 2021 and Hermann et al. 2015\n\n\n\nInstalling package into '/home/runner/work/_temp/Library'\n(as 'lib' is unspecified)\n\n\nLoading required package: devtools\n\n\nLoading required package: usethis\n\n\nLoading required package: readxl\n\n\nLoading required package: sp\n\n\nLoading required package: rnaturalearth\n\n\nLoading required package: rnaturalearthdata\n\n\n\nAttaching package: 'rnaturalearthdata'\n\n\nThe following object is masked from 'package:rnaturalearth':\n\n    countries110\n\n\nLoading required package: here\n\n\nhere() starts at /home/runner/work/psatlantismodelupdates/psatlantismodelupdates\n\n\nLoading required package: raster\n\n\nError: package or namespace load failed for 'raster' in dyn.load(file, DLLpath = DLLpath, ...):\n unable to load shared object '/home/runner/work/_temp/Library/terra/libs/terra.so':\n  libproj.so.25: cannot open shared object file: No such file or directory\n\n\nLoading required package: exactextractr\n\n\nError: package or namespace load failed for 'exactextractr' in dyn.load(file, DLLpath = DLLpath, ...):\n unable to load shared object '/home/runner/work/_temp/Library/terra/libs/terra.so':\n  libproj.so.25: cannot open shared object file: No such file or directory\n\n\nLoading required package: glmmTMB\n\n\nLoading required package: knitr\n\n\nLoading required package: rlang\n\n\n\nAttaching package: 'rlang'\n\n\nThe following object is masked from 'package:data.table':\n\n    :=\n\n\nLoading required package: ggrepel\n\n\nLoading required package: mapview\n\n\nError: package or namespace load failed for 'mapview' in dyn.load(file, DLLpath = DLLpath, ...):\n unable to load shared object '/home/runner/work/_temp/Library/terra/libs/terra.so':\n  libproj.so.25: cannot open shared object file: No such file or directory\n\n\nLoading required package: formattable\n\n\nLoading required package: RColorBrewer\n\n\nLoading required package: stringi\n\n\nLoading required package: stringr\n\n\nLoading required package: R.utils\n\n\nLoading required package: R.oo\n\n\nLoading required package: R.methodsS3\n\n\nR.methodsS3 v1.8.2 (2022-06-13 22:00:14 UTC) successfully loaded. See ?R.methodsS3 for help.\n\n\nR.oo v1.27.1 (2025-05-02 21:00:05 UTC) successfully loaded. See ?R.oo for help.\n\n\n\nAttaching package: 'R.oo'\n\n\nThe following object is masked from 'package:R.methodsS3':\n\n    throw\n\n\nThe following objects are masked from 'package:rlang':\n\n    abort, ll\n\n\nThe following objects are masked from 'package:devtools':\n\n    check, unload\n\n\nThe following objects are masked from 'package:methods':\n\n    getClasses, getMethods\n\n\nThe following objects are masked from 'package:base':\n\n    attach, detach, load, save\n\n\nR.utils v2.13.0 (2025-02-24 21:20:02 UTC) successfully loaded. See ?R.utils for help.\n\n\n\nAttaching package: 'R.utils'\n\n\nThe following object is masked from 'package:rlang':\n\n    env\n\n\nThe following object is masked from 'package:tidyr':\n\n    extract\n\n\nThe following object is masked from 'package:utils':\n\n    timestamp\n\n\nThe following objects are masked from 'package:base':\n\n    cat, commandArgs, getOption, isOpen, nullfile, parse, use, warnings\n\n\nLoading required package: magrittr\n\n\n\nAttaching package: 'magrittr'\n\n\nThe following object is masked from 'package:R.utils':\n\n    extract\n\n\nThe following object is masked from 'package:R.oo':\n\n    equals\n\n\nThe following object is masked from 'package:rlang':\n\n    set_names\n\n\nThe following object is masked from 'package:tidyr':\n\n    extract\n\n\nLoading required package: future\n\n\n\nAttaching package: 'future'\n\n\nThe following object is masked from 'package:R.utils':\n\n    reset\n\n\nLoading required package: parallel\n\n\nLoading required package: formatR\n\n\nRows: 73 Columns: 28\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (5): OldCode, Code, Name, Long Name, GroupType\ndbl (23): Index, IsTurnedOn, NumCohorts, NumGeneTypes, NumStages, NumSpawns,...\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\n\n\n\n\n\n\n\nUpdated diet proportions for Chinook populations from Hanson et al. 2021\nSpatial distributions based on SRKW sightings. Estimated based on Thorson et al. 2015\nSeasonal distribution\n\nWe updated spatial distribution based on orca master data of killer whale sightings for the years 2011 - 2020. Laura Kohen (NOAA-Western Regional Center, Protected Species Division) carried out the following analysis: To match sightings of Southern Resident killer whales to Puget Sound Atlantis boxes. First, sightings are filtered to only sightings where there was confidence that the sighting was of Southern Resident killer whales (vs other killer whale populations). Specifically, data is filtered to sightings where the “likely pod” is either SRKW, SRs, J, K, or L; so excludes any sightings where the sighting could only be identified to the “orca” level (not more specific). Also excludes sightings that were specified as transients, Northern residents, “not orcas”, or HBs (humpbacks). Data was then filtered to years 2011-2020. From there, we filtered down to unique day-quadrant sightings. Specifically, if there are any 2+ sightings with the same date and Whale Museum specified quadrant number, we only keep 1 sighting with that day-quadrant combo. This is to remove sightings from multiple sources that can inflate occurrence in an area. Note, this then means that there could be multiple sightings on the same day in the same Atlantis box, but they will all be in different Whale Museum quadrants.\nNote also that data was filtered down to only sightings with a whale museum identified quadrant number because these will occur in the Salish sea. Note that Whale Museum quadrant extend passed the Atlantis box domain (we do not have a shapefile of the quadrants but image is included with data). This may miss a few sightings if a quadrant was not specified by the Whale Museum but not a large amount.\nWith the sightings data, sightings were converted to an sf object with latitude and longitude. Then, based on the CRS of the Atlantis polygons, the SRKW sightings sf were projected to the same CRS as the Atlantis polygons so that all are in the same sf space/same traget coordinate reference system (function st_transform). Then using st_intersection, this function finds the Atlantis polygons that each sighting falls into.\nThe final output file has for all the day-quadrant unique SRKW sightings from 2011-2020, the date (including month, day, year) and the Atlantis polygon where the sighting fell.\n\nFecundity. Fishery Management Council Working Group, data from Eric Ward, https://nwfsc-cb.github.io/srkw-status/.\n\nReferences\nFord, J.K.B., G.A. Ellis, L.G. Barrett-Lennard, A.B. Morton, R.S. Palm & K.C. Balcomb. 1998. Dietary specialization in two sympatric populations of killer whales (Orcinus orca) in coastal British Columbia and adjacent waters. Canadian Journal of Zoology-Revue Canadienne de Zoologie 76: 1456–1471.\nFord, J.K.B. & G.M. Ellis. 2006. Selective foraging by fish-eating killer whales Orcinus orca in British Columbia. Mar. Ecol. Prog. Ser. 316: 185–199.\nFord, J.K.B. 2009. Chinook salmon predation by resident killer whales: Seasonal and regional selectivity, stock identity of prey, and consumption rates. Canadian Science Advisory Secretariat = Secrétariat canadien de consultation scientifique.\nThorson, J.T., Shelton, A.O., Ward, E.J., Skaug, H.J., 2015. Geostatistical delta-generalized linear mixed models improve precision for estimated abundance indices for West Coast groundfishes. ICES J. Mar. Sci. J. Cons. 72(5), 1297–1310. doi:10.1093/icesjms/fsu243. URL: http://icesjms.oxfordjournals.org/content/72/5/1297",
+    "crumbs": [
+      "Resident orcas"
     ]
   }
 ]
