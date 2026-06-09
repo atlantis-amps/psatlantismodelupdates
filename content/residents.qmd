@@ -6,8 +6,10 @@ editor:
 ---
 
 ```{r}
+#| label: load_packages
 #| message: false
 #| warning: false
+#| include: false
 
 library(readr)
 library(ggplot2)
@@ -21,8 +23,8 @@ population
 -   Updated the diet using Ford et al. 1998, Ford & Ellis, 2006, Ford 2009, Hanson et al., 2010 & 2021 and Hermann et al. 2015
     
 ```{r}
+#| label: diet_plots
 #| echo: false
-#| eval: true 
 source(here::here("libraries.R")) #need to figure out which ones are actually needed
 #External drive (currently G:) /Azure_download/ dietps
 #Original data in Diet_database_V1_no_figures.xlsx
@@ -83,7 +85,7 @@ ror.diet.plot <- diet.matrix.ROR %>%
   ggplot2::theme(legend.position="bottom",
         legend.title = element_blank())
 
-
+ror.diet.plot
 
 
 ```

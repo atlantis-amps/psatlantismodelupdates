@@ -3,8 +3,10 @@ title: Salmon groups
 ---
 
 ```{r}
+#| label: load_libraries
 #| message: false
 #| warning: false
+#| include: false
 
 library(knitr)
 library(readr)
@@ -18,6 +20,8 @@ IsSupplemented value of 1 means all life history stages will consume the supplem
 3 is adults only.
 
 ```{r}
+#| label: salmon_table
+#| echo: false
 
 #| column: page
 #| 
