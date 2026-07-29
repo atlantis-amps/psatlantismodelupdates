@@ -39,11 +39,14 @@ In its [initial version](https://repository.library.noaa.gov/view/noaa/40463), t
 #| 
 knitr::kable(readr::read_csv(here::here("inputs","guilds_table.csv")), format="html", caption = "Table 1. Plankton groups in the Atlantis Model of Puget Sound.")
 ```
-Gelatinous zooplankton diets were compiled from multiple sources, focused on Puget Sound when available [@Costello2002; @Purcell1990]; these are studies from Puget Sound, but do not include *Aurelia* diet, instead describing the diet of small hydromedusae such as *Aglantha* and *Obelia*. Currently, diet of gelatinous zooplankton in the AMPS is: 48.3% microzooplankton; 24.7% mesozooplankton (copepods); and 27% other zooplankton including barnacle larvae, appendicularians, and bivalve larvae. As an approximation, rate parameters, specifically growth and clearance rates, were taken from the California Current Atlantis model [@Kaplan2017; @Marshall2017]. 
-
+Gelatinous zooplankton diets were compiled from multiple sources, focused on Puget Sound when available [@Costello2002-rz; @Purcell1990-ci]; these are studies from Puget Sound, that described the diet of small hydromedusae such as *Aglantha* and *Obelia*. [@Schaub2023] assessed the trophic ecology of *Aurelia labiata* in the Strait of Georgia using stable isotopes, and found that the diet of *Aurelia* was dominated particulate organic matter and zooplankton. Larger jellyfish are know to ingest more copepods, euphausiids, and fish eggs and larvae and show a trophic shift with increasing size [@Schaub2023]. 
+Currently, diet of gelatinous zooplankton in the AMPS is: 48.3% microzooplankton; 24.7% mesozooplankton (copepods); and 27% other zooplankton including barnacle larvae, appendicularians, and bivalve larvae. As an approximation, rate parameters, specifically growth and clearance rates, were taken from the California Current Atlantis model [@Kaplan2017-bw; @Marshall2017-oz]. We combined the diet of larger *Aurelia* based on gut contents from [@Graham2001] with the diet of gelatinous zooplankton in the model for parameterization of the new jellyfish functional group. Although [@Graham2001] was not carried out in Puget Sound, it is the only study that provides a detailed description of the diet of *Aurelia* anywhere in the world. We used the diet of *Aurelia* from [@Graham2001] to parameterize the new jellyfish functional group, and combined it with the diet of gelatinous zooplankton in the model. 
 
 
 ```{r}
+#| label: load_packages
+#| eval: false
+#| include: false
 
 #| label: load-packages
 #| include: false
