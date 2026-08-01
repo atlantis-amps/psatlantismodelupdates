@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -13,10 +13,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -59,7 +62,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -77,14 +100,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-f7637cccd0bf7cb028cd3b878bc0c000.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-736686ef5e5f2933876e53b36c4ff32a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-f7637cccd0bf7cb028cd3b878bc0c000.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-bd6cbec3f8f1e47e65ea724175f0138c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-8aaea1cc776fd55558d06debd1d5c78a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-bd6cbec3f8f1e47e65ea724175f0138c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -517,252 +540,7 @@ chr (3): Functional group, Representative Species, Common name
 </table>
 </div>
 </div>
-<p>Gelatinous zooplankton diets were compiled from multiple sources, focused on Puget Sound when available <span class="citation" data-cites="Costello2002 Purcell1990">(<a href="#ref-Costello2002" role="doc-biblioref"><strong>Costello2002?</strong></a>, <a href="#ref-Purcell1990" role="doc-biblioref"><strong>Purcell1990?</strong></a>)</span>; these are studies from Puget Sound, but do not include <em>Aurelia</em> diet, instead describing the diet of small hydromedusae such as <em>Aglantha</em> and <em>Obelia</em>. Currently, diet of gelatinous zooplankton in the AMPS is: 48.3% microzooplankton; 24.7% mesozooplankton (copepods); and 27% other zooplankton including barnacle larvae, appendicularians, and bivalve larvae. As an approximation, rate parameters, specifically growth and clearance rates, were taken from the California Current Atlantis model <span class="citation" data-cites="Kaplan2017 Marshall2017">(<a href="#ref-Kaplan2017" role="doc-biblioref"><strong>Kaplan2017?</strong></a>, <a href="#ref-Marshall2017" role="doc-biblioref"><strong>Marshall2017?</strong></a>)</span>.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load-packages</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"libraries.R"</span>)) <span class="co">#need to figure out which ones are actually needed</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Installing package into '/home/runner/work/_temp/Library'
-(as 'lib' is unspecified)</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: dplyr</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'dplyr'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:stats':
-
-    filter, lag</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: devtools</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: usethis</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: readxl</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: sp</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: rnaturalearth</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: rnaturalearthdata</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'rnaturalearthdata'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:rnaturalearth':
-
-    countries110</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: raster</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Error: package or namespace load failed for 'raster' in dyn.load(file, DLLpath = DLLpath, ...):
- unable to load shared object '/home/runner/work/_temp/Library/terra/libs/terra.so':
-  libproj.so.25: cannot open shared object file: No such file or directory</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: exactextractr</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Error: package or namespace load failed for 'exactextractr' in dyn.load(file, DLLpath = DLLpath, ...):
- unable to load shared object '/home/runner/work/_temp/Library/terra/libs/terra.so':
-  libproj.so.25: cannot open shared object file: No such file or directory</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: glmmTMB</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: rlang</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: ggplot2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: ggrepel</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: mapview</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Error: package or namespace load failed for 'mapview' in dyn.load(file, DLLpath = DLLpath, ...):
- unable to load shared object '/home/runner/work/_temp/Library/terra/libs/terra.so':
-  libproj.so.25: cannot open shared object file: No such file or directory</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: formattable</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: RColorBrewer</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: stringi</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: data.table</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'data.table'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:rlang':
-
-    :=</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:dplyr':
-
-    between, first, last</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:base':
-
-    %notin%</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: tidyr</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: stringr</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: R.utils</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: R.oo</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: R.methodsS3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>R.methodsS3 v1.8.2 (2022-06-13 22:00:14 UTC) successfully loaded. See ?R.methodsS3 for help.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>R.oo v1.27.1 (2025-05-02 21:00:05 UTC) successfully loaded. See ?R.oo for help.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'R.oo'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:R.methodsS3':
-
-    throw</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:rlang':
-
-    abort, ll</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:devtools':
-
-    check, unload</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:methods':
-
-    getClasses, getMethods</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
-
-    attach, detach, load, save</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>R.utils v2.13.0 (2025-02-24 21:20:02 UTC) successfully loaded. See ?R.utils for help.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'R.utils'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:tidyr':
-
-    extract</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:rlang':
-
-    env</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:utils':
-
-    timestamp</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
-
-    cat, commandArgs, getOption, isOpen, nullfile, parse, use, warnings</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: magrittr</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'magrittr'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:R.utils':
-
-    extract</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:R.oo':
-
-    equals</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:tidyr':
-
-    extract</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:rlang':
-
-    set_names</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: future</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'future'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:R.utils':
-
-    reset</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: parallel</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: formatR</code></pre>
-</div>
-</div>
+<p>Gelatinous zooplankton diets were compiled from multiple sources, focused on Puget Sound when available <span class="citation" data-cites="Costello2002-rz Purcell1990-ci">(<a href="#ref-Purcell1990-ci" role="doc-biblioref">Purcell and Grover 1990</a>, <a href="#ref-Costello2002-rz" role="doc-biblioref">Costello and Colin 2002</a>)</span>; these are studies from Puget Sound, that described the diet of small hydromedusae such as <em>Aglantha</em> and <em>Obelia</em>. <span class="citation" data-cites="Schaub2023">(<a href="#ref-Schaub2023" role="doc-biblioref"><strong>Schaub2023?</strong></a>)</span> assessed the trophic ecology of <em>Aurelia labiata</em> in the Strait of Georgia using stable isotopes, and found that the diet of <em>Aurelia</em> was dominated particulate organic matter and zooplankton. Larger jellyfish are know to ingest more copepods, euphausiids, and fish eggs and larvae and show a trophic shift with increasing size <span class="citation" data-cites="Schaub2023">(<a href="#ref-Schaub2023" role="doc-biblioref"><strong>Schaub2023?</strong></a>)</span>. Currently, diet of gelatinous zooplankton in the AMPS is: 48.3% microzooplankton; 24.7% mesozooplankton (copepods); and 27% other zooplankton including barnacle larvae, appendicularians, and bivalve larvae. As an approximation, rate parameters, specifically growth and clearance rates, were taken from the California Current Atlantis model <span class="citation" data-cites="Kaplan2017-bw Marshall2017-oz">(<a href="#ref-Marshall2017-oz" role="doc-biblioref">Marshall et al. 2017</a>, <a href="#ref-Kaplan2017-bw" role="doc-biblioref">Kaplan et al. 2017</a>)</span>. We combined the diet of larger <em>Aurelia</em> based on gut contents from <span class="citation" data-cites="Graham2001">(<a href="#ref-Graham2001" role="doc-biblioref"><strong>Graham2001?</strong></a>)</span> with the diet of gelatinous zooplankton in the model for parameterization of the new jellyfish functional group. Although <span class="citation" data-cites="Graham2001">(<a href="#ref-Graham2001" role="doc-biblioref"><strong>Graham2001?</strong></a>)</span> was not carried out in Puget Sound, it is the only study that provides a detailed description of the diet of <em>Aurelia</em> anywhere in the world. We used the diet of <em>Aurelia</em> from <span class="citation" data-cites="Graham2001">(<a href="#ref-Graham2001" role="doc-biblioref"><strong>Graham2001?</strong></a>)</span> to parameterize the new jellyfish functional group, and combined it with the diet of gelatinous zooplankton in the model.</p>
 </section>
 <section id="updated-spatial-distribution" class="level2">
 <h2 class="anchored" data-anchor-id="updated-spatial-distribution">Updated spatial distribution</h2>
@@ -776,9 +554,23 @@ Attaching package: 'future'</code></pre>
 
 <!-- -->
 
+
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Costello2002-rz" class="csl-entry" role="listitem">
+Costello, J. H., and S. P. Colin. 2002. Prey resource use by coexistent hydromedusae from friday harbor, washington. Limnol. Oceanogr.
+</div>
+<div id="ref-Kaplan2017-bw" class="csl-entry" role="listitem">
+Kaplan, I. C., L. E. Koehn, E. E. Hodgson, K. N. Marshall, and T. E. Essington. 2017. <a href="https://doi.org/10.1016/j.ecolmodel.2017.05.007">Modeling food web effects of low sardine and anchovy abundance in the california current</a>. Ecol. Modell. 359:1–24.
+</div>
+<div id="ref-Marshall2017-oz" class="csl-entry" role="listitem">
+Marshall, K. N., I. C. Kaplan, E. E. Hodgson, A. Hermann, D. S. Busch, P. McElhany, T. E. Essington, C. J. Harvey, and E. A. Fulton. 2017. <a href="https://doi.org/10.1111/gcb.13594">Risks of ocean acidification in the california current food web and fisheries: Ecosystem model projections</a>. Glob. Chang. Biol. 23:1525–1539.
+</div>
+<div id="ref-Purcell1990-ci" class="csl-entry" role="listitem">
+Purcell, J. E., and J. J. Grover. 1990. Predation and food limitation as causes of mortality in larval herring at a spawning ground in british columbia. Mar. Ecol. Prog. Ser. 59:55–61.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -884,16 +676,16 @@ Attaching package: 'future'</code></pre>
     }
     function toggleCodeHandler(show) {
       return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
           if (show) {
             details.open = true;
           } else {
             details.removeAttribute("open");
           }
         }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
         const fromCls = show ? "hidden" : "unhidden";
         const toCls = show ? "unhidden" : "hidden";
         for (let i=0; i<cellCodeDivs.length; i++) {
@@ -1255,72 +1047,76 @@ Attaching package: 'future'</code></pre>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb66" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Addition of a jellyfish functional group</span></span>
-<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Hem Nalini Morzaria-Luna"</span></span>
-<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
-<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> jellyfishbiblio.bib</span></span>
-<span id="cb66-9"><a href="#cb66-9" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> ecology.csl</span></span>
-<span id="cb66-10"><a href="#cb66-10" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb66-11"><a href="#cb66-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-12"><a href="#cb66-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-15"><a href="#cb66-15" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb66-16"><a href="#cb66-16" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb66-17"><a href="#cb66-17" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb66-18"><a href="#cb66-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-19"><a href="#cb66-19" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb66-20"><a href="#cb66-20" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
-<span id="cb66-21"><a href="#cb66-21" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb66-22"><a href="#cb66-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb66-23"><a href="#cb66-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-24"><a href="#cb66-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Addition of a Jellyfish functional group</span></span>
-<span id="cb66-25"><a href="#cb66-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-26"><a href="#cb66-26" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> width</span><span class="op">=</span><span class="st">"540"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"image"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://user-images.githubusercontent.com/11339490/204919117-510c0fbb-99d0-43e8-abc4-f5fe7c4beef6.png"</span><span class="dt">&gt;</span></span>
-<span id="cb66-27"><a href="#cb66-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-28"><a href="#cb66-28" aria-hidden="true" tabindex="-1"></a>The model simulates food web dynamics using 73 biological groups, including one gelatinous zooplankton. While much effort centered on characterizing pelagic fish abundance, diets, and distribution during the development of the AMPS, data on these attributes are scarcer for jellyfish in Puget Sound. We use data from field studies, mesocosms, and relevant global literature to add a new functional group, based on the jellyfish *Aurelia*. We incorporate information on total consumption rates of Aurelia on their prey and composition of *Aurelia* diet.</span>
-<span id="cb66-29"><a href="#cb66-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-30"><a href="#cb66-30" aria-hidden="true" tabindex="-1"></a>As part of a <span class="co">[</span><span class="ot">WA Sea Grant</span><span class="co">](https://wsg.washington.edu/)</span> project, led by Julie Kiester (University of Washington), "Ecosystem impacts of the jellyfish *Aurelia labiata* in Puget Sound", we will quantify the ecosystem effects of changing jellyfish populations in Puget Sound. We will examine scenarios that integrate results from mesocosms and field studies part of this grant to understand the ecological role of jellyfish in Puget Sound, and their effects on other species including salmon and forage fish. Spatial representation in the Atlantis Model for Puget Sound (AMPS) will allow us to test the impact of spatial aggregations of *Aurelia* identified in aerial monitoring by EOPS, for instance in South Sound inlets. Vertical structure in the model allows us to capture diel vertical movement of jellyfish and other zooplankton taxa, which will be informed by field sampling.</span>
-<span id="cb66-31"><a href="#cb66-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-32"><a href="#cb66-32" aria-hidden="true" tabindex="-1"></a>#Current parameterization of ‘Gelatinous zooplankton’</span>
-<span id="cb66-33"><a href="#cb66-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-34"><a href="#cb66-34" aria-hidden="true" tabindex="-1"></a>In its <span class="co">[</span><span class="ot">initial version</span><span class="co">](https://repository.library.noaa.gov/view/noaa/40463)</span>, the AMPS included one ‘Gelatinous zooplankton’ functional group, which encompassed scyphozoans, larvaceans, siphonophores, and ctenophores. Other plankton groups, including jellyfish prey, were aggregated into five additional functional groups (Table 1). The composition of the ‘Gelatinous zooplankton’ functional group was based on samples collected throughout Puget Sound in 2011 and 2014-2017 using zooplankton nets. These nets are likely to entirely miss larger medusae, so we added information from extensive surface trawl sampling of larger jellyfish and pelagic fish undertaken in 2011 across all basins of Puget Sound. We interpolated missing data (per polygon) based on the average of all sampled polygons of similar bottom depth (i.e., with the same number of Atlantis depth layers). Total abundance of gelatinous zooplankton (per Atlantis polygon) was then taken as the sum of large and small jellyfish abundance.</span>
-<span id="cb66-35"><a href="#cb66-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-36"><a href="#cb66-36" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> width</span><span class="op">=</span><span class="st">"540"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://user-images.githubusercontent.com/11339490/205162222-6d57fb7f-7bb0-475e-9359-8fa689c80dcf.png"</span><span class="dt">&gt;</span></span>
-<span id="cb66-37"><a href="#cb66-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-40"><a href="#cb66-40" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb66-41"><a href="#cb66-41" aria-hidden="true" tabindex="-1"></a><span class="co">#| column: page</span></span>
-<span id="cb66-42"><a href="#cb66-42" aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
-<span id="cb66-43"><a href="#cb66-43" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(readr<span class="sc">::</span><span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"inputs"</span>,<span class="st">"guilds_table.csv"</span>)), <span class="at">format=</span><span class="st">"html"</span>, <span class="at">caption =</span> <span class="st">"Table 1. Plankton groups in the Atlantis Model of Puget Sound."</span>)</span>
-<span id="cb66-44"><a href="#cb66-44" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb66-45"><a href="#cb66-45" aria-hidden="true" tabindex="-1"></a>Gelatinous zooplankton diets were compiled from multiple sources, focused on Puget Sound when available <span class="co">[</span><span class="ot">@Costello2002; @Purcell1990</span><span class="co">]</span>; these are studies from Puget Sound, but do not include *Aurelia* diet, instead describing the diet of small hydromedusae such as *Aglantha* and *Obelia*. Currently, diet of gelatinous zooplankton in the AMPS is: 48.3% microzooplankton; 24.7% mesozooplankton (copepods); and 27% other zooplankton including barnacle larvae, appendicularians, and bivalve larvae. As an approximation, rate parameters, specifically growth and clearance rates, were taken from the California Current Atlantis model <span class="co">[</span><span class="ot">@Kaplan2017; @Marshall2017</span><span class="co">]</span>. </span>
-<span id="cb66-46"><a href="#cb66-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-47"><a href="#cb66-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-48"><a href="#cb66-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-51"><a href="#cb66-51" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb66-52"><a href="#cb66-52" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load-packages</span></span>
-<span id="cb66-53"><a href="#cb66-53" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb66-54"><a href="#cb66-54" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"libraries.R"</span>)) <span class="co">#need to figure out which ones are actually needed</span></span>
-<span id="cb66-55"><a href="#cb66-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb66-56"><a href="#cb66-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-57"><a href="#cb66-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-58"><a href="#cb66-58" aria-hidden="true" tabindex="-1"></a><span class="fu">## Updated spatial distribution</span></span>
-<span id="cb66-59"><a href="#cb66-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-60"><a href="#cb66-60" aria-hidden="true" tabindex="-1"></a>We used the results from Green et al. who examined interspecific variation in species-specific response of jellyfish adult life stages to environmental variation and anthropogenic influence, and projected future changes in these parameters in Puget Sound. They used results from a field survey to predict the presence of seven jellyfish species across six sub basins in Puget Sound. They modeled the probability of species presence as a function of site-specific parameters (geomorphic type, anthropogenic land use) and observation-specific variables (salinity, temperature, depth). Their presence/absence models indicated strong interspecific variation in the habitat preferences of jellyfish to environmental parameters such as temperature and geomorphic type, as well as varying sensitivity to potential anthropogenic effects on nearshore waters. <span class="dt">&lt;</span><span class="kw">i</span><span class="dt">&gt;</span>Aurelia<span class="dt">&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> individuals were associated with large and small backwater embayments rather than exposed shorelines, and human development within these embayments was shown to decrease the probability of presence. </span>
-<span id="cb66-61"><a href="#cb66-61" aria-hidden="true" tabindex="-1"></a>We used the embayments derived by Green et al. (embayment_unit_revised.shp) and classified additional coastline segments from data collected by <span class="co">[</span><span class="ot">The Salmon and Steelhead Habitat Inventory and Assessment Program</span><span class="co">](http://nwifc.org/about-us/habitat/sshiap/)</span> (SSHIAP) (geomorph_ps_s.shp from Geodatabase SSHIAP_Marine.gdb&gt;Geomorph_PS_S). Geomorphology categories beach, modified, shoreline, bluff, and platform categories were aggregated and reclassified as exposed; all types of delta were assigned to the delta category. </span>
-<span id="cb66-62"><a href="#cb66-62" aria-hidden="true" tabindex="-1"></a>We also derived percent used landcover classes at 30 m resolution (szline_GSU_identity_Spj_HUC_NHD_dissolve_DU_sum_LU.shp). </span>
-<span id="cb66-63"><a href="#cb66-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-64"><a href="#cb66-64" aria-hidden="true" tabindex="-1"></a>Development classes were based on the NCCOS' Coastal Change and Analysis Program (C-CAP, 2006 analysis year). Nationally standardized, raster-based inventories of land cover for the coastal areas of the U.S. Data are derived, through the Coastal Change Analysis Program, from the analysis of multiple dates of remotely sensed imagery. https://coast.noaa.gov/digitalcoast/tools/lca.html. Land classification scheme https://coast.noaa.gov/data/digitalcoast/pdf/ccap-class-scheme-regional.pdf</span>
-<span id="cb66-65"><a href="#cb66-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-66"><a href="#cb66-66" aria-hidden="true" tabindex="-1"></a>Following Green et al. we used data from the Puget Sound Nearshore Ecosystem Restoration Project (PSNERP), an initiative led by the Washington Department of Fish and Wildlife (WDFW) in partnership with the U.S. Army Corps of Engineers (Corps) to assign geomorphology classification to Atlantis polygons</span>
-<span id="cb66-67"><a href="#cb66-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-68"><a href="#cb66-68" aria-hidden="true" tabindex="-1"></a>https://wdfw.wa.gov/species-habitats/habitat-recovery/puget-sound/psnerp</span>
-<span id="cb66-69"><a href="#cb66-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-70"><a href="#cb66-70" aria-hidden="true" tabindex="-1"></a>https://wdfw.maps.arcgis.com/apps/webappviewer/index.html?id=adfd521d37774e868e0e974cc03860df to assign geomorphic types to sampling areas.</span>
-<span id="cb66-71"><a href="#cb66-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-72"><a href="#cb66-72" aria-hidden="true" tabindex="-1"></a>Used landcover classes at 30 m resolution. Development classes were based on the NCCOS' Coastal Change and Analysis Program (C-CAP, 2006 analysis year). Nationally standardized, raster-based inventories of land cover for the coastal areas of the U.S. Data are derived, through the Coastal Change Analysis Program, from the analysis of multiple dates of remotely sensed imagery. https://coast.noaa.gov/digitalcoast/tools/lca.html. Land classification scheme https://coast.noaa.gov/data/digitalcoast/pdf/ccap-class-scheme-regional.pdf</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Addition of a jellyfish functional group</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Hem Nalini Morzaria-Luna"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> jellyfishbiblio.bib</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> ecology.csl</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Addition of a Jellyfish functional group</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> width</span><span class="op">=</span><span class="st">"540"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"image"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://user-images.githubusercontent.com/11339490/204919117-510c0fbb-99d0-43e8-abc4-f5fe7c4beef6.png"</span><span class="dt">&gt;</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>The model simulates food web dynamics using 73 biological groups, including one gelatinous zooplankton. While much effort centered on characterizing pelagic fish abundance, diets, and distribution during the development of the AMPS, data on these attributes are scarcer for jellyfish in Puget Sound. We use data from field studies, mesocosms, and relevant global literature to add a new functional group, based on the jellyfish *Aurelia*. We incorporate information on total consumption rates of Aurelia on their prey and composition of *Aurelia* diet.</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>As part of a <span class="co">[</span><span class="ot">WA Sea Grant</span><span class="co">](https://wsg.washington.edu/)</span> project, led by Julie Kiester (University of Washington), "Ecosystem impacts of the jellyfish *Aurelia labiata* in Puget Sound", we will quantify the ecosystem effects of changing jellyfish populations in Puget Sound. We will examine scenarios that integrate results from mesocosms and field studies part of this grant to understand the ecological role of jellyfish in Puget Sound, and their effects on other species including salmon and forage fish. Spatial representation in the Atlantis Model for Puget Sound (AMPS) will allow us to test the impact of spatial aggregations of *Aurelia* identified in aerial monitoring by EOPS, for instance in South Sound inlets. Vertical structure in the model allows us to capture diel vertical movement of jellyfish and other zooplankton taxa, which will be informed by field sampling.</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>#Current parameterization of ‘Gelatinous zooplankton’</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>In its <span class="co">[</span><span class="ot">initial version</span><span class="co">](https://repository.library.noaa.gov/view/noaa/40463)</span>, the AMPS included one ‘Gelatinous zooplankton’ functional group, which encompassed scyphozoans, larvaceans, siphonophores, and ctenophores. Other plankton groups, including jellyfish prey, were aggregated into five additional functional groups (Table 1). The composition of the ‘Gelatinous zooplankton’ functional group was based on samples collected throughout Puget Sound in 2011 and 2014-2017 using zooplankton nets. These nets are likely to entirely miss larger medusae, so we added information from extensive surface trawl sampling of larger jellyfish and pelagic fish undertaken in 2011 across all basins of Puget Sound. We interpolated missing data (per polygon) based on the average of all sampled polygons of similar bottom depth (i.e., with the same number of Atlantis depth layers). Total abundance of gelatinous zooplankton (per Atlantis polygon) was then taken as the sum of large and small jellyfish abundance.</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> width</span><span class="op">=</span><span class="st">"540"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://user-images.githubusercontent.com/11339490/205162222-6d57fb7f-7bb0-475e-9359-8fa689c80dcf.png"</span><span class="dt">&gt;</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="co">#| column: page</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(readr<span class="sc">::</span><span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"inputs"</span>,<span class="st">"guilds_table.csv"</span>)), <span class="at">format=</span><span class="st">"html"</span>, <span class="at">caption =</span> <span class="st">"Table 1. Plankton groups in the Atlantis Model of Puget Sound."</span>)</span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>Gelatinous zooplankton diets were compiled from multiple sources, focused on Puget Sound when available <span class="co">[</span><span class="ot">@Costello2002-rz; @Purcell1990-ci</span><span class="co">]</span>; these are studies from Puget Sound, that described the diet of small hydromedusae such as *Aglantha* and *Obelia*. [@Schaub2023] assessed the trophic ecology of *Aurelia labiata* in the Strait of Georgia using stable isotopes, and found that the diet of *Aurelia* was dominated particulate organic matter and zooplankton. Larger jellyfish are know to ingest more copepods, euphausiids, and fish eggs and larvae and show a trophic shift with increasing size <span class="co">[</span><span class="ot">@Schaub2023</span><span class="co">]</span>. </span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>Currently, diet of gelatinous zooplankton in the AMPS is: 48.3% microzooplankton; 24.7% mesozooplankton (copepods); and 27% other zooplankton including barnacle larvae, appendicularians, and bivalve larvae. As an approximation, rate parameters, specifically growth and clearance rates, were taken from the California Current Atlantis model <span class="co">[</span><span class="ot">@Kaplan2017-bw; @Marshall2017-oz</span><span class="co">]</span>. We combined the diet of larger *Aurelia* based on gut contents from [@Graham2001] with the diet of gelatinous zooplankton in the model for parameterization of the new jellyfish functional group. Although [@Graham2001] was not carried out in Puget Sound, it is the only study that provides a detailed description of the diet of *Aurelia* anywhere in the world. We used the diet of *Aurelia* from <span class="co">[</span><span class="ot">@Graham2001</span><span class="co">]</span> to parameterize the new jellyfish functional group, and combined it with the diet of gelatinous zooplankton in the model. </span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load_packages</span></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load-packages</span></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"libraries.R"</span>)) <span class="co">#need to figure out which ones are actually needed</span></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="fu">## Updated spatial distribution</span></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>We used the results from Green et al. who examined interspecific variation in species-specific response of jellyfish adult life stages to environmental variation and anthropogenic influence, and projected future changes in these parameters in Puget Sound. They used results from a field survey to predict the presence of seven jellyfish species across six sub basins in Puget Sound. They modeled the probability of species presence as a function of site-specific parameters (geomorphic type, anthropogenic land use) and observation-specific variables (salinity, temperature, depth). Their presence/absence models indicated strong interspecific variation in the habitat preferences of jellyfish to environmental parameters such as temperature and geomorphic type, as well as varying sensitivity to potential anthropogenic effects on nearshore waters. <span class="dt">&lt;</span><span class="kw">i</span><span class="dt">&gt;</span>Aurelia<span class="dt">&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> individuals were associated with large and small backwater embayments rather than exposed shorelines, and human development within these embayments was shown to decrease the probability of presence. </span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>We used the embayments derived by Green et al. (embayment_unit_revised.shp) and classified additional coastline segments from data collected by <span class="co">[</span><span class="ot">The Salmon and Steelhead Habitat Inventory and Assessment Program</span><span class="co">](http://nwifc.org/about-us/habitat/sshiap/)</span> (SSHIAP) (geomorph_ps_s.shp from Geodatabase SSHIAP_Marine.gdb&gt;Geomorph_PS_S). Geomorphology categories beach, modified, shoreline, bluff, and platform categories were aggregated and reclassified as exposed; all types of delta were assigned to the delta category. </span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>We also derived percent used landcover classes at 30 m resolution (szline_GSU_identity_Spj_HUC_NHD_dissolve_DU_sum_LU.shp). </span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>Development classes were based on the NCCOS' Coastal Change and Analysis Program (C-CAP, 2006 analysis year). Nationally standardized, raster-based inventories of land cover for the coastal areas of the U.S. Data are derived, through the Coastal Change Analysis Program, from the analysis of multiple dates of remotely sensed imagery. https://coast.noaa.gov/digitalcoast/tools/lca.html. Land classification scheme https://coast.noaa.gov/data/digitalcoast/pdf/ccap-class-scheme-regional.pdf</span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>Following Green et al. we used data from the Puget Sound Nearshore Ecosystem Restoration Project (PSNERP), an initiative led by the Washington Department of Fish and Wildlife (WDFW) in partnership with the U.S. Army Corps of Engineers (Corps) to assign geomorphology classification to Atlantis polygons</span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>https://wdfw.wa.gov/species-habitats/habitat-recovery/puget-sound/psnerp</span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a>https://wdfw.maps.arcgis.com/apps/webappviewer/index.html?id=adfd521d37774e868e0e974cc03860df to assign geomorphic types to sampling areas.</span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>Used landcover classes at 30 m resolution. Development classes were based on the NCCOS' Coastal Change and Analysis Program (C-CAP, 2006 analysis year). Nationally standardized, raster-based inventories of land cover for the coastal areas of the U.S. Data are derived, through the Coastal Change Analysis Program, from the analysis of multiple dates of remotely sensed imagery. https://coast.noaa.gov/digitalcoast/tools/lca.html. Land classification scheme https://coast.noaa.gov/data/digitalcoast/pdf/ccap-class-scheme-regional.pdf</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
